@@ -82,11 +82,9 @@ export default function FoundersNote() {
                   partnerships.
                 </h2>
                 <p className="text-[16px] sm:text-[18px] leading-8 text-[#334155] max-w-[60ch]">
-                  At Bridgesoft, we believe technology should create clarity,
-                  momentum, and measurable growth for the businesses we serve.
-                  Our mission is to help organizations modernize with
-                  confidence, solve complex challenges with practical insight,
-                  and turn bold ideas into resilient digital experiences.
+                  At BridgeSoft, we are committed to delivering innovative
+                  software solutions that empower businesses to thrive in a
+                  rapidly evolving digital landscape.
                 </p>
               </div>
             </motion.div>

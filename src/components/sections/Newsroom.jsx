@@ -6,9 +6,8 @@ import { RiArrowRightSLine } from "react-icons/ri";
 const featuredStory = {
   tag: "Corporate",
   date: "Jun 10, 2026",
-  title:
-    "Bridgesoft launches new cloud platform for SMEs in Nigeria, enabling businesses to scale and innovate",
-  desc: "Bridgesoft has announced the launch of its new cloud platform, specifically designed to meet the needs of small and medium-sized enterprises (SMEs) in Nigeria.  ",
+  title: "Bridgesoft Cloud Launches New Cloud Platform for SMEs in Nigeria",
+  desc: "The platform aims to provide affordable, scalable, and secure cloud services to help SMEs accelerate their digital transformation.",
   image:
     "https://images.unsplash.com/photo-1618828665011-0abd973f7bb8?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   href: "/news/cloud-mandate",

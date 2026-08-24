@@ -20,7 +20,7 @@ const cabinet = [
 
     fullName: "Mr. Tunde Adesanya",
     title: "Chief Executive Officer",
-    bio: "Visionary leader driving the strategic direction and growth of Bridgesoft across Africa.",
+    bio: "Previously served as CEO of Bridgesoft Cloud, Tunde brings a wealth of experience in technology and business strategy, having led several successful digital transformation initiatives across various industries.  ",
     image: tundeImg,
     colorTheme: "bg-[#0A2540]", // Navy
   },
@@ -29,7 +29,7 @@ const cabinet = [
 
     fullName: "Mr. Ovie Ejiro",
     title: "Chief Financial Officer",
-    bio: "Steering financial strategy, capital allocation, and fiscal responsibility to ensure sustainable growth.",
+    bio: "Ejiro is a finance veteran with extensive experience in corporate finance, investment banking, and financial planning. He has been instrumental in driving Bridgesoft's financial strategy and ensuring sustainable growth. ",
     image: ovieImg,
     colorTheme: "bg-[#4338CA]", // Indigo
   },
@@ -47,7 +47,7 @@ const cabinet = [
 
     fullName: "Mr. Felix Onwudiwe",
     title: "Chief Technology Officer",
-    bio: "Leading the technological vision, architecture, and innovation to ensure Bridgesoft remains at the forefront of enterprise solutions.",
+    bio: "Onwudiew was the former CEO of Bridgesoft Enterprise before becoming the CTO of Bridgesoft. He has a strong background in software engineering, cloud architecture, and technology innovation, leading the development of cutting-edge solutions for clients across Africa. ",
     image: felixImg,
     colorTheme: "bg-[#B45309]", // Amber
   },
@@ -56,7 +56,7 @@ const cabinet = [
 
     fullName: "Mr. Emeka Osagie",
     title: "Chief Product Officer",
-    bio: "Driving product strategy, user experience, and innovation to deliver world-class solutions that meet the evolving needs of our clients.",
+    bio: "Osagie is responsible for product strategy, roadmap, and innovation, ensuring that Bridgesoft's offerings meet the evolving needs of clients and the market.  ",
     image: emekaImg,
     colorTheme: "bg-[#0369A1]", // Ocean Blue
   },
@@ -65,16 +65,16 @@ const cabinet = [
 
     fullName: "Mr. Sola Adegbite",
     title: "Chief Revenue Officer",
-    bio: "Spearheading revenue growth, sales strategy, and market expansion to maximize Bridgesoft's commercial success.",
+    bio: "Adegbite is responsible for driving revenue growth, sales strategy, and market expansion across Africa. He brings a wealth of experience in business development and strategic partnerships.    ",
     image: solaImg,
     colorTheme: "bg-[#BE123C]", // Rose
   },
   {
     id: "adamu",
 
-    fullName: "Mr. Adamu Shafiu",
+    fullName: "Mr. Adamu Suleiman",
     title: "General Counsel & Corporate Secretary",
-    bio: "Ensuring legal compliance, corporate governance, and risk management to safeguard Bridgesoft's interests and reputation.",
+    bio: "Suleiman is an accomplished legal professional with extensive experience in corporate law, regulatory compliance, and governance. He provides strategic legal counsel to the executive team and ensures that Bridgesoft operates within the bounds of applicable laws and regulations.    ",
     image: adamuImg,
     colorTheme: "bg-[#0F766E]", // Teal
   },
@@ -83,7 +83,7 @@ const cabinet = [
 
     fullName: "Ms. Angela Ikpeama",
     title: "Chief Communications Officer",
-    bio: "Leveraging strategic communications to amplify brand presence and foster stakeholder trust across Africa.",
+    bio: "Ikpeama is responsible for shaping Bridgesoft's brand narrative, public relations, and internal communications. She has a strong background in corporate communications and has successfully led campaigns that enhance brand visibility and stakeholder engagement.    ",
     image: angelaImg,
     colorTheme: "bg-[#86198F]", // Fuchsia
   },
@@ -92,7 +92,7 @@ const cabinet = [
 
     fullName: "Mrs. Tomiye Alagoa",
     title: "Chief People Officer",
-    bio: "Championing talent development, organizational culture, and employee engagement to cultivate a high-performing workforce.",
+    bio: "Alagoa leads over 14000 employees across Africa, focusing on talent acquisition, employee engagement, and organizational development. She has a proven track record in human resources management and is dedicated to fostering a positive and inclusive workplace culture.   ",
     image: tomiyeImg,
     colorTheme: "bg-[#5B21B6]", // Deep Violet
   },

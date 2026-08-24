@@ -20,9 +20,9 @@ const boardMembers = [
   {
     id: "murigi",
     fullName: "Mr. Murigi Kiprop",
-    title: "Non-Executive Chairman",
+    title: "Chairman of the Board",
     image: murigiImg,
-    bio: "Former Managing Director of Accenture East Africa. Holds an MBA from INSEAD. Chairs the Governance & Nominations Committee.",
+    bio: "Kiprop is a seasoned executive with over 25 years of experience in corporate governance and strategic leadership. He has served on multiple boards across Africa and is known for his expertise in scaling businesses in emerging markets.",
     colorTheme: "bg-[#0A2540]", // Deep Brand Navy
   },
   {
@@ -30,7 +30,7 @@ const boardMembers = [
     fullName: "Mr. Tunde Adesanya",
     title: "Chief Executive Officer",
     image: tundeImg,
-    bio: "Appointed CEO 2019. Previously CEO, Bridgesoft Cloud from its inception in 2009.",
+    bio: "Adesanya served as CEO of Bridgesoft Cloud before becoming the CEO of Bridgesoft. He has a strong background in technology and business strategy, having led several successful digital transformation initiatives across various industries.",
     colorTheme: "bg-[#0369A1]", // Ocean Blue
   },
   {
@@ -38,71 +38,71 @@ const boardMembers = [
     fullName: "Mr. Ovie Ejiro",
     title: "Chief Financial Officer",
     image: ovieImg,
-    bio: "Former CFO of Corporate & Investment Banking at Stanbic IBTC Bank. Fellow of ICAN.",
+    bio: "Ejiro is a finance veteran with extensive experience in corporate finance, investment banking, and financial planning. He has been instrumental in driving Bridgesoft's financial strategy and ensuring sustainable growth.",
     colorTheme: "bg-[#4338CA]", // Indigo
   },
   {
     id: "anwar",
     fullName: "Mr. Anwar Alhassan",
-    title: "Co-Founder & NED",
+    title: "Co-Founder & Non-Executive Director",
     image: anwarImg,
-    bio: "Co-founder, Former Chairman 2019–2025, CEO 1998–2019. Built Bridgesoft from a 3-person startup to a $28B enterprise.",
+    bio: "Alhassan is a co-founder, former CEO and Chairman of Bridgesoft and has played a pivotal role in shaping the company's vision and strategic direction. He brings a wealth of experience in technology innovation and business development.",
     colorTheme: "bg-[#B45309]", // Amber
   },
   {
     id: "david",
     fullName: "Mr. David Saro",
-    title: "Co-Founder & NED",
+    title: "Co-Founder & Non-Executive Director",
     image: davidImg,
-    bio: "Co-Founder, Former President & CTO, Co-recipient of the ACM SIGMOD Systems Award (2016).",
+    bio: "Saro is a co-founder, former President & Chief Technology Officer of Bridgesoft and has been instrumental in the company's growth and success. With a strong background in software engineering and product development, he continues to drive innovation within the organization.",
     colorTheme: "bg-[#BE123C]", // Rose
   },
   {
     id: "damilola",
     fullName: "Mrs. Damilola Shonibar",
-    title: "Independent NED",
+    title: "Independent Non-Executive Director",
     image: damilolaImg,
-    bio: "Former CFO of NSIA and ICAN Fellow. Spent 14 years as a PwC Nigeria audit partner leading the TMT practice.",
+    bio: "Shonibar served as the Chief information Officer of the Nigerian Communications Commission (NCC) and has extensive experience in technology policy and regulatory affairs. She brings a unique perspective to the board, particularly in navigating complex regulatory environments.  ",
     colorTheme: "bg-[#0F766E]", // Teal
   },
   {
     id: "naledi",
     fullName: "Ms. Naledi Dlamini",
-    title: "Independent NED",
+    title: "Independent Non-Executive Director",
     image: nalediImg,
-    bio: "Former CIO of Standard Bank Group. PhD in Computer Science, UCT. Former NED of the Johannesburg Stock Exchange.",
+    bio: "Dlamini is a technology and innovation expert with a strong background in digital transformation and business strategy. She has held leadership roles in several multinational companies and is passionate about driving technological advancements in Africa.  ",
     colorTheme: "bg-[#5B21B6]", // Deep Violet
   },
   {
     id: "taranjeet",
     fullName: "Mr. Taranjeet Bhatia",
-    title: "Independent NED",
+    title: "Independent Non-Executive Director",
     image: taranjeetImg,
-    bio: "30-year investment banking veteran. Former MD and Head of Africa Investment Banking at Standard Chartered Bank London.",
+    bio: "Bhatia is the CEO of Bhatia Capital, a leading investment firm focused on emerging markets. He has extensive experience in finance, investment strategy, and corporate governance, and has served on the boards of several successful companies across Africa.",
     colorTheme: "bg-[#047857]", // Emerald
   },
   {
     id: "amira",
     fullName: "Mrs. Amira Bekele",
-    title: "Independent NED",
+    title: "Independent Non-Executive Director",
     image: amiraImg,
-    bio: "Senior Advisor of the African Union's Digital Transformation Strategy Secretariat. MSc from LSE.",
+    bio: "Bekele is a Senior Partner at Bekele & Associates, a leading law firm specializing in corporate law and international business transactions. She has advised numerous multinational corporations on regulatory compliance and corporate governance matters. ",
     colorTheme: "bg-[#C2410C]", // Orange
   },
   {
     id: "adeyemi",
     fullName: "Mr. Adeyemi Bankole",
-    title: "Independent NED",
+    title: "Independent Non-Executive Director",
     image: adeyemiImg,
-    bio: "General Partner of Sahel Capital's technology fund. Former Head of Tech Investment Banking at Coronation Merchant Bank.",
+    bio: "Bankole is the founder and CEO of Bankole Consulting, a firm that provides strategic advisory services to businesses in Africa. He has a strong background in business development, corporate strategy, and market expansion. ",
     colorTheme: "bg-[#1D4ED8]", // Royal Blue
   },
   {
     id: "ibiere",
     fullName: "Ms. Ibiere Briggs",
-    title: "Independent NED",
+    title: "Independent Non-Executive Director",
     image: ibiereImg,
-    bio: "Cybersecurity specialist and founder of CyberShield Africa. CISSP certified. MSc from Royal Holloway.",
+    bio: "Briggs is a Cybersecurity and risk management expert with over 15 years of experience in the technology sector. She has held senior positions in several multinational companies and is passionate about promoting cybersecurity awareness and best practices across industries.  ",
     colorTheme: "bg-[#86198F]", // Fuchsia
   },
 ];

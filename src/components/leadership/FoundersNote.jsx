@@ -26,7 +26,7 @@ export default function FoundersNote() {
 
   return (
     <section
-      className="bg-[#F6F9FC] py-24 lg:py-32 border-b border-rule font-sans"
+      className="bg-white py-20 lg:py-28 border-b border-rule font-sans"
       aria-label="A Note from the CEO"
     >
       <div className="site-container">
@@ -35,56 +35,54 @@ export default function FoundersNote() {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
           variants={container}
-          className="bg-white rounded-none w-fit p-8 sm:p-12 lg:p-16 border border-rule shadow-[0_20px_40px_rgba(10,37,64,0.05)] relative overflow-hidden"
+          className="w-full max-w-6xl mx-auto border-t border-b border-rule py-10 sm:py-14 lg:py-16 relative"
         >
-          {/* Subtle Background Accent */}
-          <div className="absolute top-0 right-0 w-50 h-50 bg-accent/5 rounded-none blur-[80px] pointer-events-none" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
             {/* ── LEFT: CEO Portrait ── */}
             <motion.div
               variants={fadeUp}
               className="lg:col-span-4 flex flex-col"
             >
-              <div className="relative w-80 aspect-[4/5] rounded-none overflow-hidden mb-6 bg-mist border border-rule">
+              <div className="relative w-full max-w-[280px] aspect-[4/5] overflow-hidden mb-5 bg-mist">
                 <img
                   src={tundeImg}
                   alt="Tunde Adesanya"
-                  className="w-full h-full object-cover saturate-[0.85]"
+                  className="w-full h-full object-cover grayscale-[0.15]"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl" />
               </div>
               <div>
-                <h3 className="text-[22px] font-bold text-[#0A2540] tracking-tight">
+                <h3 className="text-xl font-semibold text-[#0A2540] tracking-tight">
                   Tunde Adesanya
                 </h3>
-                <div className="text-[13px] font-bold text-[#0A2540] uppercase tracking-widest mt-1">
+                <div className="text-sm text-subtle mt-1">
                   Chief Executive Officer
                 </div>
               </div>
             </motion.div>
 
             {/* ── RIGHT: Editorial Note ── */}
-            <motion.div variants={fadeUp} className="lg:col-span-8">
-              <div className="mb-8">
-                <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-subtle">
+            <motion.div variants={fadeUp} className="lg:col-span-8 lg:pt-2">
+              <div className="mb-7 flex items-center gap-4">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-subtle">
                   A Note from the CEO
                 </span>
+                <span className="h-px w-12 bg-rule" aria-hidden="true" />
               </div>
 
               <div className="relative">
                 <RiDoubleQuotesL
-                  className="absolute -left-2 -top-7 text-[52px] text-[#0A2540]/10"
+                  className="mb-4 text-3xl text-[#0A2540]/25"
                   aria-hidden="true"
                 />
-                <h2 className="text-[28px] sm:text-[36px] font-medium text-[#0A2540] leading-[1.2] tracking-tight mb-6 max-w-[18ch]">
-                  Building lasting value through smart technology and trusted
-                  partnerships.
+                <h2 className="text-[30px] sm:text-[42px] font-medium text-[#0A2540] leading-[1.12] tracking-[-0.02em] mb-7 max-w-[20ch]">
+                  Good software should make difficult work feel simpler.
                 </h2>
-                <p className="text-[16px] sm:text-[18px] leading-8 text-[#334155] max-w-[60ch]">
-                  At BridgeSoft, we are committed to delivering innovative
-                  software solutions that empower businesses to thrive in a
-                  rapidly evolving digital landscape.
+                <p className="text-base sm:text-lg leading-8 text-[#334155] max-w-[58ch]">
+                  Brigdesoft was founded on the belief that enterprise software
+                  should empower organizations to achieve more with less
+                  friction. Our mission is to deliver innovative solutions that
+                  streamline complex processes, enhance collaboration, and drive
+                  measurable results for our clients.
                 </p>
               </div>
             </motion.div>

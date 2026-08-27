@@ -38,7 +38,7 @@ const cabinet = [
 
     fullName: "Mr. Aarav Kumar Sharma",
     title: "Chief Operating Officer",
-    bio: "Overseeing operational excellence, process optimization, and cross-functional alignment to drive efficiency.",
+    bio: "Sharam is a seasoned operations executive with a proven track record in scaling technology companies. He oversees Bridgesoft's operational strategy, ensuring efficiency and excellence across all business functions.  ",
     image: aaravImg,
     colorTheme: "bg-[#047857]", // Emerald
   },

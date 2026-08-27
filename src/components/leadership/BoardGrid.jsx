@@ -62,7 +62,7 @@ const boardMembers = [
     fullName: "Mrs. Damilola Shonibar",
     title: "Independent Non-Executive Director",
     image: damilolaImg,
-    bio: "Shonibar served as the Chief information Officer of the Nigerian Communications Commission (NCC) and has extensive experience in technology policy and regulatory affairs. She brings a unique perspective to the board, particularly in navigating complex regulatory environments.  ",
+    bio: "Shonibar is a seasoned executive with extensive experience in corporate governance, risk management, and strategic planning. She has served on several boards across Africa and is known for her expertise in driving organizational growth and sustainability. ",
     colorTheme: "bg-[#0F766E]", // Teal
   },
   {

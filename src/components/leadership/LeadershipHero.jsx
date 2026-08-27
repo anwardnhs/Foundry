@@ -55,11 +55,11 @@ export default function LeadershipHero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-[#425466] leading-[1.6] max-w-2xl mx-auto font-medium"
           >
-            Meet the visionary leaders steering Bridgesoft's mission to
-            revolutionize enterprise cloud infrastructure across Africa. With
-            decades of combined experience in technology, operations, and
-            strategic growth, our executive team is the driving force behind our
-            continental expansion and innovation.
+            At Bridgesoft, our leadership team is the cornerstone of our
+            success. With a blend of visionary thinking and operational
+            expertise, they steer the company towards its mission of delivering
+            innovative solutions that drive value for our clients and
+            stakeholders.
           </motion.p>
         </motion.div>
       </div>

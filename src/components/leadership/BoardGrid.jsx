@@ -44,7 +44,7 @@ const boardMembers = [
   {
     id: "anwar",
     fullName: "Mr. Anwar Alhassan",
-    title: "Co-Founder & Non-Executive Director",
+    title: "Non-Executive Director",
     image: anwarImg,
     bio: "Alhassan is a co-founder, former CEO and Chairman of Bridgesoft and has played a pivotal role in shaping the company's vision and strategic direction. He brings a wealth of experience in technology innovation and business development.",
     colorTheme: "bg-[#B45309]", // Amber
@@ -52,7 +52,7 @@ const boardMembers = [
   {
     id: "david",
     fullName: "Mr. David Saro",
-    title: "Co-Founder & Non-Executive Director",
+    title: "Non-Executive Director",
     image: davidImg,
     bio: "Saro is a co-founder, former President & Chief Technology Officer of Bridgesoft and has been instrumental in the company's growth and success. With a strong background in software engineering and product development, he continues to drive innovation within the organization.",
     colorTheme: "bg-[#BE123C]", // Rose

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
@@ -42,6 +43,7 @@ const PlaceholderPage = ({ title }) => (
 export default function App() {
   return (
     <BrowserRouter>
+      <SpeedInsights />
       <Routes>
         {/* ── Login — standalone, no Navbar or Footer ── */}
         <Route path="/login" element={<Login />} />

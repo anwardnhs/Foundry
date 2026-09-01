@@ -78,7 +78,7 @@ export default function FoundersNote() {
                   Good software should make difficult work feel simpler.
                 </h2>
                 <p className="text-base sm:text-lg leading-8 text-[#334155] max-w-[58ch]">
-                  Brigdesoft was founded on the belief that enterprise software
+                  Foundry was founded on the belief that enterprise software
                   should empower organizations to achieve more with less
                   friction. Our mission is to deliver innovative solutions that
                   streamline complex processes, enhance collaboration, and drive

@@ -17,7 +17,7 @@ const timeline = [
   {
     year: "2006",
     title: "Public Market Debut",
-    desc: "Bridgsoft goes public on the Nigerian Stock Exchange (NSE: BSFT), raising $120 million to fuel expansion into new markets and invest in cutting-edge technology.",
+    desc: "Foundry goes public on the Nigerian Stock Exchange (NSE: FDRY), raising $120 million to fuel expansion into new markets and invest in cutting-edge technology.",
   },
   {
     year: "2009",
@@ -27,7 +27,7 @@ const timeline = [
   {
     year: "2015",
     title: "Global Dual-Listing",
-    desc: "Foundry achieves a dual-listing on the London Stock Exchange (LSE: BSFT), expanding its investor base and increasing international visibility. The company continues to grow its footprint across multiple continents.",
+    desc: "Foundry achieves a dual-listing on the London Stock Exchange (LSE: FDRY), expanding its investor base and increasing international visibility. The company continues to grow its footprint across multiple continents.",
   },
   {
     year: "2025",

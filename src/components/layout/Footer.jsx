@@ -153,14 +153,14 @@ export default function Footer() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-800 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 "></span>
               </span>
-              NGX: BSOFT
+              NGX: FDRY
             </div>
             <div className="flex items-center gap-2 bg-[#F6F9FC] border border-rule px-3 py-1.5 rounded-full text-[12px] font-mono font-bold text-[#425466] shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#030e61] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 "></span>
               </span>
-              LSE: BSFT
+              LSE: FDRY
             </div>
           </div>
         </div>

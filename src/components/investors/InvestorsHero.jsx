@@ -113,7 +113,7 @@ export default function InvestorsHero() {
               </div>
 
               <div className="font-mono text-[32px] sm:text-[36px] font-bold text-[#0A2540] leading-none tracking-tight mb-2">
-                NGX: BSOFT
+                NGX: FDRY
               </div>
               <div className="text-[13px] text-emerald-800 font-bold flex items-center gap-1.5">
                 <RiArrowRightUpLine className="w-4 h-4" />
@@ -142,7 +142,7 @@ export default function InvestorsHero() {
               </div>
 
               <div className="font-mono text-[24px] sm:text-[28px] font-bold text-[#425466] leading-none tracking-tight mb-2">
-                LSE: BSFT
+                LSE: FDRY
               </div>
               <div className="text-[13px] text-subtle font-medium flex items-center gap-1.5">
                 <RiGlobeLine className="w-4 h-4" />

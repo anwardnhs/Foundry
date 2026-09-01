@@ -35,7 +35,7 @@ export const listings = [
   {
     id: "ngx",
     exchange: "Nigerian Exchange Group",
-    ticker: "BSOFT",
+    ticker: "FDRY",
     prefix: "NGX",
     sharesInIssue: "15,000,000,000",
     closingPrice: "NGN 3,078",
@@ -48,7 +48,7 @@ export const listings = [
   {
     id: "lse",
     exchange: "London Stock Exchange",
-    ticker: "BSFT",
+    ticker: "FDRY",
     prefix: "LSE",
     sharesInIssue: "15,000,000,000",
     closingPrice: "—",

@@ -53,7 +53,7 @@ export default function NewsroomHero() {
             className="text-[16px] sm:text-[18px] text-[#0A2540] font-medium mb-10"
           >
             Stay up to date with the latest news, press releases, and media
-            coverage about BridgeSoft Plc.
+            coverage about Foundry Plc.
           </motion.p>
 
           {/* ─── Action Buttons ─── */}

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { RiArrowRightLine } from "react-icons/ri";
 
-// ─── Image Imports (Using your specified .png assets) ───────────────────────
-import tundeImg from "@/assets/images/tunde.png";
-import aaravImg from "@/assets/images/aarav.png";
-import felixImg from "@/assets/images/felix.png";
+// ─── Image Imports (Using your specified .webp assets) ───────────────────────
+import tundeImg from "@/assets/images/tunde.webp";
+import aaravImg from "@/assets/images/aarav.webp";
+import felixImg from "@/assets/images/felix.webp";
 
 // ─── Executive Cabinet Data ───────────────────────────────────────────────────
 const executives = [

@@ -1,8 +1,8 @@
 // ─── Categories ─────────────────────────────
 // ──────────────────────────────────
-import murigiImg from "@/assets/images/murigi.png";
-import ovieImg from "@/assets/images/ovie.png";
-import meetimg from '@/assets/images/meeting.jpg'
+import murigiImg from "@/assets/images/murigi.webp";
+import ovieImg from "@/assets/images/ovie.webp";
+import meetimg from '@/assets/images/meeting.webp'
 export const categories = [
   { id: "all", label: "All" },
   { id: "corporate", label: "Corporate" },

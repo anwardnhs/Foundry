@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { RiDoubleQuotesL } from "react-icons/ri";
 
 // ─── Asset Import ─────────────────────────────────────────────────────────────
-import tundeImg from "@/assets/images/tunde.png";
+import tundeImg from "@/assets/images/tunde.webp";
 
 // ─── Animation Variants ───────────────────────────────────────────────────────
 const fadeUp = {

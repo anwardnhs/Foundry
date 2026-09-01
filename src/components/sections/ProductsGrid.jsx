@@ -11,7 +11,7 @@ const products = [
     link: "/products/cloud",
     btnLabel: "Explore Cloud",
     image:
-      "https://media.istockphoto.com/id/2245861123/photo/aerial-view-data-center.jpg?s=612x612&w=0&k=20&c=rLNMn9kyObNZExi07J7I67yd94o8z-AK0k_pfnW8V4M=",
+      "https://media.istockphoto.com/id/2245861123/photo/aerial-view-data-center.webp?s=612x612&w=0&k=20&c=rLNMn9kyObNZExi07J7I67yd94o8z-AK0k_pfnW8V4M=",
   },
   {
     id: "data",
@@ -20,7 +20,7 @@ const products = [
     link: "/products/data",
     btnLabel: "Explore Data",
     image:
-      "https://media.istockphoto.com/id/2166973319/photo/aerial-view-of-luandas-coastline-and-urban-landscape-in-angola.jpg?s=612x612&w=0&k=20&c=Rkc9jq9q1l-YcPJLGc3fqhmAUuSTbG2-9EnEeB4e69Q=",
+      "https://media.istockphoto.com/id/2166973319/photo/aerial-view-of-luandas-coastline-and-urban-landscape-in-angola.webp?s=612x612&w=0&k=20&c=Rkc9jq9q1l-YcPJLGc3fqhmAUuSTbG2-9EnEeB4e69Q=",
   },
   {
     id: "ai",
@@ -29,7 +29,7 @@ const products = [
     link: "/bridge-intelligence",
     btnLabel: "Explore AI",
     image:
-      "https://media.istockphoto.com/id/2050780380/photo/hispanic-programmers-collaborating-on-software-development-in-a-modern-office-setting.jpg?s=612x612&w=0&k=20&c=NjcxyCS1vjVqqLl6yv6GyPveBGTTUMR5MRN799x7kVs=",
+      "https://media.istockphoto.com/id/2050780380/photo/hispanic-programmers-collaborating-on-software-development-in-a-modern-office-setting.webp?s=612x612&w=0&k=20&c=NjcxyCS1vjVqqLl6yv6GyPveBGTTUMR5MRN799x7kVs=",
   },
   {
     id: "enterprise",
@@ -39,7 +39,7 @@ const products = [
     link: "/products/enterprise",
     btnLabel: "Explore Enterprise",
     image:
-      "https://media.istockphoto.com/id/1321495390/photo/onne-estate-camp-nigeria-orlean-invest-intels.jpg?s=612x612&w=0&k=20&c=dWkjiDCTSoFYnJ2DiVcwBzINewHeGFgRLCEurn6B2Fc=",
+      "https://media.istockphoto.com/id/1321495390/photo/onne-estate-camp-nigeria-orlean-invest-intels.webp?s=612x612&w=0&k=20&c=dWkjiDCTSoFYnJ2DiVcwBzINewHeGFgRLCEurn6B2Fc=",
   },
   {
     id: "security",
@@ -48,7 +48,7 @@ const products = [
     link: "/products/security",
     btnLabel: "Explore Security",
     image:
-      "https://media.istockphoto.com/id/1187179311/photo/overhead-view-of-modern-office.jpg?s=612x612&w=0&k=20&c=8eNP7IDSagdU0_rvGQtjf_irMmhItt5OLedz6tEoAKA=",
+      "https://media.istockphoto.com/id/1187179311/photo/overhead-view-of-modern-office.webp?s=612x612&w=0&k=20&c=8eNP7IDSagdU0_rvGQtjf_irMmhItt5OLedz6tEoAKA=",
   },
 ];
 

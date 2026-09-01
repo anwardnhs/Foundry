@@ -3,15 +3,15 @@ import { motion, useInView } from "framer-motion";
 import PersonCard from "@/components/shared/PersonCard";
 
 // ─── Asset Imports ────────────────────────────────────────────────────────────
-import tundeImg from "@/assets/images/tunde.png";
-import ovieImg from "@/assets/images/ovie.png";
-import aaravImg from "@/assets/images/aarav.png";
-import felixImg from "@/assets/images/felix.png";
-import emekaImg from "@/assets/images/emeka.png";
-import solaImg from "@/assets/images/sola.png";
-import adamuImg from "@/assets/images/adamu.png";
-import angelaImg from "@/assets/images/angela.png";
-import tomiyeImg from "@/assets/images/tomiye.png";
+import tundeImg from "@/assets/images/tunde.webp";
+import ovieImg from "@/assets/images/ovie.webp";
+import aaravImg from "@/assets/images/aarav.webp";
+import felixImg from "@/assets/images/felix.webp";
+import emekaImg from "@/assets/images/emeka.webp";
+import solaImg from "@/assets/images/sola.webp";
+import adamuImg from "@/assets/images/adamu.webp";
+import angelaImg from "@/assets/images/angela.webp";
+import tomiyeImg from "@/assets/images/tomiye.webp";
 
 // ─── The Operators Data (AWS/Stripe Enterprise Tone) ──────────────────────────
 const cabinet = [

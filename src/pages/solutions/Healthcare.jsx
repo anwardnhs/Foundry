@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 import TrustStrip from "@/components/solutions/TrustStrip";
 import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection";
 
-import doctorImage from "@/assets/images/doctor.jpg";
+import doctorImage from "@/assets/images/doctor.webp";
 import healthGraphic from "@/assets/images/health.svg";
 import heartGraphic from "@/assets/images/heart.svg";
 import brainGraphic from "@/assets/images/brain.svg";

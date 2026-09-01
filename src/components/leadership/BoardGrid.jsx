@@ -3,17 +3,17 @@ import { motion, useInView } from "framer-motion";
 import PersonCard from "@/components/shared/PersonCard";
 
 // ─── Asset Imports (Kept exactly as requested) ───────────────────────────────
-import murigiImg from "@/assets/images/murigi.png";
-import tundeImg from "@/assets/images/tunde.png";
-import ovieImg from "@/assets/images/ovie.png";
-import anwarImg from "@/assets/images/anwar.png";
-import davidImg from "@/assets/images/saro.png";
-import damilolaImg from "@/assets/images/damilola.png";
-import nalediImg from "@/assets/images/naledi.png";
-import taranjeetImg from "@/assets/images/taranjeet.png";
-import amiraImg from "@/assets/images/amira.png";
-import adeyemiImg from "@/assets/images/adeyemi.png";
-import ibiereImg from "@/assets/images/ibere.png";
+import murigiImg from "@/assets/images/murigi.webp";
+import tundeImg from "@/assets/images/tunde.webp";
+import ovieImg from "@/assets/images/ovie.webp";
+import anwarImg from "@/assets/images/anwar.webp";
+import davidImg from "@/assets/images/saro.webp";
+import damilolaImg from "@/assets/images/damilola.webp";
+import nalediImg from "@/assets/images/naledi.webp";
+import taranjeetImg from "@/assets/images/taranjeet.webp";
+import amiraImg from "@/assets/images/amira.webp";
+import adeyemiImg from "@/assets/images/adeyemi.webp";
+import ibiereImg from "@/assets/images/ibere.webp";
 
 // ─── Board Data (Updated from your leadership.js structure) ───────────────────
 const boardMembers = [

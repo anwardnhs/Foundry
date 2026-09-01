@@ -14,7 +14,7 @@ import { getSolutionBySlug } from "@/data/solutions";
 import { cn } from "@/lib/utils";
 import TrustStrip from "@/components/solutions/TrustStrip";
 
-import bankImage from "@/assets/images/bank2.jpg";
+import bankImage from "@/assets/images/bank2.webp";
 import dashboardGraphic from "@/assets/images/dashboard.svg";
 import phoneOne from "@/assets/images/fiphone.svg";
 import phoneTwo from "@/assets/images/fianacedb.svg";

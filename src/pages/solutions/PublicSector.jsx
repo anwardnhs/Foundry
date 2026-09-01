@@ -23,7 +23,7 @@ import person2Illustration from "@/assets/images/person2.svg";
 import dashboardGraphic from "@/assets/images/dashboard.svg";
 import cloudGraphic from "@/assets/images/cloud.svg";
 import deskGraphic from "@/assets/images/bank4.avif";
-import mapGraphic from "@/assets/images/lag.jpg";
+import mapGraphic from "@/assets/images/lag.webp";
 
 const data = getSolutionBySlug("public-sector");
 

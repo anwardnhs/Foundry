@@ -80,7 +80,7 @@ export default function PerksAndBenefits() {
             We take care of our team.
           </h2>
           <p className="text-[18px] text-slate-600 max-w-2xl">
-            At BridgeSoft, we believe that a great workplace is more than just a
+            At Foundry, we believe that a great workplace is more than just a
             paycheck. We offer a comprehensive benefits package designed to
             support your health, growth, and work-life balance. Here are just a
             few of the perks you can enjoy as part of our team

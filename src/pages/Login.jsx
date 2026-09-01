@@ -171,7 +171,7 @@ export default function Login() {
                         <div className="flex justify-center">
                           <img
                             src={brandLogo}
-                            alt="Bridgesoft"
+                            alt="Foundry"
                             className="h-8 w-auto object-contain"
                           />
                         </div>

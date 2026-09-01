@@ -45,10 +45,10 @@ export default function PressMedia() {
                 Members of the media can reach our corporate communications team
                 directly at{" "}
                 <a
-                  href="mailto:press@bridgesoft.com"
+                  href="mailto:press@foundry.com"
                   className="font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
                 >
-                  press@bridgesoft.com
+                  press@foundry.com
                 </a>
                 .
               </p>

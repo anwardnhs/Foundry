@@ -108,7 +108,7 @@ export default function MissionStatement() {
               Anwar Alhassan & David Saro
             </span>
             <span className="text-[13px] font-medium text-slate-500">
-              Co-Founders, Bridgesoft Plc
+              Co-Founders, Foundry Plc
             </span>
           </motion.div>
         </motion.div>

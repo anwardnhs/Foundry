@@ -7,12 +7,12 @@ const timeline = [
   {
     year: "1998",
     title: "The Foundation",
-    desc: "Bridgesoft is founded with a vision to provide robust, scalable software solutions for enterprises across Africa. The company quickly establishes itself as a trusted partner for mission-critical applications.",
+    desc: "Foundry is founded with a vision to provide robust, scalable software solutions for enterprises across Africa. The company quickly establishes itself as a trusted partner for mission-critical applications.",
   },
   {
     year: "2001",
     title: "Earning the Public Trust",
-    desc: "Bridgesoft secures its first major government contract, delivering a nationwide payroll system that serves millions of citizens. This milestone cements the company's reputation for reliability and excellence.",
+    desc: "Foundry secures its first major government contract, delivering a nationwide payroll system that serves millions of citizens. This milestone cements the company's reputation for reliability and excellence.",
   },
   {
     year: "2006",
@@ -22,17 +22,17 @@ const timeline = [
   {
     year: "2009",
     title: "The Cloud Era",
-    desc: "Bridgesoft launches its first cloud-based enterprise platform, enabling clients to access critical applications and data from anywhere. This innovation positions the company as a leader in cloud computing across Africa.",
+    desc: "Foundry launches its first cloud-based enterprise platform, enabling clients to access critical applications and data from anywhere. This innovation positions the company as a leader in cloud computing across Africa.",
   },
   {
     year: "2015",
     title: "Global Dual-Listing",
-    desc: "Bridgesoft achieves a dual-listing on the London Stock Exchange (LSE: BSFT), expanding its investor base and increasing international visibility. The company continues to grow its footprint across multiple continents.",
+    desc: "Foundry achieves a dual-listing on the London Stock Exchange (LSE: BSFT), expanding its investor base and increasing international visibility. The company continues to grow its footprint across multiple continents.",
   },
   {
     year: "2025",
     title: "BridgeIntelligence",
-    desc: "Bridgesoft unveils BridgeIntelligence, an AI-driven analytics platform that empowers organizations to make data-driven decisions. This marks a new era of innovation and positions Bridgesoft at the forefront of intelligent enterprise solutions.",
+    desc: "Foundry unveils BridgeIntelligence, an AI-driven analytics platform that empowers organizations to make data-driven decisions. This marks a new era of innovation and positions Foundry at the forefront of intelligent enterprise solutions.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function OriginStory() {
 
               <div className="space-y-6 text-[17px] text-[#425466] leading-[1.6]">
                 <p>
-                  Bridgesoft was founded in 1998 with a vision to provide
+                  Foundry was founded in 1998 with a vision to provide
                   robust, scalable software solutions for enterprises across
                   Africa. Over the years, we have grown into a trusted partner
                   for mission-critical applications, serving banks, insurers,
@@ -98,7 +98,7 @@ export default function OriginStory() {
                   organizations worldwide.
                 </p>
                 <p>
-                  Today, Bridgesoft stands as a testament to what can be
+                  Today, Foundry stands as a testament to what can be
                   achieved with vision, dedication, and a relentless pursuit of
                   quality. We continue to build software solutions that not only
                   meet the needs of our clients but also drive meaningful impact

@@ -30,7 +30,7 @@ const boardMembers = [
     fullName: "Mr. Tunde Adesanya",
     title: "Chief Executive Officer",
     image: tundeImg,
-    bio: "Adesanya served as CEO of Bridgesoft Cloud before becoming the CEO of Bridgesoft. He has a strong background in technology and business strategy, having led several successful digital transformation initiatives across various industries.",
+    bio: "Adesanya served as CEO of Foundry Cloud before becoming the CEO of Foundry. He has a strong background in technology and business strategy, having led several successful digital transformation initiatives across various industries.",
     colorTheme: "bg-[#0369A1]", // Ocean Blue
   },
   {
@@ -38,7 +38,7 @@ const boardMembers = [
     fullName: "Mr. Ovie Ejiro",
     title: "Chief Financial Officer",
     image: ovieImg,
-    bio: "Ejiro is a finance veteran with extensive experience in corporate finance, investment banking, and financial planning. He has been instrumental in driving Bridgesoft's financial strategy and ensuring sustainable growth.",
+    bio: "Ejiro is a finance veteran with extensive experience in corporate finance, investment banking, and financial planning. He has been instrumental in driving Foundry's financial strategy and ensuring sustainable growth.",
     colorTheme: "bg-[#4338CA]", // Indigo
   },
   {
@@ -46,7 +46,7 @@ const boardMembers = [
     fullName: "Mr. Anwar Alhassan",
     title: "Non-Executive Director",
     image: anwarImg,
-    bio: "Alhassan is a co-founder, former CEO and Chairman of Bridgesoft and has played a pivotal role in shaping the company's vision and strategic direction. He brings a wealth of experience in technology innovation and business development.",
+    bio: "Alhassan is a co-founder, former CEO and Chairman of Foundry and has played a pivotal role in shaping the company's vision and strategic direction. He brings a wealth of experience in technology innovation and business development.",
     colorTheme: "bg-[#B45309]", // Amber
   },
   {
@@ -54,7 +54,7 @@ const boardMembers = [
     fullName: "Mr. David Saro",
     title: "Non-Executive Director",
     image: davidImg,
-    bio: "Saro is a co-founder, former President & Chief Technology Officer of Bridgesoft and has been instrumental in the company's growth and success. With a strong background in software engineering and product development, he continues to drive innovation within the organization.",
+    bio: "Saro is a co-founder, former President & Chief Technology Officer of Foundry and has been instrumental in the company's growth and success. With a strong background in software engineering and product development, he continues to drive innovation within the organization.",
     colorTheme: "bg-[#BE123C]", // Rose
   },
   {
@@ -146,7 +146,7 @@ export default function BoardGrid() {
               <p className="text-[17px] text-[#425466] leading-[1.6]">
                 Our board combines decades of public sector governance with deep
                 technical expertise. They provide the oversight required to
-                scale Bridgesoft's infrastructure securely across highly
+                scale Foundry's infrastructure securely across highly
                 regulated continental markets.
               </p>
             </motion.div>

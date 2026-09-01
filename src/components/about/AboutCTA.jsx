@@ -51,7 +51,7 @@ export default function AboutCTA() {
           </h2>
 
           <p className="text-[18px] text-[#A3B8CC] leading-[1.6] mb-10 max-w-xl">
-            Join the leading institutions across Africa that trust Bridgesoft to
+            Join the leading institutions across Africa that trust Foundry to
             power their critical operations. Our team is ready to help you
             achieve your goals with clarity, care, and purpose.
           </p>

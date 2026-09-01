@@ -204,7 +204,7 @@ export default function HealthcareSolution() {
                 variants={fadeUp}
                 className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#425466] sm:text-[20px]"
               >
-                Bridgesoft helps hospitals, clinics, and public health teams
+                Foundry helps hospitals, clinics, and public health teams
                 keep records clear, work aligned, and daily care easier to
                 manage.
               </motion.p>

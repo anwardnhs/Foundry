@@ -80,7 +80,7 @@ export default function App() {
           />
           <Route
             path="/products/enterprise"
-            element={<PlaceholderPage title="Bridgesoft Enterprise" />}
+            element={<PlaceholderPage title="Foundry Enterprise" />}
           />
           <Route
             path="/products/security"

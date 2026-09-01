@@ -62,7 +62,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2 relative z-50">
             <img
               src={brandMark}
-              alt="Bridgesoft"
+              alt="Foundry"
               className="h-8 w-auto object-contain"
             />
             <span
@@ -71,7 +71,7 @@ export default function Navbar() {
                 isDarkTheme ? "text-[#0A2540]" : "text-white",
               )}
             >
-              Bridgesoft
+              Foundry
             </span>
           </Link>
 

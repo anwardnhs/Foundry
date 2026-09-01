@@ -54,14 +54,14 @@ const fadeUp = {
   },
 };
 
-export default function BridgesoftWorks() {
+export default function FoundryWorks() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section
       className="bg-white py-24 lg:py-32 border-b border-rule font-sans"
-      aria-label="Bridgesoft Works Infrastructure"
+      aria-label="Foundry Works Infrastructure"
     >
       <div className="site-container">
         <motion.div
@@ -76,7 +76,7 @@ export default function BridgesoftWorks() {
               <motion.div variants={fadeUp} className="mb-6">
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#F6F9FC] border border-rule text-[12px] font-bold uppercase tracking-widest text-subtle">
                   <RiServerLine className="w-4 h-4" />
-                  Bridgesoft Works
+                  Foundry Works
                 </span>
               </motion.div>
 
@@ -93,7 +93,7 @@ export default function BridgesoftWorks() {
                 variants={fadeUp}
                 className="text-[18px] text-[#425466] leading-[1.6]"
               >
-                Bridgesoft operates a proprietary network of data centers across
+                Foundry operates a proprietary network of data centers across
                 Africa, providing a secure and resilient foundation for
                 enterprise operations. Our facilities are designed to meet the
                 most demanding requirements for uptime, security, and

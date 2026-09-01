@@ -19,7 +19,7 @@ export default function LeadershipHero() {
   return (
     <section
       className="relative pt-40 pb-24 lg:pt-48 lg:pb-32 bg-[#F6F9FC] border-b border-rule overflow-hidden font-sans"
-      aria-label="Bridgesoft Leadership"
+      aria-label="Foundry Leadership"
     >
       {/* ─── Minimalist CSS Background ─── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -55,7 +55,7 @@ export default function LeadershipHero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-[#425466] leading-[1.6] max-w-2xl mx-auto font-medium"
           >
-            At Bridgesoft, our leadership team is the cornerstone of our
+            At Foundry, our leadership team is the cornerstone of our
             success. With a blend of visionary thinking and operational
             expertise, they steer the company towards its mission of delivering
             innovative solutions that drive value for our clients and

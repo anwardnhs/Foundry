@@ -10,14 +10,14 @@ const irTeam = [
     title: "Head of Investor Relations, Africa",
     focus: "NGX & Domestic Institutional",
     location: "Lagos, Nigeria",
-    email: "ir.africa@bridgesoft.com",
+    email: "ir.africa@foundry.com",
   },
   {
     name: "Peter Thompson",
     title: "Vice President, Investor Relations, Global",
     focus: "LSE & International Equities",
     location: "London, United Kingdom",
-    email: "ir.global@bridgesoft.com",
+    email: "ir.global@foundry.com",
   },
 ];
 

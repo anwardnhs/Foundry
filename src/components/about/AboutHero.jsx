@@ -19,7 +19,7 @@ export default function AboutHero() {
   return (
     <section
       className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#FAFAFA] border-b border-slate-200 overflow-hidden font-sans"
-      aria-label="About Bridgesoft"
+      aria-label="About Foundry"
     >
       {/* ─── Premium Unsplash Abstract Background ─── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -56,7 +56,7 @@ export default function AboutHero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-slate-600 leading-[1.6] max-w-3xl mx-auto font-normal"
           >
-            At Bridgesoft, we design and build software solutions that empower
+            At Foundry, we design and build software solutions that empower
             global institutions to achieve their goals. Our commitment to
             excellence, innovation, and integrity drives us to deliver products
             that stand the test of time.

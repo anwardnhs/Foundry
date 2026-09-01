@@ -255,7 +255,7 @@ export default function PublicSectorSolution() {
                 variants={fadeUp}
                 className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#0A2540] sm:text-[20px]"
               >
-                Bridgesoft helps governments and institutions keep work
+                Foundry helps governments and institutions keep work
                 organized, services easier to reach, and teams better aligned.
               </motion.p>
 

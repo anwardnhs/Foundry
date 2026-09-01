@@ -44,7 +44,7 @@ export default function CareersHero() {
               variants={fadeUp}
               className="text-[18px] sm:text-[20px] lg:text-[22px] text-slate-600 leading-[1.6] max-w-lg mb-10 font-normal"
             >
-              At Bridgesoft, we’re building the future of digital
+              At Foundry, we’re building the future of digital
               infrastructure. If you’re passionate about technology, innovation,
               and making an impact, we’d love to hear from you.
             </motion.p>
@@ -93,7 +93,7 @@ export default function CareersHero() {
             <div className="relative w-full aspect-[4/3] lg:aspect-[4/4] xl:aspect-[4/3] rounded-[24px] lg:rounded-[32px] overflow-hidden bg-slate-100 shadow-[0_20px_40px_rgb(0,0,0,0.08)] ring-1 ring-slate-900/5 ml-auto max-w-[600px]">
               <img
                 src="https://plus.unsplash.com/premium_photo-1689700526278-f5096144422f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Bridgesoft team collaborating"
+                alt="Foundry team collaborating"
                 className="w-full h-full object-cover"
               />
             </div>

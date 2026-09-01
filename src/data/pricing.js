@@ -13,7 +13,7 @@ export const unifiedTiers = [
     id: "starter",
     name: "Starter",
     tag: null,
-    description: "For small teams and startups looking to get started with Bridgesoft's core infrastructure and data services.",
+    description: "For small teams and startups looking to get started with Foundry's core infrastructure and data services.",
     monthlyNGN: 485000,
     monthlyUSD: 299,
     enterprise: false,
@@ -21,10 +21,10 @@ export const unifiedTiers = [
     ctaHref: "/contact",
     features: [
       "Up to 50 users",
-      "Bridgesoft Cloud — 500GB storage",
-      "Bridgesoft Data — Basic warehousing",
-      "Bridgesoft Enterprise — Core modules",
-      "Bridgesoft Integration — Standard connectors",
+      "Foundry Cloud — 500GB storage",
+      "Foundry Data — Basic warehousing",
+      "Foundry Enterprise — Core modules",
+      "Foundry Integration — Standard connectors",
       "Priority support (24/5)",
       "NGN billing",
     ],
@@ -47,11 +47,11 @@ export const unifiedTiers = [
     ctaHref: "/contact",
     features: [
       "Up to 500 users",
-      "Bridgesoft Cloud — 5TB storage",
-      "Bridgesoft Data — Full warehousing + analytics",
-      "Bridgesoft Enterprise — ERP & HRMS modules",
+      "Foundry Cloud — 5TB storage",
+      "Foundry Data — Full warehousing + analytics",
+      "Foundry Enterprise — ERP & HRMS modules",
       "BridgeIntelligence AI — Standard tier",
-      "Bridgesoft Integration — Advanced connectors",
+      "Foundry Integration — Advanced connectors",
       "Dedicated account manager",
       "Priority support (24/5)",
       "NGN & USD billing",
@@ -76,7 +76,7 @@ export const unifiedTiers = [
     features: [
       "Unlimited users",
       "Custom storage allocation",
-      "Full Bridgesoft platform access",
+      "Full Foundry platform access",
       "BridgeIntelligence AI — Custom LLM layers",
       "On-premise or sovereign cloud deployment",
       "Custom SLA (up to 99.99% uptime)",
@@ -93,7 +93,7 @@ export const unifiedTiers = [
 // ─── Per-Division Tiers ───────────────────────────────────────────────────────
 export const divisionPricing = {
   cloud: {
-    label: "Bridgesoft Cloud",
+    label: "Foundry Cloud",
     description: "IaaS, PaaS, SaaS and sovereign cloud infrastructure.",
     tiers: [
       {
@@ -144,7 +144,7 @@ export const divisionPricing = {
     ],
   },
   data: {
-    label: "Bridgesoft Data",
+    label: "Foundry Data",
     description: "Database-as-a-service, data warehousing and AI analytics.",
     tiers: [
       {
@@ -193,7 +193,7 @@ export const divisionPricing = {
     ],
   },
   enterprise: {
-    label: "Bridgesoft Enterprise",
+    label: "Foundry Enterprise",
     description: "ERP, CRM, HRMS and financial management suites.",
     tiers: [
       {
@@ -243,7 +243,7 @@ export const divisionPricing = {
     ],
   },
   consulting: {
-    label: "Bridgesoft Consulting",
+    label: "Foundry Consulting",
     description: "Strategy, digital transformation and managed services.",
     tiers: [
       {
@@ -295,9 +295,9 @@ export const featureCategories = [
   {
     category: "Platform Access",
     features: [
-      { name: "Bridgesoft Cloud", starter: "Basic", growth: "Full", enterprise: "Custom" },
-      { name: "Bridgesoft Data", starter: "Basic", growth: "Full", enterprise: "Custom" },
-      { name: "Bridgesoft Enterprise", starter: false, growth: "Core modules", enterprise: "Full suite" },
+      { name: "Foundry Cloud", starter: "Basic", growth: "Full", enterprise: "Custom" },
+      { name: "Foundry Data", starter: "Basic", growth: "Full", enterprise: "Custom" },
+      { name: "Foundry Enterprise", starter: false, growth: "Core modules", enterprise: "Full suite" },
       { name: "BridgeIntelligence AI", starter: false, growth: "Standard", enterprise: "Custom LLM" },
     ],
   },
@@ -358,7 +358,7 @@ export const faqs = [
   },
   {
     q: "How is data residency handled?",
-    a: "Starter and Growth plans are hosted on Bridgesoft's regional cloud infrastructure. Enterprise plans can be deployed on-premise or via our sovereign cloud option, meaning your data never leaves your institution's control.",
+    a: "Starter and Growth plans are hosted on Foundry's regional cloud infrastructure. Enterprise plans can be deployed on-premise or via our sovereign cloud option, meaning your data never leaves your institution's control.",
   },
   {
     q: "Do you offer procurement support for government institutions?",

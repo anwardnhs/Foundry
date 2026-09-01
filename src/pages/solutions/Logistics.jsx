@@ -256,7 +256,7 @@ export default function LogisticsSolution() {
                 variants={fadeUp}
                 className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#425466] sm:text-[20px]"
               >
-                Bridgesoft helps ports, warehouses, and carriers stay organized,
+                Foundry helps ports, warehouses, and carriers stay organized,
                 keep updates flowing, and avoid costly delays.
               </motion.p>
 

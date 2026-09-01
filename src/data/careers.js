@@ -18,7 +18,7 @@ export const roles = [
     type: "Full-time",
     remote: true,
     href: "/careers/cloud-engineer",
-    division: "Bridgesoft Cloud",
+    division: "Foundry Cloud",
   },
   {
     id: "ml-engineer",
@@ -38,7 +38,7 @@ export const roles = [
     type: "Full-time",
     remote: true,
     href: "/careers/backend-engineer",
-    division: "Bridgesoft Data",
+    division: "Foundry Data",
   },
   {
     id: "devops",
@@ -48,7 +48,7 @@ export const roles = [
     type: "Full-time",
     remote: false,
     href: "/careers/devops-lead",
-    division: "Bridgesoft Cloud",
+    division: "Foundry Cloud",
   },
   {
     id: "product-designer",
@@ -58,7 +58,7 @@ export const roles = [
     type: "Full-time",
     remote: true,
     href: "/careers/product-designer",
-    division: "Bridgesoft Enterprise",
+    division: "Foundry Enterprise",
   },
   {
     id: "brand-designer",
@@ -78,7 +78,7 @@ export const roles = [
     type: "Full-time",
     remote: false,
     href: "/careers/pm-cloud",
-    division: "Bridgesoft Cloud",
+    division: "Foundry Cloud",
   },
   {
     id: "product-analyst",
@@ -88,7 +88,7 @@ export const roles = [
     type: "Full-time",
     remote: true,
     href: "/careers/product-analyst",
-    division: "Bridgesoft Data",
+    division: "Foundry Data",
   },
   {
     id: "implementation",
@@ -98,7 +98,7 @@ export const roles = [
     type: "Full-time",
     remote: false,
     href: "/careers/implementation-expert",
-    division: "Bridgesoft Consulting",
+    division: "Foundry Consulting",
   },
   {
     id: "project-manager",
@@ -108,7 +108,7 @@ export const roles = [
     type: "Full-time",
     remote: false,
     href: "/careers/tech-pm",
-    division: "Bridgesoft Consulting",
+    division: "Foundry Consulting",
   },
   {
     id: "enterprise-sales",
@@ -128,11 +128,11 @@ export const roles = [
     type: "Full-time",
     remote: true,
     href: "/careers/solutions-engineer",
-    division: "Bridgesoft Cloud",
+    division: "Foundry Cloud",
   },
 ]
 
-// ─── Why Bridgesoft ───────────────────────────────────────────────────────────
+// ─── Why Foundry ───────────────────────────────────────────────────────────
 export const reasons = [
   {
     number: "01",

@@ -57,7 +57,7 @@ export default function Footer() {
               Ready to build the future of your institution?
             </h2>
             <p className="text-[16px] text-white/70 leading-[1.6]">
-              Join the leading institutions building their future on Bridgesoft.
+              Join the leading institutions building their future on Foundry.
               Get in touch with our team to see how we can help you scale.
             </p>
           </div>
@@ -80,11 +80,11 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-2 mb-6 group">
               <img
                 src={brandMark}
-                alt="Bridgesoft"
+                alt="Foundry"
                 className="h-8 w-auto object-contain"
               />
               <span className="font-sans font-black text-[20px] text-[#0A2540] tracking-tight">
-                Bridgesoft
+                Foundry
               </span>
             </Link>
 
@@ -93,8 +93,8 @@ export default function Footer() {
               English (NG)
             </button>
             <p className="text-[13px] text-[#425466] leading-[1.6] max-w-[200px] mt-2 pl-3">
-              <span className="font-bold">Bridgesoft</span> is a registered
-              trademark of Bridgesoft Plc.
+              <span className="font-bold">Foundry</span> is a registered
+              trademark of Foundry Plc.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-rule gap-6">
           {/* Legal / Copyright */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 text-[13px] font-medium text-[#425466]">
-            <span>&copy; {new Date().getFullYear()} Bridgesoft Plc.</span>
+            <span>&copy; {new Date().getFullYear()} Foundry Plc.</span>
             <Link
               to="/privacy"
               className="hover:text-[#0A2540] transition-colors"

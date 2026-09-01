@@ -41,7 +41,7 @@ export default function StockInfo() {
               Equities & Listings
             </h2>
             <p className="text-[16px] text-[#425466]">
-              Bridgesoft Plc is dual-listed, maintaining its primary listing on
+              Foundry Plc is dual-listed, maintaining its primary listing on
               the Nigerian Exchange Group (NGX) and a standard listing on the
               London Stock Exchange (LSE).
             </p>

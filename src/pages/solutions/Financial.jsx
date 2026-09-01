@@ -215,7 +215,7 @@ export default function FinancialSolution() {
                 variants={fadeUp}
                 className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#0A2540] sm:text-[20px]"
               >
-                Bridgesoft helps financial teams keep payments, customer work,
+                Foundry helps financial teams keep payments, customer work,
                 and daily operations moving without extra friction.
               </motion.p>
 

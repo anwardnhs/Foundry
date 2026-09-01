@@ -45,11 +45,11 @@ export default function Careers() {
                 Join Our Team
               </p>
               <h2 className="text-[32px] md:text-[40px] font-bold text-[#0A2540] leading-[1.1] tracking-tight mb-6">
-                People are the heart of Bridgesoft. We're building a culture
+                People are the heart of Foundry. We're building a culture
                 where everyone can do their best work and grow with us.
               </h2>
               <p className="text-[15px] text-[#0A2540] leading-relaxed mb-8 max-w-lg">
-                At Bridgesoft, we believe that our people are our greatest
+                At Foundry, we believe that our people are our greatest
                 asset. We are committed to creating a diverse and inclusive
                 workplace where everyone can thrive. Join us and be part of a
                 team that is making a real impact across Africa.

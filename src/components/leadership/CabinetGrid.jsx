@@ -20,7 +20,7 @@ const cabinet = [
 
     fullName: "Mr. Tunde Adesanya",
     title: "Chief Executive Officer",
-    bio: "Previously served as CEO of Bridgesoft Cloud, Tunde brings a wealth of experience in technology and business strategy, having led several successful digital transformation initiatives across various industries.  ",
+    bio: "Previously served as CEO of Foundry Cloud, Tunde brings a wealth of experience in technology and business strategy, having led several successful digital transformation initiatives across various industries.  ",
     image: tundeImg,
     colorTheme: "bg-[#0A2540]", // Navy
   },
@@ -29,7 +29,7 @@ const cabinet = [
 
     fullName: "Mr. Ovie Ejiro",
     title: "Chief Financial Officer",
-    bio: "Ejiro is a finance veteran with extensive experience in corporate finance, investment banking, and financial planning. He has been instrumental in driving Bridgesoft's financial strategy and ensuring sustainable growth. ",
+    bio: "Ejiro is a finance veteran with extensive experience in corporate finance, investment banking, and financial planning. He has been instrumental in driving Foundry's financial strategy and ensuring sustainable growth. ",
     image: ovieImg,
     colorTheme: "bg-[#4338CA]", // Indigo
   },
@@ -38,7 +38,7 @@ const cabinet = [
 
     fullName: "Mr. Aarav Kumar Sharma",
     title: "Chief Operating Officer",
-    bio: "Sharam is a seasoned operations executive with a proven track record in scaling technology companies. He oversees Bridgesoft's operational strategy, ensuring efficiency and excellence across all business functions.  ",
+    bio: "Sharam is a seasoned operations executive with a proven track record in scaling technology companies. He oversees Foundry's operational strategy, ensuring efficiency and excellence across all business functions.  ",
     image: aaravImg,
     colorTheme: "bg-[#047857]", // Emerald
   },
@@ -47,7 +47,7 @@ const cabinet = [
 
     fullName: "Mr. Felix Onwudiwe",
     title: "Chief Technology Officer",
-    bio: "Onwudiew was the former CEO of Bridgesoft Enterprise before becoming the CTO of Bridgesoft. He has a strong background in software engineering, cloud architecture, and technology innovation, leading the development of cutting-edge solutions for clients across Africa. ",
+    bio: "Onwudiew was the former CEO of Foundry Enterprise before becoming the CTO of Foundry. He has a strong background in software engineering, cloud architecture, and technology innovation, leading the development of cutting-edge solutions for clients across Africa. ",
     image: felixImg,
     colorTheme: "bg-[#B45309]", // Amber
   },
@@ -56,7 +56,7 @@ const cabinet = [
 
     fullName: "Mr. Emeka Osagie",
     title: "Chief Product Officer",
-    bio: "Osagie is responsible for product strategy, roadmap, and innovation, ensuring that Bridgesoft's offerings meet the evolving needs of clients and the market.  ",
+    bio: "Osagie is responsible for product strategy, roadmap, and innovation, ensuring that Foundry's offerings meet the evolving needs of clients and the market.  ",
     image: emekaImg,
     colorTheme: "bg-[#0369A1]", // Ocean Blue
   },
@@ -74,7 +74,7 @@ const cabinet = [
 
     fullName: "Mr. Adamu Suleiman",
     title: "General Counsel & Corporate Secretary",
-    bio: "Suleiman is an accomplished legal professional with extensive experience in corporate law, regulatory compliance, and governance. He provides strategic legal counsel to the executive team and ensures that Bridgesoft operates within the bounds of applicable laws and regulations.    ",
+    bio: "Suleiman is an accomplished legal professional with extensive experience in corporate law, regulatory compliance, and governance. He provides strategic legal counsel to the executive team and ensures that Foundry operates within the bounds of applicable laws and regulations.    ",
     image: adamuImg,
     colorTheme: "bg-[#0F766E]", // Teal
   },
@@ -83,7 +83,7 @@ const cabinet = [
 
     fullName: "Ms. Angela Ikpeama",
     title: "Chief Communications Officer",
-    bio: "Ikpeama is responsible for shaping Bridgesoft's brand narrative, public relations, and internal communications. She has a strong background in corporate communications and has successfully led campaigns that enhance brand visibility and stakeholder engagement.    ",
+    bio: "Ikpeama is responsible for shaping Foundry's brand narrative, public relations, and internal communications. She has a strong background in corporate communications and has successfully led campaigns that enhance brand visibility and stakeholder engagement.    ",
     image: angelaImg,
     colorTheme: "bg-[#86198F]", // Fuchsia
   },
@@ -143,7 +143,7 @@ export default function CabinetGrid() {
             <p className="text-[18px] text-[#425466] leading-[1.6]">
               The core executive team responsible for executing our continental
               mandate. Each leader brings a unique expertise, but together they
-              form the strategic brain trust driving Bridgesoft's growth and
+              form the strategic brain trust driving Foundry's growth and
               innovation across Africa.
             </p>
           </motion.div>

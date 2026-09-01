@@ -43,7 +43,7 @@ export default function RegulatoryNote() {
           </h2>
 
           <p className="text-[16px] text-[#425466] leading-[1.6] mb-8 max-w-2xl mx-auto">
-            Bridgesoft Plc is strictly regulated by the{" "}
+            Foundry Plc is strictly regulated by the{" "}
             <strong>Securities and Exchange Commission (SEC) Nigeria</strong>{" "}
             and the <strong>Financial Conduct Authority (FCA)</strong> in the
             United Kingdom. We adhere entirely to the corporate governance and

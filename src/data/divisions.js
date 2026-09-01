@@ -1,7 +1,7 @@
 export const divisions = [
   {
     id: "cloud",
-    name: "Bridgesoft Cloud",
+    name: "Foundry Cloud",
     slug: "cloud",
     est: "2009",
     tagline: "Sovereign cloud. African data centres. Your infrastructure.",
@@ -11,7 +11,7 @@ export const divisions = [
   },
   {
     id: "data",
-    name: "Bridgesoft Data",
+    name: "Foundry Data",
     slug: "data",
     est: "1998",
     tagline: "Your data pipeline, without the mess.",
@@ -21,7 +21,7 @@ export const divisions = [
   },
   {
     id: "enterprise",
-    name: "Bridgesoft Enterprise",
+    name: "Foundry Enterprise",
     slug: "enterprise",
     est: "2004",
     tagline: "ERP, CRM, and HRMS — built for how institutions actually work.",
@@ -31,7 +31,7 @@ export const divisions = [
   },
   {
     id: "consulting",
-    name: "Bridgesoft Consulting",
+    name: "Foundry Consulting",
     slug: "consulting",
     est: "2003",
     tagline: "Strategy that ships, not just slides.",
@@ -41,7 +41,7 @@ export const divisions = [
   },
   {
     id: "ventures",
-    name: "Bridgesoft Ventures",
+    name: "Foundry Ventures",
     slug: "ventures",
     est: "2016",
     tagline: "Early capital for Africa's next technology leaders.",

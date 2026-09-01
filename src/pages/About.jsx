@@ -1,7 +1,7 @@
 import AboutHero from "@/components/about/AboutHero";
 import OriginStory from "@/components/about/OriginStory";
 import MissionStatement from "@/components/about/MissionStatement";
-import BridgesoftWorks from "@/components/about/BridgesoftWorks";
+import FoundryWorks from "@/components/about/FoundryWorks";
 import LeadershipPreview from "@/components/about/LeadershipPreview";
 import AboutCTA from "@/components/about/AboutCTA";
 
@@ -11,7 +11,7 @@ export default function About() {
       <AboutHero />
       <OriginStory />
       <MissionStatement />
-      <BridgesoftWorks />
+      <FoundryWorks />
       <LeadershipPreview />
       <AboutCTA />
     </main>

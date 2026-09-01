@@ -39,14 +39,14 @@ const container = {
   show: { transition: { staggerChildren: 0.15 } },
 };
 
-export default function LifeAtBridgesoft() {
+export default function LifeAtFoundry() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section
       className="bg-white py-24 lg:py-32 font-sans overflow-hidden"
-      aria-label="Life at Bridgesoft"
+      aria-label="Life at Foundry"
     >
       <div className="site-container max-w-[1400px]">
         {/* ─── Editorial Header ─── */}

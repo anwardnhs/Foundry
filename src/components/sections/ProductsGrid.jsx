@@ -6,7 +6,7 @@ import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri";
 const products = [
   {
     id: "cloud",
-    title: "Bridgesoft Cloud",
+    title: "Foundry Cloud",
     desc: "Powerful cloud hosting on our own data centres. Your data stays local, safe, and entirely under our control with massive scalability.",
     link: "/products/cloud",
     btnLabel: "Explore Cloud",
@@ -15,7 +15,7 @@ const products = [
   },
   {
     id: "data",
-    title: "Bridgesoft Data",
+    title: "Foundry Data",
     desc: "Transform raw data into actionable insights with our advanced analytics and reporting tools, designed to help you make informed decisions. ",
     link: "/products/data",
     btnLabel: "Explore Data",
@@ -33,7 +33,7 @@ const products = [
   },
   {
     id: "enterprise",
-    title: "Bridgesoft Enterprise",
+    title: "Foundry Enterprise",
     tags: ["ERP", "OPERATIONS", "SCALE"],
     desc: "A comprehensive suite of enterprise solutions designed to streamline complex operations, enhance collaboration, and drive growth for large organizations.",
     link: "/products/enterprise",
@@ -43,7 +43,7 @@ const products = [
   },
   {
     id: "security",
-    title: "Bridgesoft Protector",
+    title: "Foundry Protector",
     desc: "Protect your digital assets with our advanced security solutions, offering robust protection against cyber threats and ensuring the integrity of your data and systems.  ",
     link: "/products/security",
     btnLabel: "Explore Security",

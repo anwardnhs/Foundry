@@ -73,7 +73,7 @@ export default function HiringProcess() {
           <p className="text-[18px] text-slate-600 mt-4 max-w-2xl">
             We’ve designed our hiring process to be as straightforward and
             transparent as possible. Here’s what you can expect when you apply
-            to join the Bridgesoft team:
+            to join the Foundry team:
           </p>
         </motion.div>
 

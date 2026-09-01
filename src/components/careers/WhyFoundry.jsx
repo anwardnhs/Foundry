@@ -6,7 +6,7 @@ const reasons = [
   {
     id: "01",
     title: "Impact at scale.",
-    desc: "Bridgesoft powers some of the largest enterprises in Africa and beyond. Your work will be used by millions of users every day, across multiple continents.",
+    desc: "Foundry powers some of the largest enterprises in Africa and beyond. Your work will be used by millions of users every day, across multiple continents.",
   },
   {
     id: "02",
@@ -35,14 +35,14 @@ const container = {
   show: { transition: { staggerChildren: 0.15 } },
 };
 
-export default function WhyBridgesoft() {
+export default function WhyFoundry() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section
       className="bg-white py-20 lg:py-32 font-sans"
-      aria-label="Why Bridgesoft"
+      aria-label="Why Foundry"
     >
       <div className="site-container max-w-7xl">
         {/* ─── Section Header ─── */}

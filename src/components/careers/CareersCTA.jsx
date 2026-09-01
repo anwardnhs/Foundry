@@ -72,11 +72,11 @@ export default function CareerCTA() {
 
             {/* Secondary Action */}
             <a
-              href="mailto:careers@bridgesoft.com"
+              href="mailto:careers@foundry.com"
               className="group flex items-center gap-2 text-[15px] font-semibold text-white hover:text-white transition-colors px-4 py-2"
             >
               <RiMailLine className="w-5 h-5 text-white group-hover:text-white transition-colors" />
-              careers@bridgesoft.com
+              careers@foundry.com
             </a>
           </motion.div>
         </motion.div>

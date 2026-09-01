@@ -27,7 +27,7 @@ export default function TrustStrip({ headline, proofPoints = [] }) {
             {headline}
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-sm  font-bold leading-6 text-[#425466] sm:text-base">
-            Proven by the world’s leading organizations, Bridgesoft is trusted
+            Proven by the world’s leading organizations, Foundry is trusted
             to deliver secure, reliable, and scalable solutions that help teams
             work better together.
           </p>

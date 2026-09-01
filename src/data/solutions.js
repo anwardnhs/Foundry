@@ -11,10 +11,10 @@ export const solutions = {
     industry: "Financial Services",
 
     hero: {
-      eyebrow: "Bridgesoft for Financial Services",
+      eyebrow: "Foundry for Financial Services",
       headline: "A foundational platform for banks, insurers, and fintechs.",
       subtext:
-        "Power your core banking systems, payment gateways, and digital channels with institutional-grade technology. Bridgesoft delivers the strict security, guaranteed uptime, and regulatory alignment demanded by Africa's financial sector.",
+        "Power your core banking systems, payment gateways, and digital channels with institutional-grade technology. Foundry delivers the strict security, guaranteed uptime, and regulatory alignment demanded by Africa's financial sector.",
       backgroundImage:
         "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBhYnN0cmFjdHxlbnwwfHwwfHx8MA%3D%3D",
       heroImage:
@@ -34,7 +34,7 @@ export const solutions = {
     },
 
     features: {
-      title: "The Bridgesoft advantage for finance",
+      title: "The Foundry advantage for finance",
       items: [
         {
           icon: "RiShieldKeyholeLine",
@@ -46,7 +46,7 @@ export const solutions = {
           icon: "RiCloudLine",
           title: "Reliable tools for your most important work",
           description:
-            "Run your core banking and payment systems on Bridgesoft Cloud. We provide the power needed to process millions of transactions without a hitch.",
+            "Run your core banking and payment systems on Foundry Cloud. We provide the power needed to process millions of transactions without a hitch.",
         },
         {
           icon: "RiDatabase2Line",
@@ -59,15 +59,15 @@ export const solutions = {
 
     spotlight: {
       divisionId: "cloud",
-      divisionName: "Bridgesoft Cloud",
+      divisionName: "Foundry Cloud",
       eyebrow: "Featured product",
       title: "The engine for core banking and payments.",
       description:
-        "Bridgesoft Cloud is engineered for financial enterprises that demand absolute reliability. Operating from our four Tier-III data centres across Africa, we deliver the low-latency performance necessary to process millions of daily transactions without interruption.",
-      cta: { label: "Explore Bridgesoft Cloud", href: "/products/cloud" },
+        "Foundry Cloud is engineered for financial enterprises that demand absolute reliability. Operating from our four Tier-III data centres across Africa, we deliver the low-latency performance necessary to process millions of daily transactions without interruption.",
+      cta: { label: "Explore Foundry Cloud", href: "/products/cloud" },
       backgroundImage:
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-      visualLabel: "Bridgesoft Cloud — financial services",
+      visualLabel: "Foundry Cloud — financial services",
     },
 
     useCases: [
@@ -102,7 +102,7 @@ export const solutions = {
     },
 
     meta: {
-      title: "Financial Services Solutions | Bridgesoft",
+      title: "Financial Services Solutions | Foundry",
       description:
         "Institutional-grade cloud, data, and enterprise platforms for banks, insurers, and fintechs across Africa.",
     },
@@ -115,7 +115,7 @@ export const solutions = {
     industry: "Public Sector",
 
     hero: {
-      eyebrow: "Bridgesoft for Public Sector",
+      eyebrow: "Foundry for Public Sector",
       headline: "Sovereign technology for resilient government operations.",
       subtext:
         "Deploy national identity systems, public finance platforms, and citizen services on sovereign infrastructure. We provide African governments with secure, scalable solutions built to serve millions.",
@@ -163,15 +163,15 @@ export const solutions = {
 
     spotlight: {
       divisionId: "enterprise",
-      divisionName: "Bridgesoft Enterprise",
+      divisionName: "Foundry Enterprise",
       eyebrow: "Featured product",
       title: "Unifying national government operations.",
       description:
-        "Developed from our headquarters at Eko Atlantic City, Lagos, Bridgesoft Enterprise consolidates civic data management, civil service administration, and public service delivery into a cohesive framework to enhance transparency.",
-      cta: { label: "Explore Bridgesoft Enterprise", href: "/products/enterprise" },
+        "Developed from our headquarters at Eko Atlantic City, Lagos, Foundry Enterprise consolidates civic data management, civil service administration, and public service delivery into a cohesive framework to enhance transparency.",
+      cta: { label: "Explore Foundry Enterprise", href: "/products/enterprise" },
       backgroundImage:
         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop",
-      visualLabel: "Bridgesoft Enterprise — public sector",
+      visualLabel: "Foundry Enterprise — public sector",
     },
 
     useCases: [
@@ -206,7 +206,7 @@ export const solutions = {
     },
 
     meta: {
-      title: "Public Sector Solutions | Bridgesoft",
+      title: "Public Sector Solutions | Foundry",
       description:
         "Sovereign cloud, enterprise software, and data infrastructure for governments and public institutions across Africa.",
     },
@@ -219,10 +219,10 @@ export const solutions = {
     industry: "Healthcare & Life Sciences",
 
     hero: {
-      eyebrow: "Bridgesoft for Healthcare & Life Sciences",
+      eyebrow: "Foundry for Healthcare & Life Sciences",
       headline: "Resilient digital foundations for modern healthcare.",
       subtext:
-        "Unify patient records, streamline hospital administration, and secure sensitive medical data. Bridgesoft equips clinical networks with the high-availability infrastructure needed for uninterrupted patient care.",
+        "Unify patient records, streamline hospital administration, and secure sensitive medical data. Foundry equips clinical networks with the high-availability infrastructure needed for uninterrupted patient care.",
       backgroundImage:
         "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop",
       heroImage:
@@ -267,15 +267,15 @@ export const solutions = {
 
     spotlight: {
       divisionId: "data",
-      divisionName: "Bridgesoft Data",
+      divisionName: "Foundry Data",
       eyebrow: "Featured product",
       title: "The pulse of hospital operations.",
       description:
-        "Bridgesoft Data processes massive volumes of clinical information with near-zero latency. From diagnostic imaging archives to real-time vitals monitoring, we ensure that care teams have the exact information they need.",
-      cta: { label: "Explore Bridgesoft Data", href: "/products/data" },
+        "Foundry Data processes massive volumes of clinical information with near-zero latency. From diagnostic imaging archives to real-time vitals monitoring, we ensure that care teams have the exact information they need.",
+      cta: { label: "Explore Foundry Data", href: "/products/data" },
       backgroundImage:
         "https://images.unsplash.com/photo-1584036561561-d466889f8dcc?q=80&w=2070&auto=format&fit=crop",
-      visualLabel: "Bridgesoft Data — healthcare",
+      visualLabel: "Foundry Data — healthcare",
     },
 
     useCases: [
@@ -310,7 +310,7 @@ export const solutions = {
     },
 
     meta: {
-      title: "Healthcare & Life Sciences Solutions | Bridgesoft",
+      title: "Healthcare & Life Sciences Solutions | Foundry",
       description:
         "Connected health records, operational visibility, and privacy-compliant infrastructure for African hospitals.",
     },
@@ -323,10 +323,10 @@ export const solutions = {
     industry: "Supply Chain & Logistics",
 
     hero: {
-      eyebrow: "Bridgesoft for Supply Chain & Logistics",
+      eyebrow: "Foundry for Supply Chain & Logistics",
       headline: "Uninterrupted operations for global supply chains.",
       subtext:
-        "Digitise port management, warehousing, and fleet tracking. Bridgesoft provides the high-performance computing required to maintain total visibility across complex logistical networks.",
+        "Digitise port management, warehousing, and fleet tracking. Foundry provides the high-performance computing required to maintain total visibility across complex logistical networks.",
       backgroundImage:
         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop",
       heroImage:
@@ -371,15 +371,15 @@ export const solutions = {
 
     spotlight: {
       divisionId: "cloud",
-      divisionName: "Bridgesoft Cloud",
+      divisionName: "Foundry Cloud",
       eyebrow: "Featured product",
       title: "Always-on infrastructure for freight and transit.",
       description:
-        "Logistics cannot tolerate downtime. Bridgesoft Cloud provides the resilient, scalable hosting required to run critical scheduling and dispatch software without interruption, ensuring your freight never stops moving.",
-      cta: { label: "Explore Bridgesoft Cloud", href: "/products/cloud" },
+        "Logistics cannot tolerate downtime. Foundry Cloud provides the resilient, scalable hosting required to run critical scheduling and dispatch software without interruption, ensuring your freight never stops moving.",
+      cta: { label: "Explore Foundry Cloud", href: "/products/cloud" },
       backgroundImage:
         "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
-      visualLabel: "Bridgesoft Cloud — supply chain",
+      visualLabel: "Foundry Cloud — supply chain",
     },
 
     useCases: [
@@ -414,7 +414,7 @@ export const solutions = {
     },
 
     meta: {
-      title: "Supply Chain & Logistics Solutions | Bridgesoft",
+      title: "Supply Chain & Logistics Solutions | Foundry",
       description:
         "Integrated, high-availability technology systems for African ports, carriers, and warehouses.",
     },
@@ -427,10 +427,10 @@ export const solutions = {
     industry: "Cloud Migration",
 
     hero: {
-      eyebrow: "Bridgesoft for Cloud Migration",
+      eyebrow: "Foundry for Cloud Migration",
       headline: "De-risk your transition to enterprise cloud.",
       subtext:
-        "Execute complex architectural shifts with precision. Bridgesoft Consulting delivers structured migrations to infrastructure we control — not rent.",
+        "Execute complex architectural shifts with precision. Foundry Consulting delivers structured migrations to infrastructure we control — not rent.",
       backgroundImage:
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
       heroImage:
@@ -479,15 +479,15 @@ export const solutions = {
 
     spotlight: {
       divisionId: "cloud",
-      divisionName: "Bridgesoft Cloud",
+      divisionName: "Foundry Cloud",
       eyebrow: "Featured product",
       title: "A destination engineered for enterprise scale.",
       description:
-        "Migrating to Bridgesoft Cloud means moving to a platform built for Africa's largest corporations. Listed on both the NGX and LSE, we provide the financial stability, technical depth, and physical infrastructure necessary to host your most demanding applications.",
-      cta: { label: "Explore Bridgesoft Cloud", href: "/products/cloud" },
+        "Migrating to Foundry Cloud means moving to a platform built for Africa's largest corporations. Listed on both the NGX and LSE, we provide the financial stability, technical depth, and physical infrastructure necessary to host your most demanding applications.",
+      cta: { label: "Explore Foundry Cloud", href: "/products/cloud" },
       backgroundImage:
         "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop",
-      visualLabel: "Bridgesoft Cloud — migration",
+      visualLabel: "Foundry Cloud — migration",
     },
 
     useCases: [
@@ -518,7 +518,7 @@ export const solutions = {
     ],
 
     stats: [
-      { value: "1,200+", label: "Migrations completed on Bridgesoft Cloud" },
+      { value: "1,200+", label: "Migrations completed on Foundry Cloud" },
       { value: "63MW", label: "Total data center capacity across Africa" },
       { value: "99.99%", label: "Uptime SLA post-migration" },
     ],
@@ -530,7 +530,7 @@ export const solutions = {
     },
 
     meta: {
-      title: "Cloud Migration | Bridgesoft",
+      title: "Cloud Migration | Foundry",
       description:
         "Structured, low-risk cloud migration to owned African infrastructure for major enterprises.",
     },
@@ -543,7 +543,7 @@ export const solutions = {
     industry: "Data Compliance",
 
     hero: {
-      eyebrow: "Bridgesoft for Data Compliance",
+      eyebrow: "Foundry for Data Compliance",
       headline: "Regulatory alignment without the operational drag.",
       subtext:
         "Automate governance, streamline audits, and enforce data privacy standards across your entire organisation with native compliance controls.",
@@ -557,7 +557,7 @@ export const solutions = {
     trustBar: {
       headline: "Securing data for regulated institutions",
       proofPoints: [
-        "4,300+ enterprise clients on Bridgesoft platforms",
+        "4,300+ enterprise clients on Foundry platforms",
         "Compliance support across 14 African markets",
         "Included on all Enterprise plans",
       ],
@@ -595,15 +595,15 @@ export const solutions = {
 
     spotlight: {
       divisionId: "data",
-      divisionName: "Bridgesoft Data",
+      divisionName: "Foundry Data",
       eyebrow: "Featured product",
       title: "The framework for corporate data governance.",
       description:
-        "Bridgesoft Data enforces your internal policies at the storage layer. By standardising how information is classified, encrypted, and retained, we ensure that your organisation remains fully compliant without burdening your engineering teams.",
-      cta: { label: "Explore Bridgesoft Data", href: "/products/data" },
+        "Foundry Data enforces your internal policies at the storage layer. By standardising how information is classified, encrypted, and retained, we ensure that your organisation remains fully compliant without burdening your engineering teams.",
+      cta: { label: "Explore Foundry Data", href: "/products/data" },
       backgroundImage:
         "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop",
-      visualLabel: "Bridgesoft Data — compliance",
+      visualLabel: "Foundry Data — compliance",
     },
 
     useCases: [
@@ -634,9 +634,9 @@ export const solutions = {
     ],
 
     stats: [
-      { value: "4,300+", label: "Enterprise clients on Bridgesoft platforms" },
+      { value: "4,300+", label: "Enterprise clients on Foundry platforms" },
       { value: "14", label: "African markets with local compliance support" },
-      { value: "2001", label: "Year Bridgesoft first earned public-sector trust" },
+      { value: "2001", label: "Year Foundry first earned public-sector trust" },
     ],
 
     cta: {
@@ -646,7 +646,7 @@ export const solutions = {
     },
 
     meta: {
-      title: "Data Compliance | Bridgesoft",
+      title: "Data Compliance | Foundry",
       description:
         "Systemic data governance and automated compliance frameworks for African institutions.",
     },
@@ -659,7 +659,7 @@ export const solutions = {
     industry: "AI Automation",
 
     hero: {
-      eyebrow: "Bridgesoft for AI Automation",
+      eyebrow: "Foundry for AI Automation",
       headline: "Intelligent automation for strict regulatory environments.",
       subtext:
         "Deploy enterprise artificial intelligence that respects your operational boundaries. BridgeIntelligence handles repetitive workflows while maintaining complete transparency and human oversight.",
@@ -698,7 +698,7 @@ export const solutions = {
           icon: "RiFlowChart",
           title: "Seamless procedural integration",
           description:
-            "Embed intelligent routing, document classification, and data extraction directly into your existing Bridgesoft Enterprise workflows without disruption.",
+            "Embed intelligent routing, document classification, and data extraction directly into your existing Foundry Enterprise workflows without disruption.",
         },
         {
           icon: "RiEyeLine",
@@ -762,7 +762,7 @@ export const solutions = {
     },
 
     meta: {
-      title: "AI Automation | Bridgesoft",
+      title: "AI Automation | Foundry",
       description:
         "Auditable, secure AI automation and processing tools for regulated African institutions.",
     },

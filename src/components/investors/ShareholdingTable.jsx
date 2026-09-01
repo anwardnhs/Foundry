@@ -75,7 +75,7 @@ export default function ShareholdingTable() {
               </h2>
 
               <p className="text-[16px] text-[#425466] leading-[1.6]">
-                Bridgesoft Plc maintains a highly structured, diverse
+                Foundry Plc maintains a highly structured, diverse
                 shareholder base comprising our founding entities, tier-1
                 domestic institutions, and global asset managers.
               </p>

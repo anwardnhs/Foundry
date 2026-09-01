@@ -212,7 +212,7 @@ export default function OpenRoles() {
             </p>
           </div>
           <a
-            href="mailto:careers@bridgesoft.com"
+            href="mailto:careers@foundry.com"
             className="shrink-0 flex items-center gap-2 h-11 px-6 rounded-full bg-white border border-slate-200 hover:border-slate-300 text-slate-900 font-semibold text-[14px] shadow-sm hover:shadow transition-all"
           >
             <RiMailSendLine className="w-4 h-4 text-slate-500" />

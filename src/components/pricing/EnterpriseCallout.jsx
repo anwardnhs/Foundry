@@ -26,21 +26,9 @@ export default function EnterpriseCallout() {
 
   return (
     <section
-      className="relative py-24 lg:py-32 overflow-hidden font-sans"
+      className="relative py-16 lg:py-24 bg-slate-50 border-t border-slate-200 overflow-hidden font-sans"
       aria-label="Enterprise Contact"
     >
-      {/* ─── Premium Unsplash Dark Abstract Background ─── */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Deep, sophisticated dark abstract from Unsplash */}
-        <img
-          src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Enterprise dark abstract background"
-          className="w-full h-full object-cover"
-        />
-        {/* Heavy slate gradient overlay for text readability and SaaS feel */}
-        <div className="absolute inset-0 bg-slate-950/80 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-900/40 backdrop-blur-[2px]" />
-      </div>
-
       <div className="site-container relative z-10">
         <motion.div
           ref={ref}
@@ -52,7 +40,7 @@ export default function EnterpriseCallout() {
           {/* Headline */}
           <motion.h2
             variants={fadeUp}
-            className="text-[36px] sm:text-[48px] lg:text-[56px] font-semibold text-black leading-[1.1] tracking-tight mb-6"
+            className="text-[32px] sm:text-[44px] lg:text-[48px] font-semibold text-slate-900 leading-[1.1] tracking-tight mb-6"
           >
             Running a large institution? <br className="hidden sm:block" />
             Let's build something specific.
@@ -61,7 +49,7 @@ export default function EnterpriseCallout() {
           {/* Subtext */}
           <motion.p
             variants={fadeUp}
-            className="text-[18px] text-slate-300 leading-[1.6] max-w-2xl font-normal mb-12"
+            className="text-[17px] text-slate-600 leading-[1.6] max-w-2xl font-normal mb-10"
           >
             Need sovereign data residency, custom LLM layers, or localized
             regulatory compliance? Skip the standard tiers and get an
@@ -73,26 +61,26 @@ export default function EnterpriseCallout() {
             variants={fadeUp}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
           >
-            {/* Primary CTA (Pill shape, smooth hover) */}
+            {/* Primary CTA */}
             <Button
               asChild
-              className="w-full sm:w-auto h-14 px-8 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-medium text-[15px] transition-all shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:scale-[1.02]"
+              className="w-full sm:w-auto h-12 px-8 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-[15px] transition-all shadow-sm"
             >
               <Link to="/contact" className="flex items-center gap-2">
                 Talk to Sales
-                <RiMailSendLine className="w-5 h-5" />
+                <RiMailSendLine className="w-4 h-4" />
               </Link>
             </Button>
 
-            {/* Secondary CTA (Glassmorphism outline, Pill shape) */}
+            {/* Secondary CTA */}
             <Button
               asChild
               variant="outline"
-              className="w-full sm:w-auto h-14 px-8 rounded-full bg-white hover:bg-white/10 border-white text-black font-medium text-[15px] transition-all backdrop-blur-md"
+              className="w-full sm:w-auto h-12 px-8 rounded-full bg-white hover:bg-slate-50 border-slate-200 text-slate-700 font-medium text-[15px] transition-all shadow-sm"
             >
               <Link to="/demo" className="flex items-center gap-2">
                 Request a Demo
-                <RiArrowRightUpLine className="w-5 h-5" />
+                <RiArrowRightUpLine className="w-4 h-4" />
               </Link>
             </Button>
           </motion.div>

@@ -2,12 +2,37 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
 const companies = [
-  { id: "dangote", name: "Dangote", domain: "dangote.com" },
-  { id: "mtn", name: "MTN", domain: "mtn.com" },
-  { id: "flutterwave", name: "Flutterwave", domain: "flutterwave.com" },
-  { id: "standardbank", name: "Standard Bank", domain: "standardbank.co.za" },
-  { id: "paystack", name: "Paystack", domain: "paystack.com" },
-  { id: "oando", name: "Oando", domain: "oandoplc.com" },
+  {
+    id: "dangote",
+    name: "DANGOTE",
+    className: "font-serif font-black tracking-tight uppercase text-[22px]",
+  },
+  {
+    id: "mtn",
+    name: "MTN",
+    className:
+      "font-sans font-black italic tracking-tighter text-[28px] leading-none",
+  },
+  {
+    id: "flutterwave",
+    name: "flutterwave",
+    className: "font-sans font-extrabold tracking-tight text-[22px] lowercase",
+  },
+  {
+    id: "standardbank",
+    name: "Standard Bank",
+    className: "font-sans font-semibold tracking-tight text-[20px]",
+  },
+  {
+    id: "paystack",
+    name: "paystack",
+    className: "font-sans font-bold tracking-tighter text-[22px] lowercase",
+  },
+  {
+    id: "oando",
+    name: "OANDO",
+    className: "font-sans font-black tracking-widest uppercase text-[20px]",
+  },
 ]
 
 const marqueeVariants = {
@@ -29,20 +54,17 @@ export default function TrustStrip() {
   const items = [...companies, ...companies]
 
   return (
-    <section className="border-y border-[#E6ECF5] bg-white py-8 lg:py-10" aria-label="Trusted Companies">
+    <section className="border-y border-[#E6ECF5] bg-white py-12 lg:py-16" aria-label="Trusted Companies">
       <div className="site-container" ref={ref}>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.34em] text-[#635BFF]">
-            Trusted by institutions across financial services
-          </p>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#425466] sm:text-base">
-            Trusted by teams that want software to feel steady, simple, and easy to run.
+          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-6">
+            Trusted by teams that want software to feel steady, simple, and easy to run
           </p>
         </div>
 
         <div className="relative mt-8 overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-24" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-32" />
 
           <motion.div
             initial="hidden"
@@ -54,17 +76,11 @@ export default function TrustStrip() {
             {items.map((company, index) => (
               <div
                 key={`${company.id}-${index}`}
-                className="flex shrink-0 items-center gap-3 px-6 sm:px-8 lg:px-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="flex shrink-0 items-center px-8 sm:px-12 lg:px-16 opacity-40 grayscale hover:opacity-100 transition-all duration-300"
                 aria-hidden={index >= companies.length}
               >
-                <img 
-                  src={`https://www.google.com/s2/favicons?domain=${company.domain}&sz=128`} 
-                  alt={`${company.name} logo`} 
-                  className="w-7 h-7 object-contain rounded-sm mix-blend-multiply"
-                  onError={(e) => { e.target.style.display = 'none'; }}
-                />
                 <span
-                  className="select-none whitespace-nowrap text-[18px] font-bold tracking-tight text-[#0A2540] sm:text-[22px] lg:text-[24px]"
+                  className={`select-none whitespace-nowrap text-[#0A2540] ${company.className}`}
                   title={company.name}
                 >
                   {company.name}

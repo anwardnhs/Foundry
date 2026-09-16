@@ -1,14 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { RiCheckLine, RiSubtractLine } from "react-icons/ri";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+
 import {
   Accordion,
   AccordionContent,
@@ -143,59 +136,57 @@ export default function FeatureComparison() {
                 </AccordionTrigger>
 
                 <AccordionContent className="pb-0 pt-0">
-                  <Table>
-                    <TableBody>
-                      {category.features.map((feature, fIdx) => (
-                        <TableRow
-                          key={fIdx}
-                          className="border-slate-200 hover:bg-transparent group"
-                        >
-                          {/* Feature Name */}
-                          <TableCell className="w-full sm:w-[40%] px-6 py-4">
-                            <span className="text-[15px] font-medium text-slate-700">
-                              {feature.name}
+                  <div className="flex flex-col">
+                    {category.features.map((feature, fIdx) => (
+                      <div
+                        key={fIdx}
+                        className="flex flex-col sm:flex-row border-t border-slate-200 group relative"
+                      >
+                        {/* Feature Name */}
+                        <div className="w-full sm:w-[40%] px-6 py-4 flex items-center">
+                          <span className="text-[15px] font-medium text-slate-700">
+                            {feature.name}
+                          </span>
+                        </div>
+
+                        {/* Mobile View: Shows labels inline */}
+                        <div className="sm:hidden w-full flex flex-col gap-2 px-6 pb-4 pt-0">
+                          <div className="flex justify-between items-center py-2 border-b border-slate-100">
+                            <span className="text-[12px] font-medium text-slate-500">
+                              Starter
                             </span>
-                          </TableCell>
-
-                          {/* Mobile View: Shows labels inline */}
-                          <TableCell className="sm:hidden w-full flex flex-col gap-2 px-6 pb-4 pt-0 border-b border-slate-200 last:border-0">
-                            <div className="flex justify-between items-center py-2 border-b border-slate-100">
-                              <span className="text-[12px] font-medium text-slate-500">
-                                Starter
-                              </span>
-                              {renderCell(feature.starter, false)}
-                            </div>
-                            <div className="flex justify-between items-center py-2 border-b border-slate-100 bg-indigo-50/30 px-2 rounded-md -mx-2">
-                              <span className="text-[12px] font-semibold text-indigo-700">
-                                Growth
-                              </span>
-                              {renderCell(feature.growth, true)}
-                            </div>
-                            <div className="flex justify-between items-center py-2">
-                              <span className="text-[12px] font-medium text-slate-500">
-                                Enterprise
-                              </span>
-                              {renderCell(feature.enterprise, false)}
-                            </div>
-                          </TableCell>
-
-                          {/* Desktop View: Proper Grid Alignment */}
-                          <TableCell className="hidden sm:table-cell w-[20%] px-6 py-4 text-center border-l border-slate-200">
                             {renderCell(feature.starter, false)}
-                          </TableCell>
-
-                          {/* Growth Column Highlight */}
-                          <TableCell className="hidden sm:table-cell w-[20%] px-6 py-4 text-center border-l border-r border-slate-200 bg-indigo-50/40 group-hover:bg-indigo-50/70 transition-colors">
+                          </div>
+                          <div className="flex justify-between items-center py-2 border-b border-slate-100 bg-indigo-50/30 px-2 rounded-md -mx-2">
+                            <span className="text-[12px] font-semibold text-indigo-700">
+                              Growth
+                            </span>
                             {renderCell(feature.growth, true)}
-                          </TableCell>
-
-                          <TableCell className="hidden sm:table-cell w-[20%] px-6 py-4 text-center">
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-[12px] font-medium text-slate-500">
+                              Enterprise
+                            </span>
                             {renderCell(feature.enterprise, false)}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                          </div>
+                        </div>
+
+                        {/* Desktop View: Proper Grid Alignment */}
+                        <div className="hidden sm:flex w-[20%] px-6 py-4 items-center justify-center border-l border-slate-200">
+                          {renderCell(feature.starter, false)}
+                        </div>
+
+                        {/* Growth Column Highlight */}
+                        <div className="hidden sm:flex w-[20%] px-6 py-4 items-center justify-center border-l border-r border-slate-200 bg-indigo-50/40 group-hover:bg-indigo-50/70 transition-colors">
+                          {renderCell(feature.growth, true)}
+                        </div>
+
+                        <div className="hidden sm:flex w-[20%] px-6 py-4 items-center justify-center">
+                          {renderCell(feature.enterprise, false)}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}

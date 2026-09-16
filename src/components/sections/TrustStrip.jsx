@@ -14,6 +14,14 @@ const companies = [
   { id: "kuda", name: "Kuda", domain: "kuda.com" },
   { id: "oando", name: "Oando", domain: "oandoplc.com" },
   { id: "jumia", name: "Jumia", domain: "jumia.com" },
+  { id: "chipper", name: "Chipper Cash", domain: "chippercash.com" },
+  { id: "opay", name: "OPay", domain: "opayweb.com" },
+  { id: "piggyvest", name: "PiggyVest", domain: "piggyvest.com" },
+  { id: "uba", name: "UBA", domain: "ubagroup.com" },
+  { id: "gtco", name: "GTCO", domain: "gtcoplc.com" },
+  { id: "stanbic", name: "Stanbic IBTC", domain: "stanbicibtc.com" },
+  { id: "wema", name: "Wema Bank", domain: "wemabank.com" },
+  { id: "paga", name: "Paga", domain: "paga.com" },
 ]
 
 export default function TrustStrip() {
@@ -35,7 +43,7 @@ export default function TrustStrip() {
     <section className="border-y border-[#E6ECF5] bg-white py-14 lg:py-20" aria-label="Trusted Companies">
       <div className="site-container" ref={ref}>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">
+          <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-indigo-600 mb-8">
             Trusted by teams that want software to feel steady, simple, and easy to run
           </p>
         </div>
@@ -65,7 +73,7 @@ export default function TrustStrip() {
                   <img 
                     src={`https://logo.uplead.com/${company.domain}`} 
                     alt={`${company.name} logo`} 
-                    className="h-14 sm:h-16 w-auto object-contain rounded-sm"
+                    className="h-16 sm:h-20 w-auto object-contain rounded-sm"
                     onError={(e) => { 
                       e.target.onerror = null; 
                       e.target.src = `https://icon.horse/icon/${company.domain}`;

@@ -58,9 +58,9 @@ export default function TrustStrip() {
                 aria-hidden={index >= companies.length}
               >
                 <img 
-                  src={`https://logo.clearbit.com/${company.domain}`} 
+                  src={`https://www.google.com/s2/favicons?domain=${company.domain}&sz=128`} 
                   alt={`${company.name} logo`} 
-                  className="w-8 h-8 object-contain rounded-md"
+                  className="w-7 h-7 object-contain rounded-sm mix-blend-multiply"
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
                 <span

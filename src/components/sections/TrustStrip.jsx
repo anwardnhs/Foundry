@@ -6,8 +6,14 @@ const companies = [
   { id: "mtn", name: "MTN", domain: "mtn.com" },
   { id: "flutterwave", name: "Flutterwave", domain: "flutterwave.com" },
   { id: "standardbank", name: "Standard Bank", domain: "standardbank.co.za" },
+  { id: "safaricom", name: "Safaricom", domain: "safaricom.co.ke" },
   { id: "paystack", name: "Paystack", domain: "paystack.com" },
+  { id: "moniepoint", name: "Moniepoint", domain: "moniepoint.com" },
+  { id: "interswitch", name: "Interswitch", domain: "interswitchgroup.com" },
+  { id: "accessbank", name: "Access Bank", domain: "accessbankplc.com" },
+  { id: "kuda", name: "Kuda", domain: "kuda.com" },
   { id: "oando", name: "Oando", domain: "oandoplc.com" },
+  { id: "jumia", name: "Jumia", domain: "jumia.com" },
 ]
 
 export default function TrustStrip() {

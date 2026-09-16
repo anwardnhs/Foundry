@@ -5,7 +5,6 @@ import DivisionPricing from "@/components/pricing/DivisionPricing";
 import FeatureTable from "@/components/pricing/FeatureTable";
 import PricingFAQ from "@/components/pricing/PricingFAQ";
 import EnterpriseCallout from "@/components/pricing/EnterpriseCallout";
-import TrustStrip from "@/components/pricing/TrustStrip";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -18,7 +17,6 @@ export default function Pricing() {
       <FeatureTable />
       <PricingFAQ />
       <EnterpriseCallout />
-      <TrustStrip />
     </main>
   );
 }

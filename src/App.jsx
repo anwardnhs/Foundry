@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import CookieBanner from "./components/layout/CookieBanner";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
@@ -15,6 +16,8 @@ import Careers from "./pages/Careers";
 import Pricing from "./pages/Pricing";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import BridgeIntelligence from "./components/sections/BridgeIntelligence";
 import FinancialReports from "./components/investors/FinancialReports";
 import StockInfo from "./components/investors/StockInfo";
@@ -27,6 +30,7 @@ function MainLayout() {
       <Navbar />
       <Outlet />
       <Footer />
+      <CookieBanner />
     </>
   );
 }
@@ -68,6 +72,8 @@ export default function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
 
           {/* ── Placeholder routes ── */}
           <Route

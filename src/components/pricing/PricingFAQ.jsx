@@ -33,21 +33,9 @@ export default function PricingFAQ() {
 
   return (
     <section
-      className="bg-white py-24 lg:py-32 font-sans relative overflow-hidden"
+      className="bg-white py-16 lg:py-20 font-sans relative overflow-hidden"
       aria-label="Frequently Asked Questions"
     >
-      {/* ─── Premium Unsplash Abstract Background ─── */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Soft, light colorful gradient from Unsplash */}
-        <img
-          src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2529&auto=format&fit=crop"
-          alt="Abstract background gradient"
-          className="w-full h-full object-cover opacity-[0.15]"
-        />
-        {/* Gradient overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/95 to-white" />
-      </div>
-
       <div className="site-container max-w-6xl relative z-10">
         <motion.div
           ref={ref}

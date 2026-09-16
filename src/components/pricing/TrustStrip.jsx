@@ -2,37 +2,12 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
 const companies = [
-  {
-    id: "dangote",
-    name: "DANGOTE",
-    className: "font-serif font-black tracking-tight uppercase text-[22px]",
-  },
-  {
-    id: "mtn",
-    name: "MTN",
-    className:
-      "font-sans font-black italic tracking-tighter text-[28px] leading-none",
-  },
-  {
-    id: "flutterwave",
-    name: "flutterwave",
-    className: "font-sans font-extrabold tracking-tight text-[22px] lowercase",
-  },
-  {
-    id: "standardbank",
-    name: "Standard Bank",
-    className: "font-sans font-semibold tracking-tight text-[20px]",
-  },
-  {
-    id: "paystack",
-    name: "paystack",
-    className: "font-sans font-bold tracking-tighter text-[22px] lowercase",
-  },
-  {
-    id: "oando",
-    name: "OANDO",
-    className: "font-sans font-black tracking-widest uppercase text-[20px]",
-  },
+  { id: "dangote", name: "Dangote", domain: "dangote.com" },
+  { id: "mtn", name: "MTN", domain: "mtn.com" },
+  { id: "flutterwave", name: "Flutterwave", domain: "flutterwave.com" },
+  { id: "standardbank", name: "Standard Bank", domain: "standardbank.co.za" },
+  { id: "paystack", name: "Paystack", domain: "paystack.com" },
+  { id: "oando", name: "Oando", domain: "oandoplc.com" },
 ]
 
 const marqueeVariants = {
@@ -79,11 +54,17 @@ export default function TrustStrip() {
             {items.map((company, index) => (
               <div
                 key={`${company.id}-${index}`}
-                className="flex shrink-0 items-center px-6 sm:px-8 lg:px-10"
+                className="flex shrink-0 items-center gap-3 px-6 sm:px-8 lg:px-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 aria-hidden={index >= companies.length}
               >
+                <img 
+                  src={`https://logo.clearbit.com/${company.domain}`} 
+                  alt={`${company.name} logo`} 
+                  className="w-8 h-8 object-contain rounded-md"
+                  onError={(e) => { e.target.style.display = 'none'; }}
+                />
                 <span
-                  className={`select-none whitespace-nowrap text-[18px] font-semibold tracking-tight text-[#0A2540] sm:text-[22px] lg:text-[24px] ${company.className}`}
+                  className="select-none whitespace-nowrap text-[18px] font-bold tracking-tight text-[#0A2540] sm:text-[22px] lg:text-[24px]"
                   title={company.name}
                 >
                   {company.name}

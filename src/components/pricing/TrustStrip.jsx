@@ -55,10 +55,13 @@ export default function TrustStrip() {
                 aria-hidden={index >= companies.length}
               >
                 <img 
-                  src={`https://logo.clearbit.com/${company.domain}`} 
+                  src={`https://logo.uplead.com/${company.domain}`} 
                   alt={`${company.name} logo`} 
                   className="h-10 w-auto object-contain rounded-sm"
-                  onError={(e) => { e.target.style.display = 'none'; }}
+                  onError={(e) => { 
+                    e.target.onerror = null; 
+                    e.target.src = `https://icon.horse/icon/${company.domain}`;
+                  }}
                   title={company.name}
                 />
               </div>

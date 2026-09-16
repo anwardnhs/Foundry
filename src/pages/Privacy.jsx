@@ -6,11 +6,11 @@ export default function Privacy() {
   }, []);
 
   return (
-    <main className="bg-slate-50 min-h-screen py-24 lg:py-32">
+    <main className="bg-white min-h-screen py-24 lg:py-32">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-[#E6ECF5]">
-          <h1 className="text-3xl font-black text-[#0F172A] tracking-tight mb-2">Privacy Policy</h1>
-          <p className="text-slate-500 mb-8 pb-8 border-b border-[#E6ECF5]">Last updated: September 16, 2026</p>
+        <div className="py-8">
+          <h1 className="text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight mb-4">Privacy Policy</h1>
+          <p className="text-slate-500 mb-12 pb-8 border-b border-[#E6ECF5]">Last updated: September 16, 2026</p>
 
           <div className="prose prose-slate max-w-none">
             <h2 className="text-xl font-bold text-[#0F172A] mt-8 mb-4">1. Introduction</h2>

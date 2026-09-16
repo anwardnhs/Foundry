@@ -2,37 +2,12 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
 const companies = [
-  {
-    id: "dangote",
-    name: "DANGOTE",
-    className: "font-serif font-black tracking-tight uppercase text-[22px]",
-  },
-  {
-    id: "mtn",
-    name: "MTN",
-    className:
-      "font-sans font-black italic tracking-tighter text-[28px] leading-none",
-  },
-  {
-    id: "flutterwave",
-    name: "flutterwave",
-    className: "font-sans font-extrabold tracking-tight text-[22px] lowercase",
-  },
-  {
-    id: "standardbank",
-    name: "Standard Bank",
-    className: "font-sans font-semibold tracking-tight text-[20px]",
-  },
-  {
-    id: "paystack",
-    name: "paystack",
-    className: "font-sans font-bold tracking-tighter text-[22px] lowercase",
-  },
-  {
-    id: "oando",
-    name: "OANDO",
-    className: "font-sans font-black tracking-widest uppercase text-[20px]",
-  },
+  { id: "dangote", name: "Dangote", domain: "dangote.com" },
+  { id: "mtn", name: "MTN", domain: "mtn.com" },
+  { id: "flutterwave", name: "Flutterwave", domain: "flutterwave.com" },
+  { id: "standardbank", name: "Standard Bank", domain: "standardbank.co.za" },
+  { id: "paystack", name: "Paystack", domain: "paystack.com" },
+  { id: "oando", name: "Oando", domain: "oandoplc.com" },
 ]
 
 const marqueeVariants = {
@@ -76,15 +51,16 @@ export default function TrustStrip() {
             {items.map((company, index) => (
               <div
                 key={`${company.id}-${index}`}
-                className="flex shrink-0 items-center px-8 sm:px-12 lg:px-16 opacity-40 grayscale hover:opacity-100 transition-all duration-300"
+                className="flex shrink-0 items-center px-8 sm:px-12 lg:px-16"
                 aria-hidden={index >= companies.length}
               >
-                <span
-                  className={`select-none whitespace-nowrap text-[#0A2540] ${company.className}`}
+                <img 
+                  src={`https://logo.clearbit.com/${company.domain}`} 
+                  alt={`${company.name} logo`} 
+                  className="h-10 w-auto object-contain rounded-sm"
+                  onError={(e) => { e.target.style.display = 'none'; }}
                   title={company.name}
-                >
-                  {company.name}
-                </span>
+                />
               </div>
             ))}
           </motion.div>

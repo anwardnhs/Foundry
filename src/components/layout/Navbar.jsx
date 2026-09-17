@@ -126,7 +126,7 @@ export default function Navbar() {
             </div>
           </nav>
 
-          {/* ── DESKTOP CTAs ── */}
+          {/* ── DESKTOP LOG IN ── */}
           <div className="hidden lg:flex items-center gap-6 relative z-50">
             <Link
               to="/login"
@@ -139,10 +139,14 @@ export default function Navbar() {
             >
               Log In
             </Link>
+          </div>
+
+          {/* ── ALWAYS VISIBLE CTA & MOBILE TOGGLE ── */}
+          <div className="flex items-center gap-4 lg:gap-6 relative z-50">
             <Link
               to="/contact"
               className={cn(
-                "inline-flex items-center gap-2 px-6 py-3 rounded-sm text-[13px] font-bold uppercase tracking-widest transition-all",
+                "hidden sm:inline-flex items-center gap-2 px-5 py-2.5 lg:px-6 lg:py-3 rounded-sm text-[12px] lg:text-[13px] font-bold uppercase tracking-widest transition-all",
                 isDarkTheme
                   ? "bg-[#0A2540] text-white hover:bg-gray-800"
                   : "bg-white text-[#0A2540] hover:bg-gray-200",
@@ -151,13 +155,12 @@ export default function Navbar() {
               Request a Demo
               <RiArrowRightSLine className="w-4 h-4" />
             </Link>
-          </div>
 
-          {/* ── MOBILE TOGGLE ── */}
-          <button
-            className="lg:hidden relative z-50 p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
+            <button
+              className="lg:hidden relative z-50 p-2 -mr-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
             {mobileMenuOpen ? (
               <RiCloseLine
                 className={cn(

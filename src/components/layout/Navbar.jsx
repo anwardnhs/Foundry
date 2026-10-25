@@ -59,7 +59,11 @@ export default function Navbar() {
       >
         <div className="site-container flex items-center justify-between h-20">
           {/* ── LOGO ── */}
-          <Link to="/" className="flex items-center gap-2 relative z-50">
+          <Link
+            to="/"
+            onMouseEnter={() => setActiveDropdown(null)}
+            className="flex items-center gap-2 relative z-50"
+          >
             <img
               src={brandMark}
               alt="Foundry"
@@ -79,7 +83,7 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-10 h-full">
             {/* Products */}
             <div
-              className="h-full flex items-center cursor-pointer"
+              className="relative h-full flex items-center cursor-pointer"
               onMouseEnter={() => setActiveDropdown("products")}
             >
               <span
@@ -92,6 +96,31 @@ export default function Navbar() {
               >
                 Products {activeDropdown === "products" ? "-" : "+"}
               </span>
+
+              <AnimatePresence>
+                {activeDropdown === "products" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[240px] cursor-default z-50"
+                  >
+                    <div className="bg-white border border-rule shadow-2xl rounded-xl p-3 flex flex-col gap-1">
+                      {menuData.products.map((link) => (
+                        <Link
+                          key={link.name}
+                          to={link.href}
+                          onClick={() => setActiveDropdown(null)}
+                          className="px-4 py-2.5 text-[15px] font-medium text-[#0A2540] hover:bg-[#F6F9FC] hover:text-accent rounded-lg transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Pricing */}
@@ -110,7 +139,7 @@ export default function Navbar() {
 
             {/* Company */}
             <div
-              className="h-full flex items-center cursor-pointer"
+              className="relative h-full flex items-center cursor-pointer"
               onMouseEnter={() => setActiveDropdown("company")}
             >
               <span
@@ -123,11 +152,39 @@ export default function Navbar() {
               >
                 Company {activeDropdown === "company" ? "-" : "+"}
               </span>
+
+              <AnimatePresence>
+                {activeDropdown === "company" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[240px] cursor-default z-50"
+                  >
+                    <div className="bg-white border border-rule shadow-2xl rounded-xl p-3 flex flex-col gap-1">
+                      {menuData.company.map((link) => (
+                        <Link
+                          key={link.name}
+                          to={link.href}
+                          onClick={() => setActiveDropdown(null)}
+                          className="px-4 py-2.5 text-[15px] font-medium text-[#0A2540] hover:bg-[#F6F9FC] hover:text-accent rounded-lg transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </nav>
 
           {/* ── DESKTOP CTAs ── */}
-          <div className="hidden lg:flex items-center gap-6 relative z-50">
+          <div
+            onMouseEnter={() => setActiveDropdown(null)}
+            className="hidden lg:flex items-center gap-6 relative z-50"
+          >
             <Link
               to="/login"
               className={cn(
@@ -176,53 +233,6 @@ export default function Navbar() {
             )}
           </button>
         </div>
-
-        {/* ── SIMPLIFIED DROPDOWN MENUS ── */}
-        <AnimatePresence>
-          {activeDropdown === "products" && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-[40%] -translate-x-1/2 w-[260px] bg-white border border-rule shadow-2xl rounded-b-xl rounded-tl-xl overflow-hidden"
-            >
-              <div className="p-4 flex flex-col gap-1">
-                {menuData.products.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="px-4 py-2.5 text-[15px] font-medium text-[#0A2540] hover:bg-[#F6F9FC] hover:text-accent rounded-lg transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
-          {activeDropdown === "company" && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-[60%] -translate-x-1/2 w-[260px] bg-white border border-rule shadow-2xl rounded-b-xl rounded-tl-xl overflow-hidden"
-            >
-              <div className="p-4 flex flex-col gap-1">
-                {menuData.company.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="px-4 py-2.5 text-[15px] font-medium text-[#0A2540] hover:bg-[#F6F9FC] hover:text-accent rounded-lg transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
 
       {/* ── MOBILE MENU OVERLAY ── */}

@@ -30,9 +30,7 @@ const companies = [
   { id: "adyen", name: "Adyen", domain: "adyen.com" },
   { id: "n26", name: "N26", domain: "n26.com" },
   { id: "sap", name: "SAP", domain: "sap.com" },
-  { id: "siemens", name: "Siemens", domain: "siemens.com" },
   { id: "deliveroo", name: "Deliveroo", domain: "deliveroo.co.uk" },
-  { id: "asml", name: "ASML", domain: "asml.com" },
 
   // Remaining African Firms
   { id: "zenith", name: "Zenith Bank", domain: "zenithbank.com" },
@@ -90,15 +88,15 @@ export default function TrustStrip() {
   })
 
   return (
-    <section className="border-y border-[#E6ECF5] bg-white py-14 lg:py-20" aria-label="Trusted Companies">
+    <section className="border-y border-[#E6ECF5] bg-white py-10 lg:py-14" aria-label="Trusted Companies">
       <div className="site-container" ref={ref}>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-indigo-600 mb-8">
+          <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-blue-600 mb-6">
             Trusted by teams that want software to feel steady, simple, and easy to run
           </p>
         </div>
 
-        <div className="relative mt-10 overflow-hidden">
+        <div className="relative mt-6 overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-40" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-40" />
 
@@ -114,18 +112,18 @@ export default function TrustStrip() {
               onDragEnd={() => setIsDragging(false)}
               dragElastic={0.1}
               dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-              className="flex w-max items-center gap-12 sm:gap-16 lg:gap-24 py-4 px-12"
+              className="flex w-max items-center gap-10 sm:gap-14 lg:gap-16 py-2 px-8"
             >
               {items.map((company, index) => (
                 <div
                   key={`${company.id}-${index}`}
-                  className="flex shrink-0 items-center justify-center pointer-events-none"
+                  className="flex shrink-0 items-center justify-center pointer-events-none h-10 w-28 sm:w-36"
                   aria-hidden={index >= companies.length}
                 >
                   <img 
                     src={`https://logo.uplead.com/${company.domain}`} 
                     alt={`${company.name} logo`} 
-                    className="h-16 sm:h-20 w-auto object-contain rounded-sm"
+                    className="max-h-7 sm:max-h-8 max-w-[110px] sm:max-w-[130px] w-auto h-auto object-contain"
                     onError={(e) => { 
                       e.target.onerror = null; 
                       e.target.src = `https://icon.horse/icon/${company.domain}`;

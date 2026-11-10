@@ -1,15 +1,9 @@
-import { useEffect } from "react";
-
 export default function Terms() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <main className="bg-white min-h-screen py-24 lg:py-32">
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
+    <article className="site-page-hero min-h-screen bg-white">
+      <div className="site-container max-w-3xl">
         <div className="py-8">
-          <h1 className="text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight mb-4">Terms of Service</h1>
+          <h1 className="site-page-title mb-4">Terms of Service</h1>
           <p className="text-slate-500 mb-12 pb-8 border-b border-[#E6ECF5]">Last updated: September 16, 2026</p>
 
           <div className="prose prose-slate max-w-none">
@@ -52,6 +46,6 @@ export default function Terms() {
           </div>
         </div>
       </div>
-    </main>
+    </article>
   );
 }

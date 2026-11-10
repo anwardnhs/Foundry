@@ -6,12 +6,12 @@ import LeadershipCTA from "@/components/leadership/LeadershipCTA";
 
 export default function Leadership() {
   return (
-    <main>
+    <>
       <LeadershipHero />
       <BoardGrid />
       <FoundersNote />
       <CabinetGrid />
       <LeadershipCTA />
-    </main>
+    </>
   );
 }

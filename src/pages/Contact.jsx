@@ -1,228 +1,115 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  RiArrowRightLine,
-  RiCheckLine,
-  RiMapPinLine,
-  RiMailLine,
-  RiPhoneLine,
-} from "react-icons/ri";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-
-// Make sure your map.svg is in this exact folder
+import { Link, useSearchParams } from "react-router-dom";
+import { RiArrowRightLine, RiClipboardLine, RiMailLine } from "react-icons/ri";
+import PageHero from "@/components/shared/PageHero";
 import mapSvg from "@/assets/images/map.svg";
 
-// --- Animation Variants ---
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-  },
+const topics = {
+  sales: "Sales and pricing",
+  demo: "Enterprise demo",
+  technical: "Technical integration",
+  partnership: "Partnerships",
 };
 
-// --- Updated Token Inputs ---
-const inputClass = cn(
-  "h-11 rounded-xl border-rule bg-white px-4 text-[14px] text-ink font-sans",
-  "placeholder:text-subtle/50 shadow-sm transition-all duration-200",
-  "hover:border-subtle/30",
-  "focus-visible:border-accent focus-visible:ring-4 focus-visible:ring-accent/10 focus-visible:outline-none",
-);
-
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [params] = useSearchParams();
+  const topic = params.get("topic");
+  const [draft, setDraft] = useState("");
+  const [copyStatus, setCopyStatus] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  function prepareDraft(event) {
+    event.preventDefault();
+    const fields = new FormData(event.currentTarget);
+    setDraft([
+      "Subject: " + topics[fields.get("topic")],
+      "Name: " + fields.get("name"),
+      "Company: " + fields.get("company"),
+      "Work email: " + fields.get("email"),
+      "",
+      fields.get("message"),
+    ].join("\n"));
+    setCopyStatus("");
+  }
+
+  async function copyDraft() {
+    try {
+      await navigator.clipboard.writeText(draft);
+      setCopyStatus("Draft copied.");
+    } catch {
+      setCopyStatus("Select the draft text to copy it manually.");
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-[#F6F9FC] font-sans selection:bg-accent/20 pt-32 pb-20 px-6 flex flex-col items-center">
-      {/* --- Educative Hero Section --- */}
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={fadeUp}
-        className="max-w-3xl text-center mb-12"
-      >
-        <p className="text-[13px] font-bold tracking-widest text-accent uppercase mb-4">
-          Connect with us
-        </p>
-        <h1 className="text-[40px] md:text-[48px] font-bold text-ink leading-tight tracking-tight mb-6">
-          Let's build the future together.
-        </h1>
-        <p className="text-[16px] text-subtle leading-relaxed max-w-2xl mx-auto">
-          Whether you’re looking to deploy BridgeIntelligence AI across your
-          enterprise, explore compliance solutions, or just talk technical
-          specs, our team is ready to guide you.
-        </p>
-      </motion.div>
-
-      {/* --- Main Card Layout --- */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-        className="w-full max-w-[1100px] bg-white rounded-[24px] shadow-[0_20px_40px_rgb(10,37,64,0.06)] border border-rule overflow-hidden flex flex-col lg:flex-row"
-      >
-        {/* === LEFT SIDE: Interactive Form === */}
-        <div className="flex-1 p-10 lg:p-14 z-10 bg-white">
-          <AnimatePresence mode="wait">
-            {submitted ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="h-full flex flex-col items-center justify-center text-center py-10"
-              >
-                <div className="w-16 h-16 rounded-full bg-green-50 border border-green-100 flex items-center justify-center mb-6">
-                  <RiCheckLine className="w-8 h-8 text-green-500" />
-                </div>
-                <h3 className="text-[24px] font-bold text-ink tracking-tight mb-3">
-                  Request received.
-                </h3>
-                <p className="text-[15px] text-subtle leading-relaxed max-w-[320px] mb-8">
-                  A product specialist will review your requirements and reach
-                  out via email within one business day.
-                </p>
-                <Button
-                  onClick={() => setSubmitted(false)}
-                  variant="outline"
-                  className="rounded-full text-[13px] font-semibold text-ink border-rule hover:bg-gray-50"
-                >
-                  Send another message
-                </Button>
-              </motion.div>
-            ) : (
-              <motion.form
-                key="form"
-                initial="hidden"
-                animate="show"
-                variants={fadeUp}
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-6"
-              >
-                <div className="mb-2">
-                  <h2 className="text-[20px] font-bold text-ink tracking-tight">
-                    Get in touch
-                  </h2>
-                  <p className="text-[14px] text-subtle mt-1">
-                    Fill out the form below and we'll route you to the right
-                    expert.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[12px] font-semibold text-ink">
-                      Full Name
-                    </label>
-                    <Input
-                      type="text"
-                      placeholder="Jane Doe"
-                      className={inputClass}
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[12px] font-semibold text-ink">
-                      Company
-                    </label>
-                    <Input
-                      type="text"
-                      placeholder="Acme Corp"
-                      className={inputClass}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-[12px] font-semibold text-ink">
-                    Work Email
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="jane@company.com"
-                    className={inputClass}
-                    required
-                  />
-                  <p className="text-[11px] text-subtle/80 pl-1">
-                    Please use your corporate email to ensure faster
-                    verification.
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-[12px] font-semibold text-ink">
-                    How can we help?
-                  </label>
-                  <select
-                    required
-                    className={cn(inputClass, "w-full appearance-none")}
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select an enquiry type
-                    </option>
-                    <option value="sales">Sales & Pricing</option>
-                    <option value="demo">Enterprise Demo</option>
-                    <option value="technical">Technical Integration</option>
-                    <option value="partnership">Partnerships</option>
-                  </select>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-[12px] font-semibold text-ink">
-                    Project Details
-                  </label>
-                  <textarea
-                    placeholder="Tell us about your infrastructure, compliance needs, or specific pain points..."
-                    rows={4}
-                    className={cn(
-                      inputClass,
-                      "h-auto resize-none py-3 leading-relaxed",
-                    )}
-                    required
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className={cn(
-                    "h-12 w-full mt-4 rounded-none",
-                    "bg-[#0a2540] text-white font-semibold text-[14px]",
-                    "shadow-[0_8px_20px_rgba(10,37,64,0.15)]",
-                    "hover:bg-[#12365c] hover:-translate-y-0.5 transition-all duration-200",
-                    "flex items-center justify-center gap-2 group",
-                  )}
-                >
-                  Submit Request
-                  <RiArrowRightLine className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </Button>
-              </motion.form>
+    <>
+      <PageHero
+        eyebrow="Contact Foundry"
+        title={topic === "demo" ? "Request a demo" : "Let’s talk about your project."}
+        description="Explore Foundry’s products, discuss an integration, or find the right team for your enquiry."
+      />
+      <section className="site-container py-10 sm:py-16" aria-label="Contact options">
+        <div className="grid overflow-hidden rounded-2xl border border-rule bg-white shadow-sm lg:grid-cols-[1.4fr_1fr]">
+          <div className="p-5 sm:p-8 lg:p-10">
+            <h2 className="text-2xl font-semibold tracking-tight text-navy">Prepare your enquiry</h2>
+            <p id="enquiry-help" className="mb-6 mt-2 text-body-md text-muted">
+              Online submission is currently unavailable. You can prepare and copy a draft here.
+            </p>
+            <form className="grid gap-5" onSubmit={prepareDraft} aria-describedby="enquiry-help">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <label className="grid gap-2 text-sm font-semibold text-navy">
+                  Full name
+                  <input name="name" autoComplete="name" className="site-field" required />
+                </label>
+                <label className="grid gap-2 text-sm font-semibold text-navy">
+                  Company
+                  <input name="company" autoComplete="organization" className="site-field" required />
+                </label>
+              </div>
+              <label className="grid gap-2 text-sm font-semibold text-navy">
+                Work email
+                <input name="email" type="email" autoComplete="email" className="site-field" required />
+              </label>
+              <label className="grid gap-2 text-sm font-semibold text-navy">
+                Enquiry type
+                <select key={topic} name="topic" className="site-field" defaultValue={Object.hasOwn(topics, topic) ? topic : ""} required>
+                  <option value="" disabled>Select an enquiry type</option>
+                  {Object.entries(topics).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
+                </select>
+              </label>
+              <label className="grid gap-2 text-sm font-semibold text-navy">
+                Project details
+                <textarea name="message" rows={4} className="site-field resize-y" required />
+              </label>
+              <button type="submit" className="site-button justify-self-start">
+                {draft ? "Update draft" : "Prepare draft"} <RiArrowRightLine aria-hidden="true" />
+              </button>
+            </form>
+            {draft && (
+              <div className="mt-6 space-y-3 rounded-xl border border-rule bg-surface p-4">
+                <p role="status" className="text-sm font-semibold text-navy">{copyStatus || "Your draft is ready to copy."}</p>
+                <textarea aria-label="Enquiry draft" className="site-field" value={draft} rows={6} readOnly />
+                <button type="button" className="site-button site-button-outline" onClick={copyDraft}>
+                  <RiClipboardLine aria-hidden="true" /> Copy draft
+                </button>
+              </div>
             )}
-          </AnimatePresence>
-        </div>
-
-        {/* === RIGHT SIDE: Map & Floating Info Card === */}
-        <div className="relative w-full lg:w-[45%] bg-[#F6F9FC] border-t lg:border-t-0 lg:border-l border-rule overflow-hidden p-8 lg:p-12 flex flex-col justify-end min-h-[400px]">
-          {/* Map Background Integration (True Color) */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src={mapSvg}
-              alt="Map Background"
-              className="w-full h-full object-cover"
-            />
           </div>
-
-          {/* Floating Info Card (Glassmorphism to ensure readability) */}
+          <aside className="flex flex-col justify-end border-t border-rule bg-surface lg:border-l lg:border-t-0">
+            <img src={mapSvg} alt="" className="hidden min-h-0 w-full flex-1 object-cover lg:block" />
+            <div className="relative border-rule bg-surface p-5 sm:p-8 lg:border-t">
+              <div className="flex items-center gap-2 text-navy">
+                <RiMailLine aria-hidden="true" />
+                <h2 className="text-lg font-semibold">Contact a team directly</h2>
+              </div>
+              <ul className="mt-4 space-y-3 text-sm font-semibold text-accent">
+                <li><a className="hover:underline" href="mailto:press@foundry.com">Press enquiries</a></li>
+                <li><Link className="hover:underline" to="/investors#investor-contacts">Investor relations</Link></li>
+                <li><a className="hover:underline" href="mailto:careers@foundry.com">Careers enquiries</a></li>
+              </ul>
+            </div>
+          </aside>
         </div>
-      </motion.div>
-    </div>
+      </section>
+    </>
   );
 }

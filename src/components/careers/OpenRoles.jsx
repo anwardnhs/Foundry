@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { RiArrowRightLine, RiMailSendLine } from "react-icons/ri";
 import { Badge } from "@/components/ui/badge";
@@ -111,17 +110,19 @@ export default function OpenRoles() {
           </div>
 
           {/* Simulated shadcn TabsList for instant compatibility */}
-          <div className="inline-flex h-10 items-center justify-center rounded-md bg-slate-100 p-1 text-slate-500 overflow-x-auto no-scrollbar max-w-full">
+          <div role="group" aria-label="Filter roles by department" className="flex flex-wrap gap-1.5">
             {departments.map((dept) => {
               const isActive = activeTab === dept;
               return (
                 <button
                   key={dept}
+                  type="button"
+                  aria-pressed={isActive}
                   onClick={() => setActiveTab(dept)}
-                  className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-4 py-1.5 text-[14px] font-medium transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                  className={`inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-lg border px-3 text-sm font-semibold transition-colors ${
                     isActive
-                      ? "bg-white text-slate-950 shadow-sm"
-                      : "hover:text-slate-900 hover:bg-slate-200/50"
+                      ? "border-accent bg-accent text-white"
+                      : "border-rule bg-white text-navy hover:bg-surface"
                   }`}
                 >
                   {dept}
@@ -153,8 +154,8 @@ export default function OpenRoles() {
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Link
-                    to={`/careers/apply?role=${job.id}`}
+                  <a
+                    href={"mailto:careers@foundry.com?subject=" + encodeURIComponent("Application: " + job.title)}
                     className="group flex flex-col md:flex-row md:items-center justify-between py-6 px-4 -mx-4 border-b border-transparent hover:border-slate-200 hover:bg-slate-50/50 rounded-xl hover:-translate-y-[2px] transition-all duration-300"
                   >
                     {/* Left: Title & Department */}
@@ -184,11 +185,11 @@ export default function OpenRoles() {
                     {/* Right: CTA */}
                     <div className="md:w-3/12 flex justify-start md:justify-end">
                       <div className="flex items-center text-[14px] font-semibold text-indigo-600 group-hover:text-indigo-700">
-                        Apply
+                        Apply by email
                         <RiArrowRightLine className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
-                  </Link>
+                  </a>
                 </motion.div>
               ))
             )}

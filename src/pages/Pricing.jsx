@@ -10,13 +10,13 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <main>
+    <>
       <PricingHero isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
       <UnifiedPricing isAnnual={isAnnual} />
       <DivisionPricing isAnnual={isAnnual} />
       <FeatureTable />
       <PricingFAQ />
       <EnterpriseCallout />
-    </main>
+    </>
   );
 }

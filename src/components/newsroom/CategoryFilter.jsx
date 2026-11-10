@@ -3,25 +3,20 @@ import { categories } from "@/data/newsroom";
 
 export default function CategoryFilter({ activeCategory, setActiveCategory }) {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3">
-      {categories.map((category) => {
-        const isActive = activeCategory === category.id;
-
-        return (
-          <button
-            key={category.id}
-            onClick={() => setActiveCategory(category.id)}
-            className={cn(
-              "px-4 py-2 rounded-full text-[14px] font-medium transition-all duration-300 outline-none border",
-              isActive
-                ? "bg-slate-900 text-white border-slate-900 shadow-md scale-105"
-                : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:text-slate-900 shadow-sm",
-            )}
-          >
-            {category.label}
-          </button>
-        );
-      })}
+    <div role="group" aria-label="News category" className="flex flex-wrap gap-2">
+      {categories.map(({ id, label }) => (
+        <button
+          key={id}
+          type="button"
+          aria-pressed={activeCategory === id}
+          onClick={() => setActiveCategory(id)}
+          className={cn("min-h-11 rounded-lg border px-3 text-sm font-semibold transition-colors",
+            activeCategory === id ? "border-accent bg-accent text-white" : "border-rule bg-white text-navy hover:bg-surface hover:text-accent",
+          )}
+        >
+          {label}
+        </button>
+      ))}
     </div>
   );
 }

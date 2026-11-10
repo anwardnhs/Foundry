@@ -67,11 +67,18 @@ export default function ProductsGrid() {
 
   return (
     <section
-      className="relative scroll-mt-24 overflow-hidden bg-[#FAFAFA] pb-24 pt-28 lg:pb-32 lg:pt-36"
-      aria-label="Products"
+      className="relative scroll-mt-24 overflow-hidden bg-[#FAFAFA] py-12 sm:py-20 lg:py-24"
+      aria-labelledby="home-products-title"
       ref={ref}
     >
       <div className="site-container relative z-10">
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <p className="site-eyebrow mb-2">Platform</p>
+            <h2 id="home-products-title" className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">Explore our products</h2>
+          </div>
+          <Link className="site-button site-button-outline" to="/products">View all products</Link>
+        </div>
         {/* Carousel Container */}
         <div className="relative w-full max-w-[1200px] mx-auto">
           <div className="overflow-hidden w-full pb-8">
@@ -85,14 +92,15 @@ export default function ProductsGrid() {
               }
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              {products.map((product) => (
+              {products.map((product, index) => (
                 <div
                   key={product.id}
+                  aria-hidden={index !== currentIndex}
                   className="w-full flex-shrink-0 px-2 lg:px-4"
                 >
-                  <div className="group w-full bg-white rounded-[20px] lg:rounded-[32px] border border-rule/40 overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-shadow duration-500 min-h-[500px]">
+                  <div className="group w-full bg-white rounded-[20px] lg:rounded-[32px] border border-rule/40 overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-shadow duration-500 lg:min-h-[430px]">
                     {/* ── Left Content (Wink Digital Style) ── */}
-                    <div className="lg:w-[50%] p-10 md:p-16 lg:p-20 flex flex-col justify-center">
+                    <div className="lg:w-[50%] p-5 sm:p-10 lg:p-14 flex flex-col justify-center">
 
                       <h3 className="text-[32px] md:text-[44px] font-medium text-slate-900 mb-6 tracking-tight leading-[1.1] uppercase">
                         {product.title}
@@ -105,6 +113,7 @@ export default function ProductsGrid() {
                       <div className="mt-auto">
                         <Link
                           to={product.link}
+                          tabIndex={index === currentIndex ? undefined : -1}
                           className="inline-flex items-center justify-center gap-2 bg-[#004ADD] text-white px-8 py-4 font-bold text-[14px] hover:bg-[#003399] transition-colors rounded-sm w-fit group-hover:-translate-y-1 group-hover:shadow-lg duration-300"
                         >
                           {product.btnLabel}
@@ -114,10 +123,11 @@ export default function ProductsGrid() {
                     </div>
 
                     {/* ── Right Image (Edge to Edge) ── */}
-                    <div className="lg:w-[50%] h-[300px] lg:h-auto overflow-hidden relative bg-slate-100">
+                    <div className="lg:w-[50%] h-48 sm:h-64 lg:h-auto overflow-hidden relative bg-slate-100">
                       <img
                         src={product.image}
-                        alt={product.title}
+                        alt=""
+                        loading="lazy"
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                       />
                       {/* Subtle inner shadow for depth */}
@@ -134,35 +144,34 @@ export default function ProductsGrid() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex items-center justify-center gap-4 mt-6"
+            className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4"
           >
             <button
               onClick={prevSlide}
-              className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-[#004ADD] hover:border-transparent hover:shadow-md transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-[#004ADD] hover:border-transparent hover:shadow-md transition-all duration-300"
               aria-label="Previous product"
             >
               <RiArrowLeftLine className="w-6 h-6" />
             </button>
 
             {/* Pagination Dots */}
-            <div className="flex gap-2 mx-4">
+            <div className="flex gap-1.5">
               {products.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all duration-500 ${
-                    currentIndex === idx
-                      ? "w-8 bg-[#004ADD]"
-                      : "w-2 bg-slate-300 hover:bg-slate-400"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
+                  className="grid h-9 w-9 place-items-center rounded-full border border-rule text-sm font-semibold text-navy hover:bg-surface aria-pressed:border-accent aria-pressed:bg-accent aria-pressed:text-white"
+                  aria-pressed={currentIndex === idx}
+                  aria-label={"Go to slide " + (idx + 1)}
+                >
+                  {idx + 1}
+                </button>
               ))}
             </div>
 
             <button
               onClick={nextSlide}
-              className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-[#004ADD] hover:border-transparent hover:shadow-md transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-[#004ADD] hover:border-transparent hover:shadow-md transition-all duration-300"
               aria-label="Next product"
             >
               <RiArrowRightLine className="w-6 h-6" />

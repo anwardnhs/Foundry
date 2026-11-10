@@ -7,13 +7,13 @@ import AboutCTA from "@/components/about/AboutCTA";
 
 export default function About() {
   return (
-    <main>
+    <>
       <AboutHero />
       <OriginStory />
       <MissionStatement />
       <FoundryWorks />
       <LeadershipPreview />
       <AboutCTA />
-    </main>
+    </>
   );
 }

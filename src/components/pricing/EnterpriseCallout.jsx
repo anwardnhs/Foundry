@@ -78,7 +78,7 @@ export default function EnterpriseCallout() {
               variant="outline"
               className="w-full sm:w-auto h-12 px-8 rounded-full bg-white hover:bg-slate-50 border-slate-200 text-slate-700 font-medium text-[15px] transition-all shadow-sm"
             >
-              <Link to="/demo" className="flex items-center gap-2">
+              <Link to="/contact?topic=demo" className="flex items-center gap-2">
                 Request a Demo
                 <RiArrowRightUpLine className="w-4 h-4" />
               </Link>

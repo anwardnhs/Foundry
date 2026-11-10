@@ -11,6 +11,9 @@ export default {
   	extend: {
   		colors: {
   			ink: '#0A0A0A',
+			navy: '#0A2540',
+			muted: '#425466',
+			surface: '#F6F9FC',
   			slate: '#1C1C1E',
   			mist: '#F5F5F7',
   			accent: '#004ADD',

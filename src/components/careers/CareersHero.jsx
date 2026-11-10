@@ -21,7 +21,7 @@ const container = {
 export default function CareersHero() {
   return (
     <section
-      className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white overflow-hidden font-sans border-b border-slate-200"
+      className="relative site-page-hero bg-white overflow-hidden font-sans border-b border-slate-200"
       aria-label="Careers Hero"
     >
       <div className="site-container max-w-3xl">
@@ -35,7 +35,7 @@ export default function CareersHero() {
           >
             <motion.h1
               variants={fadeUp}
-              className="text-[50px] sm:text-[50px] lg:text-[80px] xl:text-[96px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-8"
+              className="site-page-title mb-6"
             >
               Join Our Team
             </motion.h1>

@@ -18,7 +18,7 @@ const fadeUp = {
 export default function AboutHero() {
   return (
     <section
-      className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#FAFAFA] border-b border-slate-200 overflow-hidden font-sans"
+      className="relative site-page-hero bg-[#FAFAFA] border-b border-slate-200 overflow-hidden font-sans"
       aria-label="About Foundry"
     >
       {/* ─── Premium Unsplash Abstract Background ─── */}
@@ -41,12 +41,12 @@ export default function AboutHero() {
           className="max-w-4xl mx-auto flex flex-col items-center text-center"
         >
           {/* Soft Eyebrow Pill */}
-          <motion.div variants={fadeUp} className="mb-6"></motion.div>
+          <motion.p variants={fadeUp} className="site-eyebrow mb-4">About Foundry</motion.p>
 
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="text-[56px] sm:text-[72px] lg:text-[88px] font-semibold text-slate-900 leading-[1.05] tracking-tight mb-8"
+            className="site-page-title mb-6"
           >
             Built to last.
           </motion.h1>

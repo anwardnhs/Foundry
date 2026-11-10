@@ -8,7 +8,7 @@ import Careers from "@/components/sections/Careers";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       <TrustStrip />
       <ProductsGrid />
@@ -16,6 +16,6 @@ export default function Home() {
       <ImpactScroll />
       <Newsroom />
       <Careers />
-    </main>
+    </>
   );
 }

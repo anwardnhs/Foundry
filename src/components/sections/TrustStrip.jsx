@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from "react"
-import { motion, useAnimationFrame, useMotionValue } from "framer-motion"
+import { useState } from "react"
+import { RiArrowDownSLine } from "react-icons/ri"
 
 const companies = [
   { id: "dangote", name: "Dangote", domain: "dangote.com" },
@@ -50,91 +50,59 @@ const companies = [
   { id: "nmbbank", name: "NMB Bank", domain: "nmbbank.co.tz" },
 ]
 
-export default function TrustStrip() {
-  const ref = useRef(null)
-  const carouselRef = useRef(null)
-  const [width, setWidth] = useState(0)
-  const [isDragging, setIsDragging] = useState(false)
-  const x = useMotionValue(0)
-  
-  // Duplicate array 3 times so we have enough content to wrap seamlessly
-  const items = [...companies, ...companies, ...companies]
+const featuredCount = 6
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      // The total width is 3 copies. We want the width of ONE copy.
-      const singleWidth = carouselRef.current.scrollWidth / 3
-      setWidth(singleWidth)
-      // Start in the middle copy so dragging right doesn't immediately hit whitespace
-      x.set(-singleWidth)
-    }
-  }, [])
-
-  useAnimationFrame((time, delta) => {
-    if (!isDragging && width > 0) {
-      const moveBy = (delta / 1000) * -60 // pixels per second
-      let newX = x.get() + moveBy
-      
-      // Seamless infinite loop wrapping
-      while (newX <= -(width * 2)) {
-        newX += width
-      }
-      while (newX > -width) {
-        newX -= width
-      }
-      
-      x.set(newX)
-    }
-  })
+function CompanyTile({ company }) {
+  const [logoFailed, setLogoFailed] = useState(false)
 
   return (
-    <section className="border-y border-[#E6ECF5] bg-white py-10 lg:py-14" aria-label="Trusted Companies">
-      <div className="site-container" ref={ref}>
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-blue-600 mb-6">
-            Trusted by teams that want software to feel steady, simple, and easy to run
-          </p>
-        </div>
+    <li className="flex min-w-0 flex-col items-center justify-center gap-3 rounded-xl border border-rule bg-white px-3 py-5 text-center">
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-surface" aria-hidden="true">
+        {logoFailed ? (
+          <span className="text-lg font-semibold text-accent">{company.name[0]}</span>
+        ) : (
+          <img
+            src={`https://icon.horse/icon/${company.domain}`}
+            alt=""
+            width={32}
+            height={32}
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-8 object-contain"
+            onError={() => setLogoFailed(true)}
+          />
+        )}
+      </span>
+      <span className="text-sm font-semibold leading-snug text-navy">{company.name}</span>
+    </li>
+  )
+}
 
-        <div className="relative mt-6 overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-40" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-40" />
+export default function TrustStrip() {
+  const [showAll, setShowAll] = useState(false)
+  const visibleCompanies = showAll ? companies : companies.slice(0, featuredCount)
 
-          {/* Draggable Area */}
-          <motion.div 
-            ref={carouselRef}
-            className="overflow-hidden cursor-grab active:cursor-grabbing"
+  return (
+    <section className="border-y border-rule bg-surface py-12 sm:py-16" aria-labelledby="trusted-companies-title">
+      <div className="site-container">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-4 sm:mb-8">
+          <h2 id="trusted-companies-title" className="max-w-xl text-balance text-2xl font-semibold tracking-tight text-navy sm:text-3xl">
+            Trusted by teams across industries
+          </h2>
+          <button
+            type="button"
+            className="site-button site-button-outline"
+            aria-expanded={showAll}
+            aria-controls="trusted-companies"
+            onClick={() => setShowAll((expanded) => !expanded)}
           >
-            <motion.div
-              drag="x"
-              style={{ x }}
-              onDragStart={() => setIsDragging(true)}
-              onDragEnd={() => setIsDragging(false)}
-              dragElastic={0.1}
-              dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-              className="flex w-max items-center gap-10 sm:gap-14 lg:gap-16 py-2 px-8"
-            >
-              {items.map((company, index) => (
-                <div
-                  key={`${company.id}-${index}`}
-                  className="flex shrink-0 items-center justify-center pointer-events-none h-10 w-28 sm:w-36"
-                  aria-hidden={index >= companies.length}
-                >
-                  <img 
-                    src={`https://logo.uplead.com/${company.domain}`} 
-                    alt={`${company.name} logo`} 
-                    className="max-h-7 sm:max-h-8 max-w-[110px] sm:max-w-[130px] w-auto h-auto object-contain"
-                    onError={(e) => { 
-                      e.target.onerror = null; 
-                      e.target.src = `https://icon.horse/icon/${company.domain}`;
-                    }}
-                    title={company.name}
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
+            {showAll ? "Show featured companies" : "View all companies"}
+            <RiArrowDownSLine className={showAll ? "h-5 w-5 rotate-180" : "h-5 w-5"} aria-hidden="true" />
+          </button>
         </div>
+        <ul id="trusted-companies" role="list" className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+          {visibleCompanies.map((company) => <CompanyTile key={company.id} company={company} />)}
+        </ul>
       </div>
     </section>
   )

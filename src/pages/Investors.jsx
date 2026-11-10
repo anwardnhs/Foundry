@@ -9,7 +9,7 @@ import IRContact from "@/components/investors/IRContact";
 
 export default function Investors() {
   return (
-    <main>
+    <>
       <InvestorsHero />
       <MetricsStrip />
       <StockInfo />
@@ -18,6 +18,6 @@ export default function Investors() {
       <GovernanceSnapshot />
       <RegulatoryNote />
       <IRContact />
-    </main>
+    </>
   );
 }

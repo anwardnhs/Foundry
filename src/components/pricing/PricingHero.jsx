@@ -20,7 +20,7 @@ const container = {
 export default function PricingHero({ isAnnual, setIsAnnual }) {
   return (
     <section
-      className="relative pt-32 pb-20 lg:pt-48 lg:pb-24 bg-white overflow-hidden font-sans border-b border-slate-200"
+      className="relative site-page-hero bg-white overflow-hidden font-sans border-b border-slate-200"
       aria-label="Pricing Introduction"
     >
       {/* ─── Premium Unsplash Abstract Background ─── */}
@@ -45,7 +45,7 @@ export default function PricingHero({ isAnnual, setIsAnnual }) {
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="text-[48px] sm:text-[64px] lg:text-[72px] font-semibold text-slate-900 leading-[1.05] tracking-tight mb-6"
+            className="site-page-title mb-6"
           >
             Enterprise-Grade Pricing for African Businesses
           </motion.h1>

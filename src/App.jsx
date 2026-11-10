@@ -1,7 +1,13 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { MotionConfig } from "framer-motion";
+import {
+  BrowserRouter, Routes, Route, Outlet, Link, Navigate,
+  useLocation, useNavigationType,
+} from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import CookieBanner from "./components/layout/CookieBanner";
+import PageHero from "./components/shared/PageHero";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
@@ -12,6 +18,7 @@ import Logistics from "./pages/solutions/Logistics";
 import Investors from "./pages/Investors";
 import Leadership from "./pages/Leadership";
 import Newsroom from "./pages/Newsroom";
+import NewsStory from "./pages/NewsStory";
 import Careers from "./pages/Careers";
 import Pricing from "./pages/Pricing";
 import Login from "./pages/Login";
@@ -23,90 +30,104 @@ import FinancialReports from "./components/investors/FinancialReports";
 import StockInfo from "./components/investors/StockInfo";
 import GovernanceSnapshot from "./components/investors/GovernanceSnapshot";
 
-// ─── Layout wrapper — Navbar + Footer for all pages except Login ──────────────
+function RoutePosition() {
+  const { pathname, hash } = useLocation();
+  const navigationType = useNavigationType();
+  const previousPath = useRef(pathname);
+
+  useEffect(() => {
+    const changedPage = previousPath.current !== pathname;
+    const frame = requestAnimationFrame(() => {
+      previousPath.current = pathname;
+      const anchor = hash && document.getElementById(hash.slice(1));
+      if (anchor) {
+        anchor.scrollIntoView();
+        if (changedPage) anchor.focus({ preventScroll: true });
+        return;
+      }
+      if (!changedPage) return;
+      if (navigationType !== "POP") window.scrollTo(0, 0);
+      document.getElementById("main-content")?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [pathname, hash, navigationType]);
+
+  return null;
+}
+
 function MainLayout() {
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-3 focus:z-[70] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-semibold focus:text-accent"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <Outlet />
+      <main id="main-content" tabIndex={-1} className="focus:outline-none">
+        <Outlet />
+      </main>
       <Footer />
       <CookieBanner />
     </>
   );
 }
 
-// ─── Placeholder for unbuilt routes ──────────────────────────────────────────
-const PlaceholderPage = ({ title }) => (
-  <main className="site-container py-32 text-center">
-    <h1 className="text-4xl font-black text-ink">{title}</h1>
-    <p className="text-subtle mt-4">This page is coming soon.</p>
-  </main>
-);
+export function NotFound() {
+  return (
+    <PageHero eyebrow="Page not found" title="Let’s get you back on track." description="This address may have changed. Start from the homepage or browse the Foundry platform.">
+      <Link className="site-button" to="/">Back to home</Link>
+      <Link className="site-button site-button-outline" to="/products">Browse products</Link>
+    </PageHero>
+  );
+}
+
+function InvestorPage({ title, description, children }) {
+  return (
+    <>
+      <PageHero eyebrow="Investor relations" title={title} description={description}>
+        <Link to="/investors" className="site-button site-button-outline">Back to investor relations</Link>
+      </PageHero>
+      {children}
+    </>
+  );
+}
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* ── Login — standalone, no Navbar or Footer ── */}
-        <Route path="/login" element={<Login />} />
-
-        {/* ── All other pages — wrapped with Navbar + Footer ── */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:product" element={<Products />} />
-          <Route path="/solutions/financial" element={<Financial />} />
-          <Route path="/solutions/public-sector" element={<PublicSector />} />
-          <Route path="/solutions/healthcare" element={<Healthcare />} />
-          <Route path="/solutions/logistics" element={<Logistics />} />
-          <Route path="/investors" element={<Investors />} />
-          <Route path="/investors/reports" element={<FinancialReports />} />
-          <Route path="/investors/filings" element={<StockInfo />} />
-          <Route
-            path="/investors/governance"
-            element={<GovernanceSnapshot />}
-          />
-          <Route path="/leadership" element={<Leadership />} />
-          <Route path="/newsroom" element={<Newsroom />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-
-          {/* ── Placeholder routes ── */}
-          <Route
-            path="/products/cloud"
-            element={<PlaceholderPage title="Cloud Infrastructure" />}
-          />
-          <Route
-            path="/products/data"
-            element={<PlaceholderPage title="Data & Analytics" />}
-          />
-          <Route
-            path="/products/enterprise"
-            element={<PlaceholderPage title="Foundry Enterprise" />}
-          />
-          <Route
-            path="/products/security"
-            element={<PlaceholderPage title="Security & Compliance" />}
-          />
-          <Route path="/bridge-intelligence" element={<BridgeIntelligence />} />
-          <Route
-            path="/solutions/migration"
-            element={<PlaceholderPage title="Zero-Downtime Migration" />}
-          />
-          <Route
-            path="/solutions/compliance"
-            element={<PlaceholderPage title="Regulatory Compliance" />}
-          />
-          <Route
-            path="/solutions/automation"
-            element={<PlaceholderPage title="AI Process Automation" />}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <RoutePosition />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:product" element={<Products />} />
+            <Route path="/solutions/financial" element={<Financial />} />
+            <Route path="/solutions/public-sector" element={<PublicSector />} />
+            <Route path="/solutions/healthcare" element={<Healthcare />} />
+            <Route path="/solutions/logistics" element={<Logistics />} />
+            <Route path="/investors" element={<Investors />} />
+            <Route path="/investors/reports" element={<InvestorPage title="Financial reports" description="Browse annual reports, quarterly results, and listing documents."><FinancialReports /></InvestorPage>} />
+            <Route path="/investors/filings" element={<InvestorPage title="Stock and listing information" description="Find Foundry’s exchange listings and related information."><StockInfo /></InvestorPage>} />
+            <Route path="/investors/governance" element={<InvestorPage title="Corporate governance" description="Learn how the board oversees the company and represents shareholders."><GovernanceSnapshot /></InvestorPage>} />
+            <Route path="/leadership" element={<Leadership />} />
+            <Route path="/newsroom" element={<Newsroom />} />
+            <Route path="/newsroom/:storyId" element={<NewsStory />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/demo" element={<Navigate to="/contact?topic=demo" replace />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/bridge-intelligence" element={<BridgeIntelligence />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </MotionConfig>
   );
 }

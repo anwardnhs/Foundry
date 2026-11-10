@@ -18,7 +18,7 @@ const fadeUp = {
 export default function LeadershipHero() {
   return (
     <section
-      className="relative pt-40 pb-24 lg:pt-48 lg:pb-32 bg-[#F6F9FC] border-b border-rule overflow-hidden font-sans"
+      className="relative site-page-hero bg-[#F6F9FC] border-b border-rule overflow-hidden font-sans"
       aria-label="Foundry Leadership"
     >
       {/* ─── Minimalist CSS Background ─── */}
@@ -45,7 +45,7 @@ export default function LeadershipHero() {
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="text-[56px] sm:text-[72px] lg:text-[88px] font-medium text-[#0A2540] leading-[1.05] tracking-tight mb-8"
+            className="site-page-title mb-6"
           >
             The people responsible.
           </motion.h1>

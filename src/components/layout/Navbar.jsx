@@ -1,304 +1,187 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { RiMenuLine, RiCloseLine, RiArrowRightSLine } from "react-icons/ri";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { RiArrowRightLine, RiArrowDownSLine, RiMenuLine } from "react-icons/ri";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import brandMark from "@/assets/images/logo2.svg";
 
-// ─── Simplified Menu Data ────────────────────────────────────────────────────────
-const menuData = {
-  products: [
-    { name: "Cloud", href: "/products/cloud" },
-    { name: "Data", href: "/products/data" },
-    { name: "Enterprise", href: "/products/enterprise" },
-    { name: "Security", href: "/products/security" },
-    { name: "BridgeIntelligence AI", href: "/bridge-intelligence" },
-  ],
-  company: [
-    { name: "About", href: "/about" },
-    { name: "Leadership", href: "/leadership" },
-    { name: "Newsroom", href: "/newsroom" },
-    { name: "Investors", href: "/investors" },
-    { name: "Careers", href: "/careers" },
-  ],
-};
+const groups = [
+  { id: "products", label: "Products", links: [
+    ["All products", "/products"],
+    ["Cloud", "/products/cloud"],
+    ["Data & Analytics", "/products/data"],
+    ["Enterprise", "/products/enterprise"],
+    ["Security", "/products/security"],
+    ["BridgeIntelligence AI", "/bridge-intelligence"],
+  ] },
+  { id: "solutions", label: "Solutions", links: [
+    ["Financial services", "/solutions/financial"],
+    ["Public sector", "/solutions/public-sector"],
+    ["Healthcare", "/solutions/healthcare"],
+    ["Logistics", "/solutions/logistics"],
+  ] },
+  { id: "company", label: "Company", links: [
+    ["About", "/about"],
+    ["Leadership", "/leadership"],
+    ["Newsroom", "/newsroom"],
+    ["Investors", "/investors"],
+    ["Careers", "/careers"],
+  ] },
+];
+
+const demoUrl = "/contact?topic=demo";
+const menuLink = "block rounded-lg px-3 py-2.5 text-sm font-medium text-navy hover:bg-surface hover:text-accent aria-[current=page]:bg-accent/10 aria-[current=page]:text-accent";
+
+function isInGroup(pathname, href) {
+  return pathname === href || pathname.startsWith(href + "/");
+}
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 20);
+  const [dropdown, setDropdown] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const navigation = useRef(null);
+  const mobileNavigation = useRef(null);
   const location = useLocation();
+  const transparent = location.pathname === "/" && !scrolled && !dropdown;
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const update = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
   }, []);
 
   useEffect(() => {
-    setMobileMenuOpen(false);
-    setActiveDropdown(null);
-  }, [location.pathname]);
+    setDropdown(null);
+    setMobileOpen(false);
+  }, [location]);
 
-  // The crucial "Lights On" logic: Navbar turns dark if not on the homepage,
-  // or if scrolled, or if a dropdown / mobile menu is open.
-  const isHome = location.pathname === "/";
-  const isDarkTheme =
-    !isHome || isScrolled || activeDropdown !== null || mobileMenuOpen;
+  useEffect(() => {
+    const closeOutside = (event) => {
+      if (!navigation.current?.contains(event.target)) setDropdown(null);
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnResize = (event) => {
+      if (event.matches) setMobileOpen(false);
+      else setDropdown(null);
+    };
+    desktop.addEventListener("change", closeOnResize);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      desktop.removeEventListener("change", closeOnResize);
+    };
+  }, []);
+
+  const navLink = cn(
+    "inline-flex min-h-11 items-center gap-1 rounded-md px-2.5 text-sm font-semibold transition-colors",
+    transparent ? "text-white/90 hover:bg-white/10 hover:text-white" : "text-navy hover:bg-surface hover:text-accent",
+  );
 
   return (
-    <>
-      <header
-        onMouseLeave={() => setActiveDropdown(null)}
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-          isDarkTheme
-            ? "bg-white border-rule shadow-sm"
-            : "bg-transparent border-transparent",
-        )}
-      >
-        <div className="site-container flex items-center justify-between h-20">
-          {/* ── LOGO ── */}
-          <Link
-            to="/"
-            onMouseEnter={() => setActiveDropdown(null)}
-            className="flex items-center gap-2 relative z-50"
-          >
-            <img
-              src={brandMark}
-              alt="Foundry"
-              className="h-8 w-auto object-contain"
-            />
-            <span
-              className={cn(
-                "font-sans font-bold text-[22px] tracking-tight transition-colors",
-                isDarkTheme ? "text-[#0A2540]" : "text-white",
-              )}
-            >
-              Foundry
-            </span>
+    <header className={cn(
+      "fixed inset-x-0 top-0 z-50 border-b transition-colors",
+      transparent ? "border-transparent" : "border-rule bg-white/95 shadow-sm backdrop-blur",
+    )}>
+      <div className="site-container flex h-[var(--header-height)] items-center justify-between gap-3">
+        <Link to="/" className={cn("inline-flex shrink-0 items-center gap-2 rounded-md", transparent ? "text-white" : "text-navy")}>
+          <img src={brandMark} alt="" className="h-8 w-auto" />
+          <span className="text-[22px] font-bold tracking-tight">Foundry</span>
+        </Link>
+
+        <nav
+          ref={navigation}
+          aria-label="Main navigation"
+          className="hidden items-center gap-1 lg:flex xl:gap-3"
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) setDropdown(null);
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Escape" && dropdown) {
+              event.stopPropagation();
+              document.getElementById("nav-trigger-" + dropdown)?.focus();
+              setDropdown(null);
+            }
+          }}
+        >
+          {groups.map(({ id, label, links }) => {
+            const open = dropdown === id;
+            const active = links.some(([, href]) => isInGroup(location.pathname, href));
+            return (
+              <div key={id} className="relative">
+                <button
+                  type="button"
+                  id={"nav-trigger-" + id}
+                  aria-expanded={open}
+                  aria-controls={"nav-panel-" + id}
+                  className={cn(navLink, (active || open) && "bg-accent/10 text-accent")}
+                  onClick={() => setDropdown(open ? null : id)}
+                >
+                  {label}
+                  <RiArrowDownSLine aria-hidden="true" className={cn("h-4 w-4 transition-transform", open && "rotate-180")} />
+                </button>
+                <ul
+                  id={"nav-panel-" + id}
+                  hidden={!open}
+                  aria-labelledby={"nav-trigger-" + id}
+                  className="absolute left-0 top-full mt-2 w-56 space-y-0.5 rounded-xl border border-rule bg-white p-2 shadow-xl"
+                >
+                  {links.map(([name, href]) => (
+                    <li key={href}><NavLink end={href === "/products"} to={href} className={menuLink} onClick={() => setDropdown(null)}>{name}</NavLink></li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+          <NavLink to="/pricing" className={cn(navLink, "aria-[current=page]:bg-accent/10 aria-[current=page]:text-accent")} onClick={() => setDropdown(null)}>Pricing</NavLink>
+        </nav>
+
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <NavLink to="/login" className={cn(navLink, "hidden lg:inline-flex")}>Log in</NavLink>
+          <Link to={demoUrl} className={cn("site-button", transparent && "site-button-light")}>
+            <span className="sm:hidden">Demo</span>
+            <span className="hidden sm:inline">Request a demo</span>
+            <RiArrowRightLine aria-hidden="true" className="hidden h-4 w-4 sm:block" />
           </Link>
-
-          {/* ── DESKTOP LINKS ── */}
-          <nav className="hidden lg:flex items-center gap-10 h-full">
-            {/* Products */}
-            <div
-              className="relative h-full flex items-center cursor-pointer"
-              onMouseEnter={() => setActiveDropdown("products")}
+          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+            <SheetTrigger asChild>
+              <button type="button" aria-label="Open navigation" className={cn("grid h-11 w-11 place-items-center rounded-lg lg:hidden", transparent ? "text-white hover:bg-white/10" : "text-navy hover:bg-surface")}>
+                <RiMenuLine aria-hidden="true" className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              aria-describedby={undefined}
+              className="z-[60] flex h-dvh w-full max-w-sm flex-col gap-4 overflow-y-auto overscroll-contain lg:hidden"
+              onOpenAutoFocus={(event) => {
+                event.preventDefault();
+                mobileNavigation.current?.focus();
+              }}
+              onCloseAutoFocus={(event) => {
+                if (document.activeElement?.id === "main-content") event.preventDefault();
+              }}
             >
-              <span
-                className={cn(
-                  "text-[15px] font-medium transition-colors flex items-center gap-1",
-                  isDarkTheme
-                    ? "text-[#0A2540] hover:text-accent"
-                    : "text-white/90 hover:text-white",
-                )}
-              >
-                Products {activeDropdown === "products" ? "-" : "+"}
-              </span>
-
-              <AnimatePresence>
-                {activeDropdown === "products" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[240px] cursor-default z-50"
-                  >
-                    <div className="bg-white border border-rule shadow-2xl rounded-xl p-3 flex flex-col gap-1">
-                      {menuData.products.map((link) => (
-                        <Link
-                          key={link.name}
-                          to={link.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="px-4 py-2.5 text-[15px] font-medium text-[#0A2540] hover:bg-[#F6F9FC] hover:text-accent rounded-lg transition-colors"
-                        >
-                          {link.name}
-                        </Link>
+              <SheetTitle className="pr-10 text-navy">Explore Foundry</SheetTitle>
+              <nav ref={mobileNavigation} tabIndex={-1} aria-label="Mobile navigation" className="space-y-4 focus:outline-none">
+                {groups.map(({ id, label, links }) => (
+                  <div key={id} className="border-b border-rule pb-3">
+                    <p className="site-eyebrow mb-1 px-3">{label}</p>
+                    <ul className="grid grid-cols-2">
+                      {links.map(([name, href]) => (
+                        <li key={href}><NavLink end={href === "/products"} to={href} className={menuLink} onClick={() => setMobileOpen(false)}>{name}</NavLink></li>
                       ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Pricing */}
-            <Link
-              to="/pricing"
-              onMouseEnter={() => setActiveDropdown(null)}
-              className={cn(
-                "text-[15px] font-medium transition-colors",
-                isDarkTheme
-                  ? "text-[#0A2540] hover:text-accent"
-                  : "text-white/90 hover:text-white",
-              )}
-            >
-              Pricing
-            </Link>
-
-            {/* Company */}
-            <div
-              className="relative h-full flex items-center cursor-pointer"
-              onMouseEnter={() => setActiveDropdown("company")}
-            >
-              <span
-                className={cn(
-                  "text-[15px] font-medium transition-colors flex items-center gap-1",
-                  isDarkTheme
-                    ? "text-[#0A2540] hover:text-accent"
-                    : "text-white/90 hover:text-white",
-                )}
-              >
-                Company {activeDropdown === "company" ? "-" : "+"}
-              </span>
-
-              <AnimatePresence>
-                {activeDropdown === "company" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[240px] cursor-default z-50"
-                  >
-                    <div className="bg-white border border-rule shadow-2xl rounded-xl p-3 flex flex-col gap-1">
-                      {menuData.company.map((link) => (
-                        <Link
-                          key={link.name}
-                          to={link.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="px-4 py-2.5 text-[15px] font-medium text-[#0A2540] hover:bg-[#F6F9FC] hover:text-accent rounded-lg transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </nav>
-
-          {/* ── DESKTOP CTAs ── */}
-          <div
-            onMouseEnter={() => setActiveDropdown(null)}
-            className="hidden lg:flex items-center gap-6 relative z-50"
-          >
-            <Link
-              to="/login"
-              className={cn(
-                "text-[13px] font-bold uppercase tracking-widest transition-colors",
-                isDarkTheme
-                  ? "text-[#0A2540] hover:text-accent"
-                  : "text-white hover:text-white/70",
-              )}
-            >
-              Log In
-            </Link>
-            <Link
-              to="/contact"
-              className={cn(
-                "inline-flex items-center gap-2 px-6 py-3 rounded-sm text-[13px] font-bold uppercase tracking-widest transition-all",
-                isDarkTheme
-                  ? "bg-[#0A2540] text-white hover:bg-gray-800"
-                  : "bg-white text-[#0A2540] hover:bg-gray-200",
-              )}
-            >
-              Request a Demo
-              <RiArrowRightSLine className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* ── MOBILE TOGGLE ── */}
-          <button
-            className="lg:hidden relative z-50 p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <RiCloseLine
-                className={cn(
-                  "w-7 h-7",
-                  isDarkTheme ? "text-[#0A2540]" : "text-white",
-                )}
-              />
-            ) : (
-              <RiMenuLine
-                className={cn(
-                  "w-7 h-7",
-                  isDarkTheme ? "text-[#0A2540]" : "text-white",
-                )}
-              />
-            )}
-          </button>
+                    </ul>
+                  </div>
+                ))}
+                <div className="grid grid-cols-2">
+                  <NavLink to="/pricing" className={menuLink} onClick={() => setMobileOpen(false)}>Pricing</NavLink>
+                  <NavLink to="/login" className={menuLink} onClick={() => setMobileOpen(false)}>Log in</NavLink>
+                </div>
+                <Link to={demoUrl} className="site-button w-full" onClick={() => setMobileOpen(false)}>Request a demo</Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-      </header>
-
-      {/* ── MOBILE MENU OVERLAY ── */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed left-0 right-0 top-20 bottom-0 z-50 bg-white px-6 py-8 overflow-y-auto lg:hidden"
-          >
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
-                <span className="text-[12px] font-bold text-subtle uppercase tracking-widest">
-                  Products
-                </span>
-                {menuData.products.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="text-[18px] font-medium text-[#0A2540] border-b border-rule pb-3"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-              <div className="flex flex-col gap-4">
-                <Link
-                  to="/pricing"
-                  className="text-[18px] font-medium text-[#0A2540] border-b border-rule pb-3"
-                >
-                  Pricing
-                </Link>
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-[12px] font-bold text-subtle uppercase tracking-widest">
-                  Company
-                </span>
-                {menuData.company.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="text-[18px] font-medium text-[#0A2540] border-b border-rule pb-3"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-              <div className="pt-6 border-t border-rule flex flex-col gap-4">
-                <Link
-                  to="/login"
-                  className="text-[16px] font-bold uppercase tracking-widest text-[#0A2540] text-center mb-2"
-                >
-                  Log In
-                </Link>
-                <Link
-                  to="/contact"
-                  className="flex items-center justify-center gap-2 bg-[#0A2540] text-white w-full py-4 rounded-sm text-[14px] font-bold uppercase tracking-widest"
-                >
-                  Request a Demo <RiArrowRightSLine className="w-5 h-5" />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+      </div>
+    </header>
   );
 }

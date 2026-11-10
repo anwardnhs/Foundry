@@ -220,8 +220,8 @@ export default function PublicSectorSolution() {
   ];
 
   return (
-    <main className="bg-white font-sans text-[#0A2540] selection:bg-[#635BFF]/15">
-      <section className="relative overflow-hidden bg-white pt-24 lg:pt-32">
+    <div className="bg-white text-navy">
+      <section className="site-page-hero relative overflow-hidden bg-white pb-0">
         <div className="pointer-events-none absolute inset-0">
           <img
             src={hero.backgroundImage}
@@ -246,7 +246,7 @@ export default function PublicSectorSolution() {
 
               <motion.h1
                 variants={fadeUp}
-                className="text-[44px] font-semibold leading-[1.02] tracking-tight text-[#0A2540] sm:text-[58px] lg:text-[68px]"
+                className="site-page-title"
               >
                 Public services that feel easier to use.
               </motion.h1>
@@ -465,6 +465,6 @@ export default function PublicSectorSolution() {
         title="Serving governments, institutions, and platforms"
         items={whoWeHelp}
       />
-    </main>
+    </div>
   );
 }

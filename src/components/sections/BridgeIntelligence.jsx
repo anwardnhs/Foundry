@@ -78,7 +78,7 @@ export default function BridgeIntelligence() {
 
   return (
     <section
-      className="bg-white py-24 lg:py-32 font-sans"
+      className="site-page-hero bg-white"
       aria-label="Bridge Intelligence"
     >
       <div className="site-container relative z-10">
@@ -87,7 +87,7 @@ export default function BridgeIntelligence() {
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="space-y-32"
+          className="space-y-14 sm:space-y-24"
         >
           {/* ── 1. HERO SECTION ── */}
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto pt-8">
@@ -99,7 +99,7 @@ export default function BridgeIntelligence() {
 
             <motion.h1
               variants={fadeUp}
-              className="text-[44px] sm:text-[56px] lg:text-[68px] font-medium text-[#0A2540] leading-[1.05] tracking-tight mb-8"
+              className="site-page-title mb-6"
             >
               Enterprise AI that <br className="hidden sm:block" /> understands
               your rules.
@@ -119,14 +119,14 @@ export default function BridgeIntelligence() {
               className="flex flex-wrap items-center justify-center gap-4"
             >
               <Link
-                to="/demo"
+                to="/contact?topic=demo"
                 className="group inline-flex h-14 items-center justify-center rounded-none bg-[#0A2540] px-8 text-[15px] font-bold text-white transition-all hover:bg-accent hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Request demo
                 <RiArrowRightSLine className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/action"
+                to="#product-preview"
                 className="inline-flex h-14 items-center justify-center rounded-none border border-rule bg-white px-8 text-[15px] font-bold text-[#0A2540] transition-colors hover:bg-[#F6F9FC]"
               >
                 See it in action
@@ -135,7 +135,7 @@ export default function BridgeIntelligence() {
           </div>
 
           {/* ── 2. MAIN PRODUCT PREVIEW ── */}
-          <motion.div variants={fadeUp} className="w-full max-w-6xl mx-auto">
+          <motion.div id="product-preview" tabIndex={-1} variants={fadeUp} className="mx-auto w-full max-w-6xl focus:outline-none">
             <div className="rounded-[2rem] bg-[#F6F9FC] border border-rule p-6 sm:p-10 shadow-[0_40px_80px_rgba(10,37,64,0.08)]">
               <div className="w-full rounded-[1.75rem] bg-white p-6 flex items-center justify-center shadow-2xl shadow-black/20">
                 <img
@@ -321,14 +321,14 @@ export default function BridgeIntelligence() {
               </h2>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
-                  to="/demo"
+                  to="/contact?topic=demo"
                   className="group inline-flex h-14 items-center justify-center rounded-none px-8 text-[15px] font-bold text-white transition-all"
                 >
                   Request demo
                   <RiArrowRightSLine className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
-                  to="/sales"
+                  to="/contact?topic=sales"
                   className="inline-flex h-14 items-center justify-center rounded-none border border-white/20 px-8 text-[15px] font-bold text-white transition-colors hover:bg-white/10"
                 >
                   Talk to sales

@@ -8,7 +8,7 @@ import CareersCTA from "@/components/careers/CareersCTA";
 
 export default function Careers() {
   return (
-    <main>
+    <>
       <CareersHero />
       <WhyFoundry />
       <LifeAtFoundry />
@@ -16,6 +16,6 @@ export default function Careers() {
       <HiringProcess />
       <PerksGrid />
       <CareersCTA />
-    </main>
+    </>
   );
 }

@@ -36,6 +36,8 @@ export default function IRContact() {
 
   return (
     <section
+      id="investor-contacts"
+      tabIndex={-1}
       className="bg-[#F6F9FC] py-24 lg:py-32 font-sans"
       aria-label="Contact IR Team"
     >

@@ -20,7 +20,7 @@ const container = {
 export default function InvestorsHero() {
   return (
     <section
-      className="relative pt-40 pb-24 lg:pt-48 lg:pb-32 bg-white overflow-hidden font-sans border-b border-rule"
+      className="relative site-page-hero bg-white overflow-hidden font-sans border-b border-rule"
       aria-label="Investor Relations"
     >
       {/* ─── Faint Tech Grid Background (Clean & Subtle) ─── */}
@@ -61,7 +61,7 @@ export default function InvestorsHero() {
             {/* Institutional Headline */}
             <motion.h1
               variants={fadeUp}
-              className="text-[48px] sm:text-[64px] lg:text-[72px] font-medium text-[#0A2540] leading-[1.05] tracking-tight mb-6"
+              className="site-page-title mb-6"
             >
               Institutional Access to Africa's Enterprise Data Economy
             </motion.h1>

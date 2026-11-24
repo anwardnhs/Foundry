@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { RiGlobalLine, RiArrowRightLine } from "react-icons/ri";
 import brandMark from "@/assets/images/logo2.svg";
+import { productSlugs } from "@/data/productPages";
+import { serviceLinks } from "@/data/servicePages";
 
 const footerLinks = [
   ["Platform", [
@@ -17,6 +19,7 @@ const footerLinks = [
     ["Healthcare", "/solutions/healthcare"],
     ["Logistics", "/solutions/logistics"],
   ]],
+  ["Services & Growth", serviceLinks],
   ["Company", [
     ["About", "/about"],
     ["Leadership", "/leadership"],
@@ -34,11 +37,15 @@ const footerLinks = [
 
 export default function Footer() {
   const { pathname } = useLocation();
+  const currentPath = pathname.replace(/\/$/, "").toLowerCase();
+  const hasPageCallToAction = currentPath === "/contact"
+    || productSlugs.some((slug) => currentPath === `/products/${slug}`)
+    || serviceLinks.some(([, path]) => currentPath === path);
 
   return (
     <footer className="border-t border-rule bg-surface py-10 sm:py-14">
       <div className="site-container">
-        {pathname !== "/contact" && (
+        {!hasPageCallToAction && (
           <div className="mb-12 flex flex-wrap items-center justify-between gap-6 rounded-2xl bg-navy p-6 text-white sm:p-10">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Build on Foundry</h2>
@@ -50,7 +57,7 @@ export default function Footer() {
           </div>
         )}
 
-        <div className="grid gap-8 lg:grid-cols-[1fr_3fr]">
+        <div className="grid gap-8 lg:grid-cols-[1fr_4fr]">
           <div>
             <Link to="/" className="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-navy">
               <img src={brandMark} alt="" className="h-8 w-auto" /> Foundry
@@ -60,7 +67,7 @@ export default function Footer() {
             </p>
             <p className="mt-3 max-w-[17rem] text-body-sm text-muted">Foundry is a registered trademark of Foundry Plc.</p>
           </div>
-          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-4">
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5">
             {footerLinks.map(([heading, links]) => (
               <div key={heading}>
                 <h3 className="mb-2 text-sm font-semibold text-navy">{heading}</h3>

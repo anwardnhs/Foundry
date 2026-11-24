@@ -3,17 +3,30 @@ import { Link, useSearchParams } from "react-router-dom";
 import { RiArrowRightLine, RiClipboardLine, RiMailLine } from "react-icons/ri";
 import PageHero from "@/components/shared/PageHero";
 import mapSvg from "@/assets/images/map.svg";
+import { productPages } from "@/data/productPages";
 
 const topics = {
   sales: "Sales and pricing",
   demo: "Enterprise demo",
   technical: "Technical integration",
+  consulting: "Strategic consulting",
+  ventures: "Startup ventures",
   partnership: "Partnerships",
+  "customer-success": "Customer success",
+};
+
+const servicePrompts = {
+  consulting: "Describe the business outcome, the current systems and any deadlines.",
+  ventures: "Describe your startup, current traction and next milestone.",
+  partnership: "Describe your capabilities and the opportunity you want to explore.",
+  "customer-success": "Name the product, your rollout stage and the outcome you want to achieve.",
 };
 
 export default function Contact() {
   const [params] = useSearchParams();
   const topic = params.get("topic");
+  const slug = params.get("product");
+  const product = Object.hasOwn(productPages, slug) ? productPages[slug].name : null;
   const [draft, setDraft] = useState("");
   const [copyStatus, setCopyStatus] = useState("");
 
@@ -22,6 +35,7 @@ export default function Contact() {
     const fields = new FormData(event.currentTarget);
     setDraft([
       "Subject: " + topics[fields.get("topic")],
+      ...(product ? ["Product: " + product] : []),
       "Name: " + fields.get("name"),
       "Company: " + fields.get("company"),
       "Work email: " + fields.get("email"),
@@ -78,7 +92,7 @@ export default function Contact() {
               </label>
               <label className="grid gap-2 text-sm font-semibold text-navy">
                 Project details
-                <textarea name="message" rows={4} className="site-field resize-y" required />
+                <textarea name="message" rows={4} className="site-field resize-y" placeholder={Object.hasOwn(servicePrompts, topic) ? servicePrompts[topic] : undefined} required />
               </label>
               <button type="submit" className="site-button justify-self-start">
                 {draft ? "Update draft" : "Prepare draft"} <RiArrowRightLine aria-hidden="true" />

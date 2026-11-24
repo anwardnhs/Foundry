@@ -11,6 +11,10 @@ import PageHero from "./components/shared/PageHero";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import ProductPage from "./pages/ProductPage";
+import { productSlugs } from "./data/productPages";
+import ServicePage from "./pages/ServicePage";
+import { servicePages } from "./data/servicePages";
 import Financial from "./pages/solutions/Financial";
 import PublicSector from "./pages/solutions/PublicSector";
 import Healthcare from "./pages/solutions/Healthcare";
@@ -105,6 +109,12 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            {servicePages.map((page) => (
+              <Route key={page.id} path={page.path} element={<ServicePage key={page.id} page={page} />} />
+            ))}
+            {productSlugs.map((slug) => (
+              <Route key={slug} path={`/products/${slug}`} element={<ProductPage key={slug} slug={slug} />} />
+            ))}
             <Route path="/products/:product" element={<Products />} />
             <Route path="/solutions/financial" element={<Financial />} />
             <Route path="/solutions/public-sector" element={<PublicSector />} />

@@ -4,6 +4,7 @@ import { RiArrowRightLine, RiArrowDownSLine, RiMenuLine } from "react-icons/ri";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import brandMark from "@/assets/images/logo2.svg";
+import { serviceLinks } from "@/data/servicePages";
 
 const groups = [
   { id: "products", label: "Products", links: [
@@ -20,6 +21,7 @@ const groups = [
     ["Healthcare", "/solutions/healthcare"],
     ["Logistics", "/solutions/logistics"],
   ] },
+  { id: "services", label: "Services", links: serviceLinks },
   { id: "company", label: "Company", links: [
     ["About", "/about"],
     ["Leadership", "/leadership"],

@@ -1,39 +1,19 @@
 import { useState } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { RiArrowRightLine, RiClipboardLine, RiMailLine } from "react-icons/ri";
 import PageHero from "@/components/shared/PageHero";
 import mapSvg from "@/assets/images/map.svg";
-import { productPages } from "@/data/productPages";
 
 const topics = {
   sales: "Sales and pricing",
   demo: "Enterprise demo",
   technical: "Technical integration",
-  consulting: "Strategic consulting",
-  ventures: "Startup ventures",
   partnership: "Partnerships",
-  "customer-success": "Customer success",
-};
-
-const servicePrompts = {
-  consulting: "Describe the business outcome, the current systems and any deadlines.",
-  ventures: "Describe your startup, current traction and next milestone.",
-  partnership: "Describe your capabilities and the opportunity you want to explore.",
-  "customer-success": "Name the product, your rollout stage and the outcome you want to achieve.",
 };
 
 export default function Contact() {
-  const { state, key } = useLocation();
-  const initialMessage = typeof state?.enquiryBrief === "string" ? state.enquiryBrief : "";
   const [params] = useSearchParams();
   const topic = params.get("topic");
-  const slug = params.get("product");
-  const product = Object.hasOwn(productPages, slug) ? productPages[slug].name : null;
-  return <Enquiry key={key} initialMessage={initialMessage} initialTopic={topic} product={product} />;
-}
-
-function Enquiry({ initialTopic, product, initialMessage }) {
-  const [topic, setTopic] = useState(Object.hasOwn(topics, initialTopic) ? initialTopic : "");
   const [draft, setDraft] = useState("");
   const [copyStatus, setCopyStatus] = useState("");
 
@@ -42,7 +22,6 @@ function Enquiry({ initialTopic, product, initialMessage }) {
     const fields = new FormData(event.currentTarget);
     setDraft([
       "Subject: " + topics[fields.get("topic")],
-      ...(product ? ["Product: " + product] : []),
       "Name: " + fields.get("name"),
       "Company: " + fields.get("company"),
       "Work email: " + fields.get("email"),
@@ -65,7 +44,7 @@ function Enquiry({ initialTopic, product, initialMessage }) {
     <>
       <PageHero
         eyebrow="Contact Foundry"
-        title={initialTopic === "demo" ? "Request a demo" : "Let’s talk about your project."}
+        title={topic === "demo" ? "Request a demo" : "Let’s talk about your project."}
         description="Explore Foundry’s products, discuss an integration, or find the right team for your enquiry."
       />
       <section className="site-container py-10 sm:py-16" aria-label="Contact options">
@@ -75,7 +54,7 @@ function Enquiry({ initialTopic, product, initialMessage }) {
             <p id="enquiry-help" className="mb-6 mt-2 text-body-md text-muted">
               Online submission is currently unavailable. You can prepare and copy a draft here.
             </p>
-            <form className="grid gap-5" onSubmit={prepareDraft} onChange={() => { setDraft(""); setCopyStatus(""); }} aria-describedby="enquiry-help">
+            <form className="grid gap-5" onSubmit={prepareDraft} aria-describedby="enquiry-help">
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-semibold text-navy">
                   Full name
@@ -92,17 +71,17 @@ function Enquiry({ initialTopic, product, initialMessage }) {
               </label>
               <label className="grid gap-2 text-sm font-semibold text-navy">
                 Enquiry type
-                <select name="topic" className="site-field" value={topic} onChange={(event) => setTopic(event.target.value)} required>
+                <select key={topic} name="topic" className="site-field" defaultValue={Object.hasOwn(topics, topic) ? topic : ""} required>
                   <option value="" disabled>Select an enquiry type</option>
                   {Object.entries(topics).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
                 </select>
               </label>
               <label className="grid gap-2 text-sm font-semibold text-navy">
                 Project details
-                <textarea defaultValue={initialMessage} name="message" rows={4} className="site-field resize-y" placeholder={Object.hasOwn(servicePrompts, topic) ? servicePrompts[topic] : undefined} required />
+                <textarea name="message" rows={4} className="site-field resize-y" required />
               </label>
               <button type="submit" className="site-button justify-self-start">
-                Prepare draft <RiArrowRightLine aria-hidden="true" />
+                {draft ? "Update draft" : "Prepare draft"} <RiArrowRightLine aria-hidden="true" />
               </button>
             </form>
             {draft && (

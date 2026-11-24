@@ -1,5 +1,4 @@
 import tailwindcssAnimate from "tailwindcss-animate"
-import colors from "tailwindcss/colors.js"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -15,7 +14,7 @@ export default {
 			navy: '#0A2540',
 			muted: '#425466',
 			surface: '#F6F9FC',
-			slate: { ...colors.slate, DEFAULT: '#1C1C1E' },
+  			slate: '#1C1C1E',
   			mist: '#F5F5F7',
   			accent: '#004ADD',
   			subtle: '#6E6E73',

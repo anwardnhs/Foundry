@@ -4,7 +4,6 @@ import { RiArrowRightLine, RiArrowDownSLine, RiMenuLine } from "react-icons/ri";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import brandMark from "@/assets/images/logo2.svg";
-import { serviceLinks } from "@/data/servicePages";
 
 const groups = [
   { id: "products", label: "Products", links: [
@@ -15,7 +14,12 @@ const groups = [
     ["Security", "/products/security"],
     ["BridgeIntelligence AI", "/bridge-intelligence"],
   ] },
-  { id: "services", label: "Services", links: serviceLinks },
+  { id: "solutions", label: "Solutions", links: [
+    ["Financial services", "/solutions/financial"],
+    ["Public sector", "/solutions/public-sector"],
+    ["Healthcare", "/solutions/healthcare"],
+    ["Logistics", "/solutions/logistics"],
+  ] },
   { id: "company", label: "Company", links: [
     ["About", "/about"],
     ["Leadership", "/leadership"],
@@ -29,7 +33,7 @@ const demoUrl = "/contact?topic=demo";
 const menuLink = "block rounded-lg px-3 py-2.5 text-sm font-medium text-navy hover:bg-surface hover:text-accent aria-[current=page]:bg-accent/10 aria-[current=page]:text-accent";
 
 function isInGroup(pathname, href) {
-  return pathname === href || (href !== "/products" && pathname.startsWith(href + "/"));
+  return pathname === href || pathname.startsWith(href + "/");
 }
 
 export default function Navbar() {

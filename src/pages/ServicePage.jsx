@@ -1,160 +1,97 @@
-import { useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import {
-  RiBriefcaseLine, RiCheckboxCircleLine, RiGitMergeLine,
-  RiLinksLine, RiRocketLine, RiSubtractLine, RiAddLine,
-} from "react-icons/ri";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import meeting from "@/assets/images/meeting.webp";
-import lagos from "@/assets/images/lag.webp";
+import { useEffect, useState } from "react";
+import { Link, useOutletContext } from "react-router-dom";
+import { Download } from "lucide-react";
+import { WorkspacePage, ReferenceSection, ResourceLink } from "@/components/shared/WorkspacePage";
 import { serviceLinks } from "@/data/servicePages";
-import "./service-page.css";
 
-const visualStyles = {
-  consulting: { icon: RiBriefcaseLine, image: meeting },
-  ventures: { icon: RiRocketLine, image: lagos },
-  partners: { icon: RiLinksLine },
-  success: { icon: RiCheckboxCircleLine },
-};
+const emptyDraft = { checked: [], notes: "" };
 
-function ServiceVisual({ page }) {
-  const { icon: Icon, image } = visualStyles[page.id];
+function ServiceWorksheet({ page }) {
+  const worksheets = useOutletContext();
+  const [selected, setSelected] = useState(() => worksheets.current[page.id]?.selected ?? page.options[0][0]);
+  const [drafts, setDrafts] = useState(() => worksheets.current[page.id]?.drafts ?? {});
+  useEffect(() => {
+    worksheets.current[page.id] = { selected, drafts };
+  }, [worksheets, page.id, selected, drafts]);
+  const [, heading, detail, listTitle, items] = page.options.find(([label]) => label === selected);
+  const draft = drafts[selected] || emptyDraft;
+
+  function updateDraft(change) {
+    setDrafts(previous => ({
+      ...previous, [selected]: { ...(previous[selected] || emptyDraft), ...change },
+    }));
+  }
+
+  function toggleItem(item) {
+    const checked = draft.checked.includes(item)
+      ? draft.checked.filter(value => value !== item)
+      : [...draft.checked, item];
+    updateDraft({ checked });
+  }
+
+  const brief = [
+    page.worksheet.title, selected, "", listTitle,
+    ...items.map(item => (draft.checked.includes(item) ? "[x] " : "[ ] ") + item),
+    "", "Notes", draft.notes.trim() || "—",
+  ].join("\n");
+
+  function downloadBrief() {
+    const url = URL.createObjectURL(new Blob([brief], { type: "text/plain;charset=utf-8" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "foundry-" + page.id + "-brief.txt";
+    link.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
   return (
-    <aside className="svc-visual" aria-label={page.visual.label}>
-      {image && <img className="svc-visual-image" src={image} alt="" fetchpriority="high" />}
-      <div className="svc-visual-content">
-        {!image && <span className="svc-visual-icon"><Icon size={23} aria-hidden="true" /></span>}
-        <p className="svc-visual-label">{page.visual.label}</p>
-        <p className="svc-visual-title">{page.visual.title}</p>
-        <dl>
-          {page.visual.items.map(([term, detail]) => (
-            <div key={term}><dt>{term}</dt><dd>{detail}</dd></div>
-          ))}
-        </dl>
+    <section className="work-tool" id="service-explorer" tabIndex={-1} aria-labelledby="worksheet-title">
+      <div className="work-tool-heading">
+        <h2 id="worksheet-title">{page.worksheet.title}</h2>
+        <label className="work-picker">
+          <span>{page.worksheet.field}</span>
+          <select value={selected} onChange={event => setSelected(event.target.value)}>
+            {page.options.map(([label]) => <option key={label}>{label}</option>)}
+          </select>
+        </label>
       </div>
-    </aside>
-  );
-}
-
-function ServiceExplorer({ page }) {
-  return (
-    <section className="svc-explorer" id="service-explorer" tabIndex={-1} aria-labelledby="svc-explorer-title">
-      <div className="site-container">
-        <div className="svc-section-heading">
-          <h2 id="svc-explorer-title">{page.section}</h2>
-          <p>{page.summary}</p>
+      <div className="work-sheet">
+        <h3>{heading}</h3><p>{detail}</p>
+        <fieldset className="work-checklist">
+          <legend>{listTitle}</legend>
+          <div className="work-progress">
+            <progress value={draft.checked.length} max={items.length} aria-label="Checklist progress" />
+            <span aria-live="polite">{draft.checked.length} of {items.length} ready</span>
+          </div>
+          {items.map(item => <label key={item}>
+            <input type="checkbox" checked={draft.checked.includes(item)} onChange={() => toggleItem(item)} />
+            <span>{item}</span>
+          </label>)}
+        </fieldset>
+        <label className="work-notes">Notes <span>(optional)</span>
+          <textarea value={draft.notes} onChange={event => updateDraft({ notes: event.target.value })}
+            placeholder={page.worksheet.prompt} rows={2} maxLength={5000} />
+        </label>
+        <div className="work-actions">
+          <Link className="work-action" to={"/contact?topic=" + page.topic} state={{ enquiryBrief: brief }}>
+            Use in enquiry
+          </Link>
+          <button type="button" className="work-secondary" onClick={downloadBrief}>
+            <Download size={16} aria-hidden="true" /> Download brief
+          </button>
         </div>
-        <Tabs defaultValue={page.options[0][0]} orientation="vertical" className="svc-tabs">
-          <TabsList className="svc-tab-list" aria-label={page.section}>
-            {page.options.map(([label]) => (
-              <TabsTrigger className="svc-tab" key={label} value={label}>{label}</TabsTrigger>
-            ))}
-          </TabsList>
-          {page.options.map(([label, title, body, deliverable, items]) => (
-            <TabsContent className="svc-panel" key={label} value={label}>
-              <h3>{title}</h3>
-              <p>{body}</p>
-              <div className="svc-deliverable">
-                <h4>{deliverable}</h4>
-                <ul>
-                  {items.map((item) => (
-                    <li key={item}><RiCheckboxCircleLine size={18} aria-hidden="true" />{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
       </div>
-    </section>
-  );
-}
-
-function ServiceProcess({ page }) {
-  const [resourceName, resourceDescription, resourcePath, resourceAction = resourceName] = page.resource;
-
-  return (
-    <section className="site-container svc-process" aria-labelledby="svc-process-title">
-      <div className="svc-section-heading"><h2 id="svc-process-title">{page.processTitle}</h2></div>
-      <ol className="svc-steps">
-        {page.steps.map(([title, description], index) => (
-          <li key={title}>
-            <span aria-hidden="true" className="svc-step-index">{index + 1}</span>
-            <h3>{title}</h3><p>{description}</p>
-          </li>
-        ))}
-      </ol>
-      <aside className="svc-resource">
-        <RiGitMergeLine size={26} aria-hidden="true" />
-        <div><h3>{resourceName}</h3><p>{resourceDescription}</p></div>
-        <Link className="site-button site-button-outline" to={resourcePath}>{resourceAction}</Link>
-      </aside>
     </section>
   );
 }
 
 export default function ServicePage({ page }) {
-  const contact = "/contact?topic=" + page.topic;
-
-  useEffect(() => {
-    const title = document.title;
-    const meta = document.querySelector('meta[name="description"]');
-    const description = meta?.content;
-    document.title = page.name + " | Foundry";
-    if (meta) meta.content = page.intro;
-    return () => {
-      document.title = title;
-      if (meta) meta.content = description;
-    };
-  }, [page]);
-
   return (
-    <article className={`svc-page svc-${page.id}`}>
-      <header className="svc-hero">
-        <nav className="svc-nav" aria-label="Services and growth">
-          <ul className="site-container">
-            {serviceLinks.map(([name, path]) => (
-              <li key={path}><NavLink end to={path}>{name}</NavLink></li>
-            ))}
-          </ul>
-        </nav>
-        <div className="site-container svc-hero-grid">
-          <div className="svc-hero-copy">
-            <p className="svc-eyebrow">Services &amp; Growth</p>
-            <h1>{page.name}</h1>
-            <p className="svc-intro">{page.intro}</p>
-            <div className="svc-actions">
-              <Link className="site-button svc-primary" to={contact}>{page.action}</Link>
-              <Link className="svc-jump" to="#service-explorer">{page.explore}</Link>
-            </div>
-          </div>
-          <ServiceVisual page={page} />
-        </div>
-      </header>
-
-      <ServiceExplorer page={page} />
-      <ServiceProcess page={page} />
-
-      <section className="svc-questions" aria-labelledby="svc-questions-title">
-        <div className="site-container svc-questions-grid">
-          <div className="svc-section-heading"><h2 id="svc-questions-title">Common questions</h2></div>
-          <div>
-            {page.questions.map(([question, answer]) => (
-              <details key={question}>
-                <summary>{question}<RiAddLine className="svc-expand" aria-hidden="true" /><RiSubtractLine className="svc-collapse" aria-hidden="true" /></summary>
-                <p>{answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="svc-closing" aria-labelledby="svc-closing-title">
-        <div className="site-container svc-closing-grid">
-          <div><h2 id="svc-closing-title">{page.closing}</h2><p>{page.preparation}</p></div>
-          <Link className="site-button site-button-light" to={contact}>{page.action}</Link>
-        </div>
-      </section>
-    </article>
+    <WorkspacePage section="Services" links={serviceLinks} path={page.path} title={page.name} description={page.intro}>
+      <ServiceWorksheet page={page} />
+      <ReferenceSection title={page.processTitle} rows={page.steps} />
+      <ReferenceSection title="Questions" rows={page.questions} />
+      <ResourceLink resource={page.resource} />
+    </WorkspacePage>
   );
 }

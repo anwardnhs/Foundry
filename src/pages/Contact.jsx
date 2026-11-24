@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { RiArrowRightLine, RiClipboardLine, RiMailLine } from "react-icons/ri";
 import PageHero from "@/components/shared/PageHero";
 import mapSvg from "@/assets/images/map.svg";
@@ -23,14 +23,16 @@ const servicePrompts = {
 };
 
 export default function Contact() {
+  const { state, key } = useLocation();
+  const initialMessage = typeof state?.enquiryBrief === "string" ? state.enquiryBrief : "";
   const [params] = useSearchParams();
   const topic = params.get("topic");
   const slug = params.get("product");
   const product = Object.hasOwn(productPages, slug) ? productPages[slug].name : null;
-  return <Enquiry key={JSON.stringify([topic, product])} initialTopic={topic} product={product} />;
+  return <Enquiry key={key} initialMessage={initialMessage} initialTopic={topic} product={product} />;
 }
 
-function Enquiry({ initialTopic, product }) {
+function Enquiry({ initialTopic, product, initialMessage }) {
   const [topic, setTopic] = useState(Object.hasOwn(topics, initialTopic) ? initialTopic : "");
   const [draft, setDraft] = useState("");
   const [copyStatus, setCopyStatus] = useState("");
@@ -97,7 +99,7 @@ function Enquiry({ initialTopic, product }) {
               </label>
               <label className="grid gap-2 text-sm font-semibold text-navy">
                 Project details
-                <textarea name="message" rows={4} className="site-field resize-y" placeholder={Object.hasOwn(servicePrompts, topic) ? servicePrompts[topic] : undefined} required />
+                <textarea defaultValue={initialMessage} name="message" rows={4} className="site-field resize-y" placeholder={Object.hasOwn(servicePrompts, topic) ? servicePrompts[topic] : undefined} required />
               </label>
               <button type="submit" className="site-button justify-self-start">
                 Prepare draft <RiArrowRightLine aria-hidden="true" />

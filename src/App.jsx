@@ -60,6 +60,7 @@ function RoutePosition() {
 }
 
 function MainLayout() {
+  const worksheets = useRef({});
   return (
     <>
       <a
@@ -70,7 +71,7 @@ function MainLayout() {
       </a>
       <Navbar />
       <main id="main-content" tabIndex={-1} className="focus:outline-none">
-        <Outlet />
+        <Outlet context={worksheets} />
       </main>
       <Footer />
       <CookieBanner />

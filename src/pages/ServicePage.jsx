@@ -23,7 +23,7 @@ function ServiceVisual({ page }) {
     <aside className="svc-visual" aria-label={page.visual.label}>
       {image && <img className="svc-visual-image" src={image} alt="" fetchpriority="high" />}
       <div className="svc-visual-content">
-        <span className="svc-visual-icon"><Icon size={23} aria-hidden="true" /></span>
+        {!image && <span className="svc-visual-icon"><Icon size={23} aria-hidden="true" /></span>}
         <p className="svc-visual-label">{page.visual.label}</p>
         <p className="svc-visual-title">{page.visual.title}</p>
         <dl>
@@ -120,8 +120,8 @@ export default function ServicePage({ page }) {
         </nav>
         <div className="site-container svc-hero-grid">
           <div className="svc-hero-copy">
-            <p className="svc-eyebrow">{page.name}</p>
-            <h1>{page.title}</h1>
+            <p className="svc-eyebrow">Services &amp; Growth</p>
+            <h1>{page.name}</h1>
             <p className="svc-intro">{page.intro}</p>
             <div className="svc-actions">
               <Link className="site-button svc-primary" to={contact}>{page.action}</Link>

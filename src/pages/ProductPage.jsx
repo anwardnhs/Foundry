@@ -70,7 +70,7 @@ function ProductCapabilities({ product }) {
 
 export default function ProductPage({ slug }) {
   const product = productPages[slug];
-  const Icon = product.icon;
+
   const demo = `/contact?topic=demo&product=${slug}`;
 
   useEffect(() => {
@@ -94,8 +94,8 @@ export default function ProductPage({ slug }) {
         <ProductNavigation />
         <div className="site-container pf-hero-grid">
           <div className="pf-hero-copy">
-            <p className="pf-product-label"><Icon size={19} aria-hidden="true" />{product.name}</p>
-            <h1>{product.title[0]} <span>{product.title[1]}</span></h1>
+            <p className="pf-product-label">Foundry platform</p>
+            <h1>{product.name}</h1>
             <p className="pf-lead">{product.description}</p>
             <div className="pf-actions">
               <Button asChild className="pf-button"><Link to={demo}>{product.action}</Link></Button>

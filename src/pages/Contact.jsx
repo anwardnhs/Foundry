@@ -27,6 +27,11 @@ export default function Contact() {
   const topic = params.get("topic");
   const slug = params.get("product");
   const product = Object.hasOwn(productPages, slug) ? productPages[slug].name : null;
+  return <Enquiry key={JSON.stringify([topic, product])} initialTopic={topic} product={product} />;
+}
+
+function Enquiry({ initialTopic, product }) {
+  const [topic, setTopic] = useState(Object.hasOwn(topics, initialTopic) ? initialTopic : "");
   const [draft, setDraft] = useState("");
   const [copyStatus, setCopyStatus] = useState("");
 
@@ -58,7 +63,7 @@ export default function Contact() {
     <>
       <PageHero
         eyebrow="Contact Foundry"
-        title={topic === "demo" ? "Request a demo" : "Let’s talk about your project."}
+        title={initialTopic === "demo" ? "Request a demo" : "Let’s talk about your project."}
         description="Explore Foundry’s products, discuss an integration, or find the right team for your enquiry."
       />
       <section className="site-container py-10 sm:py-16" aria-label="Contact options">
@@ -68,7 +73,7 @@ export default function Contact() {
             <p id="enquiry-help" className="mb-6 mt-2 text-body-md text-muted">
               Online submission is currently unavailable. You can prepare and copy a draft here.
             </p>
-            <form className="grid gap-5" onSubmit={prepareDraft} aria-describedby="enquiry-help">
+            <form className="grid gap-5" onSubmit={prepareDraft} onChange={() => { setDraft(""); setCopyStatus(""); }} aria-describedby="enquiry-help">
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-semibold text-navy">
                   Full name
@@ -85,7 +90,7 @@ export default function Contact() {
               </label>
               <label className="grid gap-2 text-sm font-semibold text-navy">
                 Enquiry type
-                <select key={topic} name="topic" className="site-field" defaultValue={Object.hasOwn(topics, topic) ? topic : ""} required>
+                <select name="topic" className="site-field" value={topic} onChange={(event) => setTopic(event.target.value)} required>
                   <option value="" disabled>Select an enquiry type</option>
                   {Object.entries(topics).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
                 </select>
@@ -95,7 +100,7 @@ export default function Contact() {
                 <textarea name="message" rows={4} className="site-field resize-y" placeholder={Object.hasOwn(servicePrompts, topic) ? servicePrompts[topic] : undefined} required />
               </label>
               <button type="submit" className="site-button justify-self-start">
-                {draft ? "Update draft" : "Prepare draft"} <RiArrowRightLine aria-hidden="true" />
+                Prepare draft <RiArrowRightLine aria-hidden="true" />
               </button>
             </form>
             {draft && (

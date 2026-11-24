@@ -407,7 +407,7 @@
 .svc-page { --svc-accent:#004add; --svc-ink:#0a2540; --svc-dark:#0a2540; --svc-tint:#f6f9fc; --svc-rule:#d6dfe7; }
 .svc-hero { background:white; }
 .svc-eyebrow, .svc-visual-label { font-size:.82rem; letter-spacing:.09em; text-transform:uppercase; }
-.svc-hero h1 { max-width:10ch; font-weight:550; font-size:clamp(3.4rem,7.3vw,7rem); line-height:.98; }
+.svc-hero h1 { max-width:10ch; font-weight:550; font-size:clamp(2.6rem,7.3vw,7rem); overflow-wrap:break-word; line-height:.98; }
 .svc-page .svc-visual { display:block; min-height:0; border:0; border-radius:0; box-shadow:none; }
 .svc-visual-image { position:static; height:clamp(13rem,22vw,21rem); object-fit:cover; }
 .svc-visual:has(img)::before { display:none; }

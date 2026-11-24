@@ -15,12 +15,6 @@ const groups = [
     ["Security", "/products/security"],
     ["BridgeIntelligence AI", "/bridge-intelligence"],
   ] },
-  { id: "solutions", label: "Solutions", links: [
-    ["Financial services", "/solutions/financial"],
-    ["Public sector", "/solutions/public-sector"],
-    ["Healthcare", "/solutions/healthcare"],
-    ["Logistics", "/solutions/logistics"],
-  ] },
   { id: "services", label: "Services", links: serviceLinks },
   { id: "company", label: "Company", links: [
     ["About", "/about"],
@@ -35,7 +29,7 @@ const demoUrl = "/contact?topic=demo";
 const menuLink = "block rounded-lg px-3 py-2.5 text-sm font-medium text-navy hover:bg-surface hover:text-accent aria-[current=page]:bg-accent/10 aria-[current=page]:text-accent";
 
 function isInGroup(pathname, href) {
-  return pathname === href || pathname.startsWith(href + "/");
+  return pathname === href || (href !== "/products" && pathname.startsWith(href + "/"));
 }
 
 export default function Navbar() {

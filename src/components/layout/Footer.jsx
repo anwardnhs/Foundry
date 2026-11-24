@@ -88,8 +88,8 @@ export default function Footer() {
             <Link to="/terms" className="hover:text-accent hover:underline">Terms of service</Link>
           </div>
           <Link to="/investors/filings" className="flex flex-wrap gap-2 text-xs font-medium text-muted hover:text-accent" aria-label="Foundry listings on NGX and LSE">
-            <span className="rounded-full border border-rule bg-white px-3 py-1">NGX · FDRY</span>
-            <span className="rounded-full border border-rule bg-white px-3 py-1">LSE · FDRY</span>
+            <span className="rounded-full border border-rule bg-white px-3 py-1">NGX &middot; FDRY</span>
+            <span className="rounded-full border border-rule bg-white px-3 py-1">LSE &middot; FDRY</span>
           </Link>
         </div>
       </div>
